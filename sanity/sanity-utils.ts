@@ -6,16 +6,16 @@ export async function getProjects(): Promise<Project[]> {
         projectId: '8x4tdu0d',
         dataset: 'production',
         apiVersion: '2023-07-19',
-        useCdn: true,
+        useCdn: false,
     })
 
     return await client.fetch(
         groq`*[_type == "project"]{
             _id,
             _createdAt,
-            name,
+            projectName,
             "slug": slug.current,
-            "image": image.asset->url,
+            "heroImage": image.asset->url,
             url,
             content
         }`
