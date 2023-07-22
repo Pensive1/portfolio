@@ -8,7 +8,7 @@ import Icon from "./Icon";
 export default function Button(btnType:string|null, showIcon:boolean = false, iconType:string|null, children: React.ReactNode) {
     return (
         <Link href="/" className={`cta-btn cta-btn--${btnType}`} >
-            {showIcon && <Icon icontype={iconType} size={1}/>}
+            {showIcon && <Icon iconType={iconType} size={1}/>}
             {children}
         </Link>
     )
