@@ -1,4 +1,5 @@
 "use-client";
+import SectionHeading from "@/components/SectionHeading";
 import ProjectThumbnail from "@/components/home/ProjectThumbnail";
 import { getProjects } from "@/sanity/sanity-utils";
 
@@ -22,9 +23,9 @@ export default async function Home() {
       </section>
 
       <section className="projects">
+        <SectionHeading showIcon={true}>Projects</SectionHeading>
         {projects &&
           projects.map((project) => (
-            // <article key={project._id}>{project.proname}</article>
             <ProjectThumbnail
               key={project._id}
               thumbType={"hero"}

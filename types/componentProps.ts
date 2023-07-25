@@ -1,3 +1,4 @@
+// ICON COMPONENTS
 export type iconProps = {
   iconType?:
     | "question"
@@ -11,5 +12,15 @@ export type iconProps = {
     | "linkedin"
     | "mail"
     | "info";
-  size: 1 | 2 | 3;
+  size?: 1 | 2 | 3;
 };
+
+export type svgIconProps = {
+  size: number;
+};
+
+export type SectionHeadingProps = {
+  /* Inherit icon props to avoid repetition */
+  showIcon?: boolean;
+  children: React.ReactNode;
+} & iconProps;

@@ -1,20 +1,18 @@
 "use-client";
+import { iconCollection } from "@/types/components";
 import { iconProps } from "../types/componentProps";
 import dynamic from "next/dynamic";
-
-type IconComponents = {
-  [key: string]: React.ComponentType<{ size: number }>;
-};
 
 export default function Icon({ iconType = "question", size = 1 }: iconProps) {
   let dimensions = size === 1 ? 16 : size === 2 ? 24 : size === 3 ? 32 : 16;
 
-  const iconComponents = {
+  const iconCollection: iconCollection = {
     //Import icon svgs based on phrase
     question: dynamic(() => import("./icons/icn_question")),
+    route: dynamic(() => import("./icons/icn_route")),
   };
 
-  const IconComponent: IconComponents = iconComponents[iconType];
+  const IconComponent = iconCollection[iconType];
 
   {
     /* 

@@ -1,11 +1,11 @@
-"use-client";
+import { svgIconProps } from "@/types/componentProps";
 
-export default function Question(size: number) {
+export default function Question({ size }: svgIconProps) {
   return (
     <svg
       width={size}
       height={size}
-      viewBox={`0 0 ${size} ${size}`}
+      viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
