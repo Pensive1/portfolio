@@ -22,10 +22,10 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="projects">
-        <SectionHeading showIcon={true}>Projects</SectionHeading>
-        {projects &&
-          projects.map((project) => (
+      {projects.length > 0 && (
+        <section className="projects">
+          <SectionHeading showIcon={true}>Projects</SectionHeading>
+          {projects.map((project) => (
             <ProjectThumbnail
               key={project._id}
               thumbType={project.projDisplay}
@@ -37,7 +37,8 @@ export default async function Home() {
               liveUrl={project.liveUrl}
             />
           ))}
-      </section>
+        </section>
+      )}
     </main>
   );
 }

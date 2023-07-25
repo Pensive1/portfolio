@@ -43,7 +43,7 @@ const project = {
     {
       name: "slug",
       title: "Project URL",
-      description: "Example: www.site.com/projects/...",
+      description: "Portfolio site's URL for this project",
       type: "slug",
       group: "overview",
       options: { source: "projectName" },
