@@ -1,26 +1,40 @@
-"use-client";
 import SectionHeading from "@/components/SectionHeading";
 import ProjectThumbnail from "@/components/home/ProjectThumbnail";
-import { getProjects } from "@/sanity/sanity-utils";
+import { getProjects, getHomeContent } from "@/sanity/sanity-utils";
 
 export default async function Home() {
   const projects = await getProjects();
+  const { hero, about } = await getHomeContent();
 
   return (
     <main>
-      <section className="hero">
-        <h1>Title</h1>
-        <h2>lorem ipsum</h2>
-      </section>
+      {Object.keys(hero).length > 0 && (
+        <section className="hero">
+          <h1>{hero.heading}</h1>
+          <h2>{hero.tagline}</h2>
+        </section>
+      )}
 
-      <section className="about">
-        <img src="" alt="me" />
+      {Object.keys(about).length > 0 && (
+        <section className="about">
+          <img src="" alt="me" />
 
-        <div className="about-txt">
-          <h4>About</h4>
-          <p>lorem ipsum</p>
-        </div>
-      </section>
+          <div className="about-txt">
+            <h4>About</h4>
+            <p>{about.aboutContent}</p>
+          </div>
+
+          <div className="about-skills">
+            <h4>Skills</h4>
+            <ul>
+              {about.skillList.length > 0 &&
+                about.skillList.map((skill: string, index: number) => (
+                  <li key={index}>{skill}</li>
+                ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {projects.length > 0 && (
         <section className="projects">

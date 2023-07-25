@@ -25,7 +25,11 @@ export default function ProjectThumbnail({
 
             <ul className="tech-list">
               {techList.length > 0 &&
-                techList.map((tech) => <li className="tech-name">{tech}</li>)}
+                techList.map((tech, index) => (
+                  <li className="tech-name" key={index}>
+                    {tech}
+                  </li>
+                ))}
             </ul>
           </div>
         )}
