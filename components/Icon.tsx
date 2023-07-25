@@ -1,16 +1,26 @@
-'use-client';
-//Import icon svgs
+"use-client";
+import { iconProps } from "../types/componentProps";
+import dynamic from "next/dynamic";
 
-export default function Icon (iconType:string|null = null, size:number|null = null) {
-    {/* 
-        1. The size prop programatically changes the icon size in elements.
-            1.1 If a size isn't specified, the default is regular
-        2. Size... 1 = x-small, 2 = regular 3 = medium
-    */}
-    
-    {/* 
-        3.Switch statement that returns an icon type (category icon)
-            3.1 icons are filled with global css (via Tailwind)
-    */}
-    return "icon";
+type IconComponents = {
+  [key: string]: React.ComponentType<{ size: number }>;
+};
+
+export default function Icon({ iconType = "question", size = 1 }: iconProps) {
+  let dimensions = size === 1 ? 16 : size === 2 ? 24 : size === 3 ? 32 : 16;
+
+  const iconComponents = {
+    //Import icon svgs based on phrase
+    question: dynamic(() => import("./icons/icn_question")),
+  };
+
+  const IconComponent: IconComponents = iconComponents[iconType];
+
+  {
+    /* 
+    3. Returns an icon based on iconType
+        3.1 icons are filled with global css (via Tailwind)
+    */
+  }
+  return <IconComponent size={dimensions} />;
 }

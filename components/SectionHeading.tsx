@@ -1,6 +1,17 @@
-'use-client';
+"use-client";
+import Question from "./icons/icn_question";
 
-export default function SectionHeading (showIcon :boolean = true , iconType:string|null = null, title:string){
-    {/* ICON GOES HERE */}
-    <h3>{title}</h3>
+export default function SectionHeading(
+  showIcon: boolean = true,
+  title: string
+) {
+  return (
+    <div className="section-heading">
+      <Question size={16} />
+      <h3>{title}</h3>
+    </div>
+  );
+  {
+    /* replace with children */
+  }
 }

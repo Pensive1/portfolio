@@ -49,10 +49,11 @@ const project = {
       options: { source: "projectName" },
     },
     {
-      name: "shortDesc",
-      title: "Short Descrtiption",
+      name: "synopsis",
+      title: "Synopsis",
       type: "text",
-      description: "Shown below the project title",
+      description:
+        "Short Descrtiption describing this project. Shown below the project title",
       group: "overview",
     },
     {
