@@ -20,6 +20,7 @@ export async function getProjects(): Promise<Project[]> {
             "heroImage": image.asset->url,
             liveUrl,
             technologies,
+            projDisplay
         }`
   );
 }

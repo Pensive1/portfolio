@@ -95,6 +95,15 @@ const project = {
       group: "overview",
     },
     {
+      name: "projDisplay",
+      title: "Hero or regular project",
+      type: "boolean",
+      description:
+        "Affects how the thumbnail is displayed. Hero is wide and detailed, regular is consice.",
+      group: "overview",
+      initialValue: false,
+    },
+    {
       name: "bgContent",
       title: "Context",
       group: "background",

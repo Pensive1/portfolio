@@ -28,7 +28,7 @@ export default async function Home() {
           projects.map((project) => (
             <ProjectThumbnail
               key={project._id}
-              thumbType={"hero"}
+              thumbType={project.projDisplay}
               imgSrc={project.heroImage}
               title={project.projectName}
               desc={project.synopsis}

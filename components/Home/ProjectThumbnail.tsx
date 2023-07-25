@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ProjectThumbnailProps } from "@/types/project";
 
 export default function ProjectThumbnail({
-  thumbType = "regular",
+  thumbType,
   imgSrc,
   title,
   desc,
@@ -11,7 +11,7 @@ export default function ProjectThumbnail({
   caseStudyUrl,
 }: ProjectThumbnailProps) {
   return (
-    <article className={`proj-thumb --${thumbType}`}>
+    <article className={`proj-thumb --${thumbType ? "hero" : "reg"}`}>
       <img src={imgSrc} alt={`${title} project`} />
 
       <section className="thumb-content">
@@ -20,7 +20,7 @@ export default function ProjectThumbnail({
         <p className="proj-desc">{desc}</p>
 
         {techList && (
-          <div className={`proj-tech --${thumbType === "hero" && "hide"}`}>
+          <div className={`proj-tech --${!thumbType && "hide"}`}>
             <h5>tech</h5>
 
             <ul className="tech-list">

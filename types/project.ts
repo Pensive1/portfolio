@@ -8,12 +8,13 @@ export type Project = {
   slug: string;
   liveUrl: string;
   synopsis: string;
+  projDisplay: boolean;
   content: PortableTextBlock;
   technologies: string[];
 };
 
 export type ProjectThumbnailProps = {
-  thumbType?: "regular" | "hero";
+  thumbType?: boolean;
   title: string;
   imgSrc: string;
   desc: string;
