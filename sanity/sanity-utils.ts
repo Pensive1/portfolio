@@ -2,13 +2,25 @@ import aboutSectionType from "@/types/about";
 import heroType from "@/types/hero";
 import { Project } from "@/types/project";
 import { createClient, groq } from "next-sanity";
+import config from "./config/client-config";
 
-const client = createClient({
-  projectId: "8x4tdu0d",
-  dataset: "production",
-  apiVersion: "2023-07-19",
-  useCdn: false,
-});
+const client = createClient(config);
+
+// Gets homepage content
+export async function getHomeContent(): Promise<{
+  hero: heroType;
+  about: aboutSectionType;
+}> {
+  const data = await client.fetch(
+    groq`*[_type == "page" && title == "Home Page"]{
+      "hero": pageBuilder[0],
+      "about": pageBuilder[1]
+    }`
+  );
+
+  const [{ hero, about }] = data;
+  return { hero, about };
+}
 
 // Gets project thumbnails for homepage
 export async function getProjects(): Promise<Project[]> {
@@ -27,18 +39,10 @@ export async function getProjects(): Promise<Project[]> {
   );
 }
 
-// Gets homepage content
-export async function getHomeContent(): Promise<{
-  hero: heroType;
-  about: aboutSectionType;
-}> {
-  const data = await client.fetch(
-    groq`*[_type == "page" && title == "Home Page"]{
-      "hero": pageBuilder[0],
-      "about": pageBuilder[1]
-    }`
+// Get data for a single project
+export async function getProject(slug: string): Promise<Project> {
+  return await client.fetch(
+    groq`*[_type == "project" && slug.current == $slug][0]`,
+    { slug }
   );
-
-  const [{ hero, about }] = data;
-  return { hero, about };
 }
