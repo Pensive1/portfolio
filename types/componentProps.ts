@@ -8,7 +8,7 @@ export type iconProps = {
     | "medal"
     | "sword"
     | "github"
-    | "external-link"
+    | "externalLink"
     | "linkedin"
     | "mail"
     | "info";
