@@ -1,4 +1,3 @@
-"use-client";
 import { iconCollection } from "@/types/components";
 import { iconProps } from "../types/componentProps";
 import dynamic from "next/dynamic";
