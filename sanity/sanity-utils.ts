@@ -1,6 +1,6 @@
 import aboutSectionType from "@/types/about";
 import heroType from "@/types/hero";
-import { Project } from "@/types/project";
+import { Project, ProjectPage } from "@/types/project";
 import { createClient, groq } from "next-sanity";
 import config from "./config/client-config";
 
@@ -40,7 +40,7 @@ export async function getProjects(): Promise<Project[]> {
 }
 
 // Get data for a single project
-export async function getProject(slug: string): Promise<Project> {
+export async function getProject(slug: string): Promise<ProjectPage> {
   return await client.fetch(
     groq`*[_type == "project" && slug.current == $slug][0]`,
     { slug }

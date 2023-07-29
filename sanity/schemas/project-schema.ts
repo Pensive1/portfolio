@@ -159,7 +159,7 @@ const project = {
     },
     {
       title: "Solution outline",
-      name: "outline",
+      name: "solutionOutline",
       group: "solutions",
       type: "array",
       of: [{ type: "block" }],
@@ -230,7 +230,7 @@ const project = {
               fields: [
                 {
                   title: "Description",
-                  name: "uiFactorPointDesc",
+                  name: "description",
                   description: "A short summary about this point",
                   type: "array",
                   of: [{ type: "block" }],

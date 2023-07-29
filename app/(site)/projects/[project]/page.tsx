@@ -1,15 +1,19 @@
+import { PortableText } from "@portabletext/react";
+import { getProject } from "@/sanity/sanity-utils";
 import SectionHeading from "@/components/SectionHeading";
 import IconLink from "@/components/IconLink";
-import { getProject } from "@/sanity/sanity-utils";
 import ProblemPoint from "@/components/projects/ProblemPoint";
+import Feature from "@/components/projects/Feature";
+import Image from "next/image";
+import { ProjectPage } from "@/types/project";
 
-type ProjectPage = {
-  params: { project: string };
-};
-
-export default async function Project({ params }: ProjectPage) {
+export default async function Project({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const slug = params.project;
-  const project = await getProject(slug);
+  const project: ProjectPage = await getProject(slug);
 
   // If project is null, link to 404 page
   return (
@@ -17,9 +21,13 @@ export default async function Project({ params }: ProjectPage) {
       <div className="content-wrapper">
         <section className="overview">
           <h1>{project.projectName}</h1>
-          <h2>project synopsis</h2>
+          <h2>{project.synopsis}</h2>
           <div className="sub-wrapper">
             <img src="" alt="Project hero image" />
+            <Image
+              src={project.heroImage}
+              alt={`${project.projectName} feature image`}
+            />
 
             {/* Make meta a sub component */}
             <section className="project-meta">
@@ -48,12 +56,7 @@ export default async function Project({ params }: ProjectPage) {
 
         <section className="project__background">
           <SectionHeading iconType="route">Background</SectionHeading>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
-            vero esse officiis odio excepturi optio veritatis! Temporibus
-            officiis facilis nostrum natus, tempora excepturi exercitationem
-            asperiores fugit hic distinctio fugiat vero?
-          </p>
+          <PortableText value={project.bgContent} />
         </section>
 
         <section className="project__problems">
@@ -71,18 +74,46 @@ export default async function Project({ params }: ProjectPage) {
 
         <section className="project__solutions">
           <SectionHeading iconType="wand">Solutions</SectionHeading>
+
+          {/* map all problems here */}
+          <Feature featTitle="Feature 1" featimg="">
+            <PortableText value={project.solutionOutline} />
+          </Feature>
         </section>
 
         <section className="project__considerations">
-          <SectionHeading>UI Considerations</SectionHeading>
+          <SectionHeading iconType="info">UI Considerations</SectionHeading>
+          {/* uiFactorDesc */}
+          <div className="consideration-desc">
+            <PortableText value={project.uiFactorDesc} />
+          </div>
+
+          {/* uiFactors */}
+          <ul className="consideration-points">
+            {/* map all points: project.uiFactors */}
+            <li>
+              <h5>{project.uiFactors[0].uiFactorPointTitle}</h5>
+              <PortableText
+                value={project.uiFactors[0].uiFactorPoints.description}
+              />
+            </li>
+          </ul>
         </section>
 
         <section className="project__challenges">
           <SectionHeading iconType="sword">Challenges</SectionHeading>
+          {/* map challenge list */}
+          <div className="challenge">
+            <h5 className="challenge-title">
+              {project.challengeList[0].challengeTitle}
+            </h5>
+            <PortableText value={project.challengeList[0].challengeDesc} />
+          </div>
         </section>
 
-        <section className="project__challenges">
-          <SectionHeading iconType="medal">Impact/Reception</SectionHeading>
+        <section className="project__impact">
+          <SectionHeading iconType="medal">{project.impactType}</SectionHeading>
+          <PortableText value={project.impactContent} />
         </section>
       </div>
     </main>

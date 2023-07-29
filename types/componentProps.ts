@@ -48,3 +48,10 @@ export type problemPointProps = {
   probAlt?: string;
   children: React.ReactNode;
 };
+
+/* --- Features */
+export type featureProps = {
+  featimg: string;
+  featTitle: string;
+  children: React.ReactNode;
+};
