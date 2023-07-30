@@ -12,7 +12,7 @@ export default function Feature({
 
       <section className="feat-txt">
         <h5 className="feat-title">{featTitle}</h5>
-        <p className="feat-desc">{children}</p>
+        <div className="feat-desc">{children}</div>
       </section>
     </article>
   );

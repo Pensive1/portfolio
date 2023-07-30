@@ -6,6 +6,7 @@ import ProblemPoint from "@/components/projects/ProblemPoint";
 import Feature from "@/components/projects/Feature";
 import Image from "next/image";
 import { ProjectPage } from "@/types/project";
+import Overview from "@/components/projects/sections/Overview";
 
 export default async function Project({
   params,
@@ -19,40 +20,14 @@ export default async function Project({
   return (
     <main className="project">
       <div className="content-wrapper">
-        <section className="overview">
-          <h1>{project.projectName}</h1>
-          <h2>{project.synopsis}</h2>
-          <div className="sub-wrapper">
-            <img src="" alt="Project hero image" />
-            <Image
-              src={project.heroImage}
-              alt={`${project.projectName} feature image`}
-            />
-
-            {/* Make meta a sub component */}
-            <section className="project-meta">
-              <div className="meta-details">
-                <SectionHeading iconType="code">Tech stack</SectionHeading>
-
-                {/* map all techs here */}
-                <ul className="tech-list">
-                  <li className="tech-list__tech">Tech 1</li>
-                </ul>
-              </div>
-
-              <div className="meta-actions">
-                <div className="meta-actions__links">
-                  <IconLink iconType="github" href="/">
-                    GitHub
-                  </IconLink>
-                  <IconLink iconType="externalLink" href="/">
-                    Live
-                  </IconLink>
-                </div>
-              </div>
-            </section>
-          </div>
-        </section>
+        <Overview
+          projectName={project.projectName}
+          synopsis={project.synopsis}
+          heroImage={project.heroImage}
+          techStack={project.technologies}
+          githubUrl={project.githubUrl}
+          liveUrl={project.liveUrl}
+        />
 
         <section className="project__background">
           <SectionHeading iconType="route">Background</SectionHeading>
