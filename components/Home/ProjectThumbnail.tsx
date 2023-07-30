@@ -35,7 +35,7 @@ export default function ProjectThumbnail({
         )}
 
         <div className="thumb-actions">
-          {liveUrl && <Link href={`/${liveUrl}`}>See live</Link>}
+          {liveUrl && <Link href={`${liveUrl}`}>See live</Link>}
           {caseStudyUrl && (
             <Link href={`/projects/${caseStudyUrl}`}>Details</Link>
           )}
