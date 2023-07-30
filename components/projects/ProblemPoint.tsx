@@ -12,9 +12,7 @@ export default function ProblemPoint({
     <article className="problem-item">
       <img src={probImg} alt={probAlt} className="prob-img" />
       <section className="prob-txt">
-        <h5 className="prob-point__num">
-          {pointTitle /* comes from map index */}
-        </h5>
+        <h5 className="prob-point__num">{pointTitle}</h5>
         <p className="prob-desc">{children}</p>
       </section>
     </article>

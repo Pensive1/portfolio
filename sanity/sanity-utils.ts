@@ -1,6 +1,6 @@
 import aboutSectionType from "@/types/about";
 import heroType from "@/types/hero";
-import { Project, ProjectPage } from "@/types/project";
+import { Project, ProjectPage } from "@/types/data";
 import { createClient, groq } from "next-sanity";
 import config from "./config/client-config";
 

@@ -1,17 +1,16 @@
 import { PortableText } from "@portabletext/react";
 import { getProject } from "@/sanity/sanity-utils";
 import SectionHeading from "@/components/SectionHeading";
-import IconLink from "@/components/IconLink";
-import ProblemPoint from "@/components/projects/ProblemPoint";
 import Feature from "@/components/projects/Feature";
 import Image from "next/image";
-import { ProjectPage } from "@/types/project";
+import { ProjectPage } from "@/types/data";
 import Overview from "@/components/projects/sections/Overview";
+import Problems from "@/components/projects/sections/Problems";
 
 export default async function Project({
   params,
 }: {
-  params: { slug: string };
+  params: { project: string };
 }) {
   const slug = params.project;
   const project: ProjectPage = await getProject(slug);
@@ -34,18 +33,10 @@ export default async function Project({
           <PortableText value={project.bgContent} />
         </section>
 
-        <section className="project__problems">
-          <SectionHeading iconType="question">Problems</SectionHeading>
-
-          {/* map all problems here */}
-          <ProblemPoint
-            pointTitle="point 1"
-            probImg=""
-            probAlt="Problem alt desc"
-          >
-            Point description...
-          </ProblemPoint>
-        </section>
+        <Problems
+          content={project.problemContent}
+          conclusion={project.problemConclusion}
+        />
 
         <section className="project__solutions">
           <SectionHeading iconType="wand">Solutions</SectionHeading>

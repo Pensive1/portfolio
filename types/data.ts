@@ -1,4 +1,5 @@
 import { PortableTextBlock } from "sanity";
+import { problemContent } from "./componentProps";
 
 export interface Project {
   _id: string;
@@ -14,19 +15,9 @@ export interface Project {
   technologies: string[];
 }
 
-export type ProjectThumbnailProps = {
-  thumbType?: boolean;
-  title: string;
-  imgSrc: string;
-  desc: string;
-  techList: string[];
-  liveUrl: string;
-  caseStudyUrl: string;
-};
-
 export interface ProjectPage extends Project {
   bgContent: PortableTextBlock[];
-  problemContent: string;
+  problemContent: Array<problemContent>;
   challengeList: Array<object>;
   impactType: string;
   impactContent: PortableTextBlock[];

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ProjectThumbnailProps } from "@/types/project";
+import { ProjectThumbnailProps } from "@/types/data";
 
 export default function ProjectThumbnail({
   thumbType,

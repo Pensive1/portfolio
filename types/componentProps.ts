@@ -1,3 +1,5 @@
+import { PortableTextBlock } from "sanity";
+
 // ICON COMPONENTS
 interface iconList {
   iconType?:
@@ -41,7 +43,18 @@ export interface buttonProps extends iconProps {
   children: React.ReactNode;
 }
 
-/* --- Problem Points */
+/* --- HOME PAGE --- */
+export type ProjectThumbnailProps = {
+  thumbType?: boolean;
+  title: string;
+  imgSrc: string;
+  desc: string;
+  techList: string[];
+  liveUrl: string;
+  caseStudyUrl: string;
+};
+
+/* --- Problem Points --- */
 export type problemPointProps = {
   pointTitle: string;
   probImg: string;
@@ -55,3 +68,30 @@ export type featureProps = {
   featTitle: string;
   children: React.ReactNode;
 };
+
+/* --- PROJECT PAGE --- */
+export interface projectOverview {
+  projectName: string;
+  synopsis: string;
+  heroImage: string;
+  techStack: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+}
+
+export interface projectMeta {
+  techStack: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+}
+
+export interface problemContent {
+  title: string;
+  problemImg: string;
+  problemDesc: string;
+}
+
+export interface problems {
+  content: problemContent[];
+  conclusion: PortableTextBlock[];
+}
