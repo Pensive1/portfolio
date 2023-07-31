@@ -1,12 +1,12 @@
-import { PortableText } from "@portabletext/react";
 import { getProject } from "@/sanity/sanity-utils";
-import SectionHeading from "@/components/SectionHeading";
 import { ProjectPage } from "@/types/data";
+import { PortableText } from "@portabletext/react";
+import SectionHeading from "@/components/SectionHeading";
 import Overview from "@/components/projects/sections/Overview";
 import Problems from "@/components/projects/sections/Problems";
 import Solutions from "@/components/projects/sections/Solutions";
 import Considerations from "@/components/projects/sections/Considerations";
-import Challenges from "@/components/projects/sections/challenges";
+import Challenges from "@/components/projects/sections/Challenges";
 import Impact from "@/components/projects/sections/Impact";
 
 export default async function Project({

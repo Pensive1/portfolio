@@ -1,7 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
+import { Outfit } from "next/font/google";
 import "../globals.css";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: "variable",
+  variable: "--font-outfit",
+});
 
 export const metadata: Metadata = {
   title: "Richard Acquaye - Developer Portfolio",
@@ -15,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${outfit.variable} font-sans`}>
         <Header />
         {children}
         <Footer />

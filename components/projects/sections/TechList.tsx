@@ -5,8 +5,10 @@ export default function TechList({ techStack }: { techStack: string[] }) {
     <div className="meta-details">
       <SectionHeading iconType="code">Tech stack</SectionHeading>
       <ul className="tech-list">
-        {techStack.map((tech: string) => (
-          <li className="tech-list__tech">{tech}</li>
+        {techStack.map((tech: string, index: number) => (
+          <li className="tech-list__tech" key={index}>
+            {tech}
+          </li>
         ))}
       </ul>
     </div>

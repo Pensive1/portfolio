@@ -14,8 +14,8 @@ export default function Considerations({ overview, factors }) {
 
       {Object.keys(factors).length > 0 && (
         <ul className="consideration-points">
-          {factors.map((factor) => (
-            <li>
+          {factors.map((factor, index) => (
+            <li key={index}>
               <h5>{factor.uiFactorPointTitle}</h5>
               <PortableText value={factor.uiFactorPoints.description} />
             </li>
