@@ -18,12 +18,35 @@ export interface Project {
 export interface ProjectPage extends Project {
   bgContent: PortableTextBlock[];
   problemContent: Array<problemContent>;
-  challengeList: Array<object>;
+  challengeList: challenge[];
   impactType: string;
   impactContent: PortableTextBlock[];
   solutionOutline: PortableTextBlock[];
-  solutions: PortableTextBlock[];
+  solutions: Array<solution>;
   problemConclusion: PortableTextBlock[];
   uiFactorDesc: PortableTextBlock[];
-  uiFactors: Array<object>;
+  uiFactors: factor[];
 }
+
+export interface solution {
+  featureTitle: string;
+  featureImg: string;
+  featureDesc: PortableTextBlock[];
+}
+[];
+
+export interface factor {
+  index: number;
+  uiFactorPointTitle: string;
+  uiFactorPoints: {
+    description: PortableTextBlock[];
+  };
+}
+[];
+
+export interface challenge {
+  index: number;
+  challengeTitle: string;
+  challengeDesc: PortableTextBlock[];
+}
+[];

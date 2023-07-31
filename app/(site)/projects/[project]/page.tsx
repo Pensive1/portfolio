@@ -44,7 +44,6 @@ export default async function Project({
           />
         )}
 
-        {/* resolve ts issues */}
         {project.solutions && (
           <Solutions
             solutions={project.solutions}
@@ -52,7 +51,6 @@ export default async function Project({
           />
         )}
 
-        {/* resolve ts issues */}
         {(project.uiFactorDesc ||
           (project.uiFactors && Object.keys(project.uiFactors).length > 0)) && (
           <Considerations
@@ -61,13 +59,11 @@ export default async function Project({
           />
         )}
 
-        {/* resolve ts issues */}
         {project.challengeList &&
           Object.keys(project.challengeList).length > 0 && (
             <Challenges challengeList={project.challengeList} />
           )}
 
-        {/* resolve ts issues */}
         {project.impactType && project.impactContent && (
           <Impact type={project.impactType} content={project.impactContent} />
         )}

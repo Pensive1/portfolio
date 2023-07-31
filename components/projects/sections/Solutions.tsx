@@ -1,8 +1,9 @@
 import SectionHeading from "@/components/SectionHeading";
 import Feature from "../Feature";
 import { PortableText } from "@portabletext/react";
+import { solutions } from "@/types/componentProps";
 
-export default function Solutions({ outline, solutions }) {
+export default function Solutions({ outline, solutions }: solutions) {
   return (
     <section className="project__solutions">
       <SectionHeading iconType="wand">Solutions</SectionHeading>

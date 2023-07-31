@@ -1,4 +1,5 @@
 import { PortableTextBlock } from "sanity";
+import { challenge, factor, solution } from "./data";
 
 // ICON COMPONENTS
 interface iconList {
@@ -94,4 +95,23 @@ export interface problemContent {
 export interface problems {
   content: problemContent[];
   conclusion: PortableTextBlock[];
+}
+
+export interface solutions {
+  outline: PortableTextBlock[];
+  solutions: solution[];
+}
+
+export interface considerations {
+  overview: PortableTextBlock[];
+  factors: factor[];
+}
+
+export interface challenges {
+  challengeList: challenge[];
+}
+
+export interface impact {
+  type: string;
+  content: PortableTextBlock[];
 }

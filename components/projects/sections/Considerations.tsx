@@ -1,7 +1,8 @@
 import SectionHeading from "@/components/SectionHeading";
+import { considerations } from "@/types/componentProps";
 import { PortableText } from "@portabletext/react";
 
-export default function Considerations({ overview, factors }) {
+export default function Considerations({ overview, factors }: considerations) {
   return (
     <section className="project__considerations">
       <SectionHeading iconType="info">UI Considerations</SectionHeading>
