@@ -1,11 +1,13 @@
 import { PortableText } from "@portabletext/react";
 import { getProject } from "@/sanity/sanity-utils";
 import SectionHeading from "@/components/SectionHeading";
-import Feature from "@/components/projects/Feature";
-import Image from "next/image";
 import { ProjectPage } from "@/types/data";
 import Overview from "@/components/projects/sections/Overview";
 import Problems from "@/components/projects/sections/Problems";
+import Solutions from "@/components/projects/sections/Solutions";
+import Considerations from "@/components/projects/sections/Considerations";
+import Challenges from "@/components/projects/sections/challenges";
+import Impact from "@/components/projects/sections/Impact";
 
 export default async function Project({
   params,
@@ -24,63 +26,51 @@ export default async function Project({
           synopsis={project.synopsis}
           heroImage={project.heroImage}
           techStack={project.technologies}
-          githubUrl={project.githubUrl}
+          gitHubUrl={project.gitHubUrl}
           liveUrl={project.liveUrl}
         />
 
-        <section className="project__background">
-          <SectionHeading iconType="route">Background</SectionHeading>
-          <PortableText value={project.bgContent} />
-        </section>
+        {project.bgContent && (
+          <section className="project__background">
+            <SectionHeading iconType="route">Background</SectionHeading>
+            <PortableText value={project.bgContent} />
+          </section>
+        )}
 
-        <Problems
-          content={project.problemContent}
-          conclusion={project.problemConclusion}
-        />
+        {project.problemContent && (
+          <Problems
+            content={project.problemContent}
+            conclusion={project.problemConclusion}
+          />
+        )}
 
-        <section className="project__solutions">
-          <SectionHeading iconType="wand">Solutions</SectionHeading>
+        {/* resolve ts issues */}
+        {project.solutions && (
+          <Solutions
+            solutions={project.solutions}
+            outline={project.solutionOutline}
+          />
+        )}
 
-          {/* map all problems here */}
-          <Feature featTitle="Feature 1" featimg="">
-            <PortableText value={project.solutionOutline} />
-          </Feature>
-        </section>
+        {/* resolve ts issues */}
+        {(project.uiFactorDesc ||
+          (project.uiFactors && Object.keys(project.uiFactors).length > 0)) && (
+          <Considerations
+            overview={project.uiFactorDesc}
+            factors={project.uiFactors}
+          />
+        )}
 
-        <section className="project__considerations">
-          <SectionHeading iconType="info">UI Considerations</SectionHeading>
-          {/* uiFactorDesc */}
-          <div className="consideration-desc">
-            <PortableText value={project.uiFactorDesc} />
-          </div>
+        {/* resolve ts issues */}
+        {project.challengeList &&
+          Object.keys(project.challengeList).length > 0 && (
+            <Challenges challengeList={project.challengeList} />
+          )}
 
-          {/* uiFactors */}
-          <ul className="consideration-points">
-            {/* map all points: project.uiFactors */}
-            <li>
-              <h5>{project.uiFactors[0].uiFactorPointTitle}</h5>
-              <PortableText
-                value={project.uiFactors[0].uiFactorPoints.description}
-              />
-            </li>
-          </ul>
-        </section>
-
-        <section className="project__challenges">
-          <SectionHeading iconType="sword">Challenges</SectionHeading>
-          {/* map challenge list */}
-          <div className="challenge">
-            <h5 className="challenge-title">
-              {project.challengeList[0].challengeTitle}
-            </h5>
-            <PortableText value={project.challengeList[0].challengeDesc} />
-          </div>
-        </section>
-
-        <section className="project__impact">
-          <SectionHeading iconType="medal">{project.impactType}</SectionHeading>
-          <PortableText value={project.impactContent} />
-        </section>
+        {/* resolve ts issues */}
+        {project.impactType && project.impactContent && (
+          <Impact type={project.impactType} content={project.impactContent} />
+        )}
       </div>
     </main>
   );

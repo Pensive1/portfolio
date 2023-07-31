@@ -75,13 +75,13 @@ export interface projectOverview {
   synopsis: string;
   heroImage: string;
   techStack: string[];
-  githubUrl?: string;
+  gitHubUrl?: string;
   liveUrl?: string;
 }
 
 export interface projectMeta {
   techStack: string[];
-  githubUrl?: string;
+  gitHubUrl?: string;
   liveUrl?: string;
 }
 

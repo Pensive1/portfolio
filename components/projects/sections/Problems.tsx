@@ -21,9 +21,11 @@ export default function Problems({ content, conclusion }: problems) {
         ))}
       </div>
 
-      <div className="problem-conclusion">
-        <PortableText value={conclusion} />
-      </div>
+      {conclusion && (
+        <div className="problem-conclusion">
+          <PortableText value={conclusion} />
+        </div>
+      )}
     </section>
   );
 }

@@ -7,7 +7,7 @@ export default function Overview({
   synopsis,
   heroImage,
   techStack,
-  githubUrl,
+  gitHubUrl,
   liveUrl,
 }: projectOverview) {
   return (
@@ -18,7 +18,7 @@ export default function Overview({
         <Image src={heroImage} alt={`${projectName} feature image`} />
         <OverviewMeta
           techStack={techStack}
-          githubUrl={githubUrl}
+          gitHubUrl={gitHubUrl}
           liveUrl={liveUrl}
         />
       </div>

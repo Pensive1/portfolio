@@ -8,7 +8,7 @@ export interface Project {
   heroImage: string;
   slug: string;
   liveUrl: string;
-  githubUrl: string;
+  gitHubUrl: string;
   synopsis: string;
   projDisplay: boolean;
   content: PortableTextBlock[];

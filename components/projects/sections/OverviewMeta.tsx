@@ -4,7 +4,7 @@ import { projectMeta } from "@/types/componentProps";
 
 export default function OverviewMeta({
   techStack,
-  githubUrl,
+  gitHubUrl,
   liveUrl,
 }: projectMeta) {
   return (
@@ -13,8 +13,8 @@ export default function OverviewMeta({
 
       <div className="meta-actions">
         <div className="meta-actions__links">
-          {githubUrl && (
-            <IconLink iconType="github" href={githubUrl}>
+          {gitHubUrl && (
+            <IconLink iconType="github" href={gitHubUrl}>
               GitHub
             </IconLink>
           )}
