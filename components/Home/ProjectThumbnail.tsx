@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ProjectThumbnailProps } from "@/types/project";
+import { ProjectThumbnailProps } from "@/types/data";
 
 export default function ProjectThumbnail({
   thumbType,
@@ -35,7 +35,7 @@ export default function ProjectThumbnail({
         )}
 
         <div className="thumb-actions">
-          {liveUrl && <Link href={`/${liveUrl}`}>See live</Link>}
+          {liveUrl && <Link href={`${liveUrl}`}>See live</Link>}
           {caseStudyUrl && (
             <Link href={`/projects/${caseStudyUrl}`}>Details</Link>
           )}
