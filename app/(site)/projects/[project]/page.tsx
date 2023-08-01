@@ -1,3 +1,6 @@
+// "use client";
+// import { useRouter } from "next/navigation";
+import { notFound } from "next/navigation";
 import { getProject } from "@/sanity/sanity-utils";
 import { ProjectPage } from "@/types/data";
 import { PortableText } from "@portabletext/react";
@@ -16,6 +19,10 @@ export default async function Project({
 }) {
   const slug = params.project;
   const project: ProjectPage = await getProject(slug);
+
+  if (!project) {
+    notFound();
+  }
 
   // If project is null, link to 404 page
   return (
