@@ -38,7 +38,9 @@ export default function ProjectThumbnail({
         <div className="thumb-actions">
           {liveUrl && <Button href={`${liveUrl}`}>See live</Button>}
           {caseStudyUrl && (
-            <Link href={`/projects/${caseStudyUrl}`}>Details</Link>
+            <Button href={`/projects/${caseStudyUrl}`} btnType="secondary">
+              Details
+            </Button>
           )}
         </div>
       </section>

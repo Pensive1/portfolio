@@ -12,8 +12,14 @@ export default function Button({
   size,
   children,
 }: buttonProps) {
+  const buttonStyle = {
+    primary: "btn-primary",
+    secondary: "btn-secondary",
+    tertiary: "btn-tertiary",
+  };
+
   return (
-    <Link href={href} className={`cta-btn btn--${btnType}`}>
+    <Link href={href} className={`cta-btn ${buttonStyle[btnType]}`}>
       {showIcon && <Icon iconType={iconType} size={size} />}
       {children}
     </Link>
