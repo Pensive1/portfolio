@@ -96,7 +96,7 @@ const project = {
     },
     {
       name: "projDisplay",
-      title: "Hero or regular project",
+      title: "Hero project",
       type: "boolean",
       description:
         "Affects how the thumbnail is displayed. Hero is wide and detailed, regular is consice.",
@@ -126,6 +126,11 @@ const project = {
           name: "problemDetail",
           fields: [
             {
+              title: "Title",
+              type: "string",
+              name: "title",
+            },
+            {
               title: "Image",
               type: "image",
               name: "problemImg",
@@ -153,6 +158,13 @@ const project = {
       group: "problems",
     },
     {
+      title: "Solution outline",
+      name: "solutionOutline",
+      group: "solutions",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+    {
       name: "solutions",
       title: "Features",
       group: "solutions",
@@ -176,7 +188,8 @@ const project = {
             {
               title: "Feature Description",
               name: "featureDesc",
-              type: "text",
+              type: "array",
+              of: [{ type: "block" }],
             },
           ],
         },
@@ -211,11 +224,31 @@ const project = {
               type: "string",
             },
             {
-              title: "Description",
-              name: "uiFactorPointDesc",
-              description: "A short summary about this point",
-              type: "array",
-              of: [{ type: "block" }],
+              title: "Point",
+              type: "object",
+              name: "uiFactorPoints",
+              fields: [
+                {
+                  title: "Description",
+                  name: "description",
+                  description: "A short summary about this point",
+                  type: "array",
+                  of: [{ type: "block" }],
+                },
+                {
+                  name: "image",
+                  title: "Image",
+                  type: "image",
+                  options: { hotspot: true },
+                  fields: [
+                    {
+                      name: "alt",
+                      title: "Alt",
+                      type: "string",
+                    },
+                  ],
+                },
+              ],
             },
           ],
         },

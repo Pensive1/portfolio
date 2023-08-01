@@ -11,7 +11,7 @@ export default function Route({ size }: svgIconProps) {
     >
       <path
         fillRule="evenodd"
-        clip-rule="evenodd"
+        clipRule="evenodd"
         d="M0 3C0 1.34315 1.34315 0 3 0C4.65685 0 6 1.34315 6 3C6 4.65685 4.65685 6 3 6C1.34315 6 0 4.65685 0 3ZM3 2C2.44772 2 2 2.44772 2 3C2 3.55228 2.44772 4 3 4C3.55228 4 4 3.55228 4 3C4 2.44772 3.55228 2 3 2Z"
         fill="#09244B"
       />
@@ -21,7 +21,7 @@ export default function Route({ size }: svgIconProps) {
       />
       <path
         fillRule="evenodd"
-        clip-rule="evenodd"
+        clipRule="evenodd"
         d="M15 14C13.3431 14 12 15.3431 12 17C12 18.6569 13.3431 20 15 20C16.6569 20 18 18.6569 18 17C18 15.3431 16.6569 14 15 14ZM14 17C14 16.4477 14.4477 16 15 16C15.5523 16 16 16.4477 16 17C16 17.5523 15.5523 18 15 18C14.4477 18 14 17.5523 14 17Z"
         fill="#09244B"
       />

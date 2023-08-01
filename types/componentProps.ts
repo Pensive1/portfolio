@@ -1,5 +1,8 @@
+import { PortableTextBlock } from "sanity";
+import { challenge, factor, solution } from "./data";
+
 // ICON COMPONENTS
-export type iconProps = {
+interface iconList {
   iconType?:
     | "question"
     | "route"
@@ -8,19 +11,107 @@ export type iconProps = {
     | "medal"
     | "sword"
     | "github"
-    | "external-link"
+    | "externalLink"
     | "linkedin"
     | "mail"
     | "info";
-  size?: 1 | 2 | 3;
-};
+}
 
 export type svgIconProps = {
   size: number;
 };
 
-export type SectionHeadingProps = {
+export interface iconProps extends iconList {
+  size?: 1 | 2 | 3;
+}
+
+export interface SectionHeadingProps extends iconProps {
   /* Inherit icon props to avoid repetition */
   showIcon?: boolean;
   children: React.ReactNode;
-} & iconProps;
+}
+
+export interface iconLinkProps extends iconProps {
+  href: string;
+  showIcon?: boolean;
+  children: React.ReactNode;
+}
+
+export interface buttonProps extends iconProps {
+  href: string;
+  showIcon?: boolean;
+  btnType?: "primary" | "secondary" | "tertiary";
+  children: React.ReactNode;
+}
+
+/* --- HOME PAGE --- */
+export type ProjectThumbnailProps = {
+  thumbType?: boolean;
+  title: string;
+  imgSrc: string;
+  desc: string;
+  techList: string[];
+  liveUrl: string;
+  caseStudyUrl: string;
+};
+
+/* --- Problem Points --- */
+export type problemPointProps = {
+  pointTitle: string;
+  probImg: string;
+  probAlt?: string;
+  children: React.ReactNode;
+};
+
+/* --- Features */
+export type featureProps = {
+  featimg: string;
+  featTitle: string;
+  children: React.ReactNode;
+};
+
+/* --- PROJECT PAGE --- */
+export interface projectOverview {
+  projectName: string;
+  synopsis: string;
+  heroImage: string;
+  techStack: string[];
+  gitHubUrl?: string;
+  liveUrl?: string;
+}
+
+export interface projectMeta {
+  techStack: string[];
+  gitHubUrl?: string;
+  liveUrl?: string;
+}
+
+export interface problemContent {
+  title: string;
+  problemImg: string;
+  problemDesc: string;
+}
+
+export interface problems {
+  content: problemContent[];
+  conclusion: PortableTextBlock[];
+}
+
+export interface solutions {
+  outline: PortableTextBlock[];
+  solutions: solution[];
+}
+
+export interface considerations {
+  overview: PortableTextBlock[];
+  factors: factor[];
+}
+
+export interface challenges {
+  challengeList: challenge[];
+}
+
+export interface impact {
+  type: string;
+  content: PortableTextBlock[];
+}
