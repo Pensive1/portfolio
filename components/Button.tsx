@@ -13,7 +13,7 @@ export default function Button({
   children,
 }: buttonProps) {
   return (
-    <Link href={href} className={`cta-btn cta-btn--${btnType}`}>
+    <Link href={href} className={`cta-btn btn--${btnType}`}>
       {showIcon && <Icon iconType={iconType} size={size} />}
       {children}
     </Link>
