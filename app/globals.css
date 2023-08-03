@@ -77,6 +77,11 @@ body {
       font-size: 0.875rem;
     }
   }
+  .responsive-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
 }
 
 @layer utilities {
@@ -92,5 +97,10 @@ body {
   }
   .btn-tertiary{
     background:none;
+  }
+  .gradient-border{
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-image: radial-gradient(rgba(173,173,173, 1), rgba(224,224,224, 1), rgba(224,224,224, 0)) 1;   
   }
 }
