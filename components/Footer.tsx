@@ -5,7 +5,7 @@ import FooterIconLink from "./FooterIconLink";
 export default function Footer() {
   return (
     <footer className="p-4 gradient-border md:p-0">
-      <div className="flex flex-col gap-6 md:py-4">
+      <div className="flex flex-col gap-6 md:py-4 2xl:flex-row-reverse justify-between">
         <div className="flex gap-4 justify-center md:gap-[4.44rem]">
           <FooterIconLink
             href={"https://github.com/Pensive1"}
