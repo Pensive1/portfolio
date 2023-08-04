@@ -23,10 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} font-sans px-4 md:px-8 xl:w-[54.75rem] xl:px-0 xl:flex-col xl:justify-items-center 2xl:w-[1128rem]`}
+        className={`${outfit.variable} font-sans px-4 md:px-8 xl:px-0 xl:flex xl:flex-col xl:items-center`}
       >
         <Header />
-        <div className="grid grid-cols-4 gap-x-4 md:grid-cols-8 xl:grid-cols-12 xl:gap-x-6">
+        <div className="grid grid-cols-4 gap-x-4 md:grid-cols-8 xl:grid-cols-12 xl:gap-x-6 xl:w-[54.75rem] 2xl:w-[70.5rem]">
           {children}
         </div>
         <Footer />
