@@ -8,7 +8,7 @@ export default function SectionHeading({
   children,
 }: SectionHeadingProps) {
   return (
-    <div className="section-heading">
+    <div className="flex items-center gap-3 md:gap-4">
       {/* {showIcon && <Question size={16} />} */}
       {showIcon && <Icon iconType={iconType} size={size} />}
       <h3>{children}</h3>
