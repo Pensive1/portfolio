@@ -16,22 +16,28 @@ export default async function Home() {
       )}
 
       {Object.keys(about).length > 0 && (
-        <section className="about">
-          <img src="" alt="me" />
+        <section className="col-span-full flex flex-col gap-8 items-center md:flex-row-reverse">
+          <img
+            src=""
+            alt="me"
+            className="bg-gray-400 rounded-full aspect-square w-48 md:w-[25%]"
+          />
 
-          <div className="about-txt">
-            <h4>About</h4>
-            <p>{about.aboutContent}</p>
-          </div>
+          <div className="flex flex-col items-center gap-4 md:w-[75%]">
+            <div className="flex flex-col gap-2">
+              <h4>About</h4>
+              <p>{about.aboutContent}</p>
+            </div>
 
-          <div className="about-skills">
-            <h4>Skills</h4>
-            <ul>
-              {about.skillList.length > 0 &&
-                about.skillList.map((skill: string, index: number) => (
-                  <li key={index}>{skill}</li>
-                ))}
-            </ul>
+            <div className="flex flex-col gap-2 w-[100%]">
+              <h4>Skills</h4>
+              <ul className="flex gap-x-4 flex-wrap">
+                {about.skillList.length > 0 &&
+                  about.skillList.map((skill: string, index: number) => (
+                    <li key={index}>{skill}</li>
+                  ))}
+              </ul>
+            </div>
           </div>
         </section>
       )}
