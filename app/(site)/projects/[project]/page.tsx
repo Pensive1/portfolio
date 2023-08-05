@@ -1,5 +1,3 @@
-// "use client";
-// import { useRouter } from "next/navigation";
 import { notFound } from "next/navigation";
 import { getProject } from "@/sanity/sanity-utils";
 import { ProjectPage } from "@/types/data";
@@ -26,8 +24,8 @@ export default async function Project({
 
   // If project is null, link to 404 page
   return (
-    <main className="project">
-      <div className="content-wrapper">
+    <>
+      <div className="col-span-full flex flex-col items-center">
         <Overview
           projectName={project.projectName}
           synopsis={project.synopsis}
@@ -37,44 +35,42 @@ export default async function Project({
           liveUrl={project.liveUrl}
         />
 
-        {project.bgContent && (
-          <section className="project__background">
-            <SectionHeading iconType="route">Background</SectionHeading>
-            <PortableText value={project.bgContent} />
-          </section>
-        )}
-
-        {project.problemContent && (
-          <Problems
-            content={project.problemContent}
-            conclusion={project.problemConclusion}
-          />
-        )}
-
-        {project.solutions && (
-          <Solutions
-            solutions={project.solutions}
-            outline={project.solutionOutline}
-          />
-        )}
-
-        {(project.uiFactorDesc ||
-          (project.uiFactors && Object.keys(project.uiFactors).length > 0)) && (
-          <Considerations
-            overview={project.uiFactorDesc}
-            factors={project.uiFactors}
-          />
-        )}
-
-        {project.challengeList &&
-          Object.keys(project.challengeList).length > 0 && (
-            <Challenges challengeList={project.challengeList} />
+        <div className="xl:w-[83.33%]">
+          {project.bgContent && (
+            <section className="project__background">
+              <SectionHeading iconType="route">Background</SectionHeading>
+              <PortableText value={project.bgContent} />
+            </section>
           )}
-
-        {project.impactType && project.impactContent && (
-          <Impact type={project.impactType} content={project.impactContent} />
-        )}
+          {project.problemContent && (
+            <Problems
+              content={project.problemContent}
+              conclusion={project.problemConclusion}
+            />
+          )}
+          {project.solutions && (
+            <Solutions
+              solutions={project.solutions}
+              outline={project.solutionOutline}
+            />
+          )}
+          {(project.uiFactorDesc ||
+            (project.uiFactors &&
+              Object.keys(project.uiFactors).length > 0)) && (
+            <Considerations
+              overview={project.uiFactorDesc}
+              factors={project.uiFactors}
+            />
+          )}
+          {project.challengeList &&
+            Object.keys(project.challengeList).length > 0 && (
+              <Challenges challengeList={project.challengeList} />
+            )}
+          {project.impactType && project.impactContent && (
+            <Impact type={project.impactType} content={project.impactContent} />
+          )}
+        </div>
       </div>
-    </main>
+    </>
   );
 }

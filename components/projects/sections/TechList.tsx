@@ -2,9 +2,9 @@ import SectionHeading from "@/components/SectionHeading";
 
 export default function TechList({ techStack }: { techStack: string[] }) {
   return (
-    <div className="meta-details">
-      <SectionHeading iconType="code">Tech stack</SectionHeading>
-      <ul className="tech-list">
+    <div className="px-4 pt-2 flex flex-col gap-y-2 flex-grow md:py-3 md:pr-0 2xl:py-4">
+      <SectionHeading showIcon={false}>Tech stack</SectionHeading>
+      <ul className="flex gap-x-4 flex-wrap">
         {techStack.map((tech: string, index: number) => (
           <li className="tech-list__tech" key={index}>
             {tech}

@@ -8,7 +8,7 @@
   --background-end-rgb: 255, 255, 255;
   --1280-wrapper:876px;
   --1440-wrapper:1128px;
-  --mobile-grid: display:grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+  --trans-border: #00000050
 }
 
 @media (prefers-color-scheme: dark) {

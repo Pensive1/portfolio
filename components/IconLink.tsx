@@ -9,7 +9,7 @@ export default function IconLink({
   children,
 }: iconLinkProps) {
   return (
-    <Link href={href} className="icon-link">
+    <Link href={href} className="label flex items-center gap-2">
       {showIcon && <Icon iconType={iconType} />}
       {children}
     </Link>
