@@ -19,7 +19,7 @@ export default function Footer() {
           >
             LinkedIn
           </FooterIconLink>
-          <FooterIconLink href={"/"} iconType="mail">
+          <FooterIconLink href={"/"} iconType="email">
             Email
           </FooterIconLink>
         </div>

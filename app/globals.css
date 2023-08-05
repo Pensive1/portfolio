@@ -8,6 +8,7 @@
   --background-end-rgb: 255, 255, 255;
   --1280-wrapper:876px;
   --1440-wrapper:1128px;
+  --mobile-grid: display:grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,7 +57,7 @@ body {
   }
   /*  Body */
   p {
-    @apply text-sm md:text-base 2xl:text-2xl;
+    @apply text-sm md:text-base 2xl:text-lg;
   }
   /* Footnote */
   footer, .footnote {
@@ -102,6 +103,7 @@ body {
   .btn-primary{
     /* CHANGE LATER */
     background: var(--gray-3,  #828282);
+    color: #fff;
   }
   .btn-secondary{
     /* CHANGE LATER */

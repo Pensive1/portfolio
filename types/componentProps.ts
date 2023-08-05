@@ -13,7 +13,7 @@ interface iconList {
     | "github"
     | "externalLink"
     | "linkedin"
-    | "mail"
+    | "email"
     | "info";
 }
 
@@ -46,7 +46,7 @@ export interface buttonProps extends iconProps {
 
 /* --- HOME PAGE --- */
 export type ProjectThumbnailProps = {
-  thumbType?: boolean;
+  hero?: boolean;
   title: string;
   imgSrc: string;
   desc: string;

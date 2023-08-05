@@ -43,20 +43,23 @@ export default async function Home() {
       )}
 
       {projects.length > 0 && (
-        <section className="projects">
-          <SectionHeading showIcon={true}>Projects</SectionHeading>
-          {projects.map((project) => (
-            <ProjectThumbnail
-              key={project._id}
-              thumbType={project.projDisplay}
-              imgSrc={project.heroImage}
-              title={project.projectName}
-              desc={project.synopsis}
-              techList={project.technologies}
-              caseStudyUrl={project.slug}
-              liveUrl={project.liveUrl}
-            />
-          ))}
+        <section className="col-span-full flex flex-col gap-4">
+          <h4>Work</h4>
+
+          <div className="grid grid-cols-4 gap-4 md:grid-cols-8 xl:grid-cols-12">
+            {projects.map((project) => (
+              <ProjectThumbnail
+                key={project._id}
+                hero={project.projDisplay}
+                imgSrc={project.heroImage}
+                title={project.projectName}
+                desc={project.synopsis}
+                techList={project.technologies}
+                caseStudyUrl={project.slug}
+                liveUrl={project.liveUrl}
+              />
+            ))}
+          </div>
         </section>
       )}
     </>

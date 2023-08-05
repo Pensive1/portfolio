@@ -19,7 +19,7 @@ export default function Button({
   };
 
   return (
-    <Link href={href} className={`cta-btn ${buttonStyle[btnType]}`}>
+    <Link href={href} className={`cta-btn ${buttonStyle[btnType]} w-full`}>
       {showIcon && <Icon iconType={iconType} size={size} />}
       {children}
     </Link>
