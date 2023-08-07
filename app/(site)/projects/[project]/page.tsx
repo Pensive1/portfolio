@@ -52,8 +52,8 @@ export default async function Project({
           )}
           {project.solutions && (
             <Solutions
-              solutions={project.solutions}
               outline={project.solutionOutline}
+              solutions={project.solutions}
             />
           )}
           {(project.uiFactorDesc ||
