@@ -6,7 +6,7 @@ export default function Feature({
   children,
 }: featureProps) {
   return (
-    <article className="feat-item">
+    <article className="text-[var(--body-colour)]">
       {/* Embed gif here */}
       <img src={featimg} alt={`${featTitle} in action`} className="feat-img" />
 

@@ -10,7 +10,7 @@ export default function Challenges({ challengeList }: challenges) {
 
       {/* map challenge list */}
       {challengeList.map((challenge, index) => (
-        <div className="challenge" key={index}>
+        <div className="text-[var(--body-colour)]" key={index}>
           <h5 className="challenge-title">{challenge.challengeTitle}</h5>
           <PortableText value={challenge.challengeDesc} />
         </div>

@@ -291,8 +291,8 @@ const project = {
       type: "string",
       options: {
         list: [
-          { title: "Impact", value: "impact" },
-          { title: "Reception", value: "reception" },
+          { title: "Impact", value: "Impact" },
+          { title: "Reception", value: "Reception" },
         ],
         layout: "dropdown",
       },

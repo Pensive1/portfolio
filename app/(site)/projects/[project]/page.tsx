@@ -18,14 +18,14 @@ export default async function Project({
   const slug = params.project;
   const project: ProjectPage = await getProject(slug);
 
+  // If project is null, link to 404 page
   if (!project) {
     notFound();
   }
 
-  // If project is null, link to 404 page
   return (
     <>
-      <div className="col-span-full flex flex-col items-center">
+      <div className="col-span-full flex flex-col items-center gap-12 md:gap-14 2xl:gap-16">
         <Overview
           projectName={project.projectName}
           synopsis={project.synopsis}
@@ -35,9 +35,9 @@ export default async function Project({
           liveUrl={project.liveUrl}
         />
 
-        <div className="xl:w-[83.33%]">
+        <div className="xl:w-[83.33%] flex flex-col gap-12 md:gap-14 2xl:gap-16">
           {project.bgContent && (
-            <section className="project__background">
+            <section className="text-[var(--body-colour)]">
               <SectionHeading iconType="route">Background</SectionHeading>
               <PortableText value={project.bgContent} />
             </section>

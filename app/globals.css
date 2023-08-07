@@ -8,7 +8,9 @@
   --background-end-rgb: 255, 255, 255;
   --1280-wrapper:876px;
   --1440-wrapper:1128px;
-  --trans-border: #00000050
+  --trans-border: #00000050;
+  --heading-colour:#333;
+  --body-colour:#4F4F4F;
 }
 
 @media (prefers-color-scheme: dark) {

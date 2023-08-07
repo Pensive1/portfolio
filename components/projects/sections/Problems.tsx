@@ -8,7 +8,7 @@ export default function Problems({ content, conclusion }: problems) {
     <section className="project__problems">
       <SectionHeading iconType="question">Problems</SectionHeading>
 
-      <div className="problem-points">
+      <div className="text-[var(--body-colour)]">
         {content.map((point, index) => (
           <ProblemPoint
             key={index}
@@ -22,7 +22,7 @@ export default function Problems({ content, conclusion }: problems) {
       </div>
 
       {conclusion && (
-        <div className="problem-conclusion">
+        <div className="text-[var(--body-colour)]">
           <PortableText value={conclusion} />
         </div>
       )}

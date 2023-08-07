@@ -8,13 +8,13 @@ export default function Considerations({ overview, factors }: considerations) {
       <SectionHeading iconType="info">UI Considerations</SectionHeading>
 
       {overview && (
-        <div className="consideration-desc">
+        <div className="text-[var(--body-colour)]">
           <PortableText value={overview} />
         </div>
       )}
 
       {Object.keys(factors).length > 0 && (
-        <ul className="consideration-points">
+        <ul className="text-[var(--body-colour)]">
           {factors.map((factor, index) => (
             <li key={index}>
               <h5>{factor.uiFactorPointTitle}</h5>
