@@ -59,7 +59,7 @@ export type ProjectThumbnailProps = {
 export type problemPointProps = {
   pointTitle: string;
   probImg: string;
-  probAlt?: string;
+  probAlt: string;
   children: React.ReactNode;
 };
 
