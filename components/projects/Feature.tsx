@@ -12,7 +12,7 @@ export default function Feature({
 
       <section className="text-[var(--body-colour)] flex flex-col gap-1 md:gap-2 2xl:gap-3">
         <h5 className="feat-title">{featTitle}</h5>
-        <div className="feat-desc">{children}</div>
+        <div className="content feat-desc">{children}</div>
       </section>
     </article>
   );

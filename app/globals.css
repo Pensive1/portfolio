@@ -47,11 +47,11 @@ body {
   }
   /* Section Title */
   h3 {
-    @apply text-lg font-semibold md:text-[1.375rem] 2xl:text-[1.75rem];
+    @apply text-lg font-semibold md:text-[1.375rem] 2xl:text-2xl;
   }
   /* Body Title */
   h4 {
-    @apply text-sm font-semibold md:text-base 2xl:text-[1.375rem];
+    @apply text-sm font-medium md:text-base 2xl:text-lg;
   }
   /* Button Labels and Links Text */
   .label{
@@ -59,8 +59,20 @@ body {
   }
   /*  Body */
   p, ul li {
-    @apply text-sm md:text-base 2xl:text-lg;
+    @apply text-sm font-normal md:text-base 2xl:text-lg;
   }
+  /* Content lists */
+  .content > ul li, .content > ol li {
+    list-style: disc;
+    margin-left: 1.5rem;
+  }
+
+  .content > ul, .content > ol{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
   /* Footnote */
   footer, .footnote {
     @apply text-xs md:text-sm 2xl:text-base;
