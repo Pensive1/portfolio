@@ -10,7 +10,7 @@ export default function Solutions({ outline, solutions }: solutions) {
 
       <div className="flex flex-col gap-8 md:gap-10">
         {outline && (
-          <div className="content text-[var(--body-colour)] flex flex-col gap-1 md:gap-2 2xl:gap-3">
+          <div className="content text-[var(--body-colour)] flex flex-col gap-2 md:gap-3 xl:gap-4">
             <PortableText value={outline} />
           </div>
         )}

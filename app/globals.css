@@ -65,6 +65,7 @@ body {
   .content > ul li, .content > ol li {
     list-style: disc;
     margin-left: 1.5rem;
+    @apply text-sm font-normal md:text-base 2xl:text-lg;
   }
 
   .content > ul, .content > ol{
