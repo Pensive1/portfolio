@@ -7,7 +7,7 @@ export default function Impact({ type, content }: impact) {
     <section className="project__impact">
       <SectionHeading iconType="medal">{type}</SectionHeading>
 
-      <div className="text-[var(--body-colour)]">
+      <div className="text-[var(--body-colour)] flex flex-col gap-1 md:gap-2 2xl:gap-3">
         <PortableText value={content} />
       </div>
     </section>

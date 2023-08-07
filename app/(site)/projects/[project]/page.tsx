@@ -37,9 +37,11 @@ export default async function Project({
 
         <div className="xl:w-[83.33%] flex flex-col gap-12 md:gap-14 2xl:gap-16">
           {project.bgContent && (
-            <section className="text-[var(--body-colour)]">
+            <section>
               <SectionHeading iconType="route">Background</SectionHeading>
-              <PortableText value={project.bgContent} />
+              <div className="text-[var(--body-colour)] flex flex-col gap-1 md:gap-2 2xl:gap-3">
+                <PortableText value={project.bgContent} />
+              </div>
             </section>
           )}
           {project.problemContent && (

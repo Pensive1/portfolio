@@ -9,7 +9,7 @@ export default function Solutions({ outline, solutions }: solutions) {
       <SectionHeading iconType="wand">Solutions</SectionHeading>
 
       {outline && (
-        <div className="text-[var(--body-colour)]">
+        <div className="text-[var(--body-colour)] flex flex-col gap-1 md:gap-2 2xl:gap-3">
           <PortableText value={outline} />
         </div>
       )}
