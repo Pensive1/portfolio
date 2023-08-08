@@ -14,7 +14,8 @@ interface iconList {
     | "externalLink"
     | "linkedin"
     | "email"
-    | "info";
+    | "info"
+    | "video";
 }
 
 export type svgIconProps = {
@@ -53,6 +54,7 @@ export type ProjectThumbnailProps = {
   desc: string;
   techList: string[];
   liveUrl: string;
+  demoUrl: string;
   caseStudyUrl: string;
 };
 
@@ -72,19 +74,17 @@ export type featureProps = {
 };
 
 /* --- PROJECT PAGE --- */
-export interface projectOverview {
+export interface projectOverview extends projectMeta {
   projectName: string;
   synopsis: string;
   heroImage: string;
-  techStack: string[];
-  gitHubUrl?: string;
-  liveUrl?: string;
 }
 
 export interface projectMeta {
   techStack: string[];
   gitHubUrl?: string;
   liveUrl?: string;
+  demoUrl?: string;
 }
 
 export interface problemContent {

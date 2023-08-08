@@ -6,6 +6,7 @@ export default function OverviewMeta({
   techStack,
   gitHubUrl,
   liveUrl,
+  demoUrl,
 }: projectMeta) {
   return (
     <section className="border border-solid border-[var(--trans-border)] rounded-lg flex flex-col gap-4 overflow-hidden md:rounded-xl md:flex-row">
@@ -16,6 +17,11 @@ export default function OverviewMeta({
           {gitHubUrl && (
             <IconLink iconType="github" href={gitHubUrl}>
               GitHub
+            </IconLink>
+          )}
+          {demoUrl && (
+            <IconLink iconType="video" href={demoUrl}>
+              Demo
             </IconLink>
           )}
           {liveUrl && (

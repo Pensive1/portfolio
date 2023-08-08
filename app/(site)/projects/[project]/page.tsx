@@ -33,6 +33,7 @@ export default async function Project({
           techStack={project.technologies}
           gitHubUrl={project.gitHubUrl}
           liveUrl={project.liveUrl}
+          demoUrl={project.demoUrl}
         />
 
         <div className="xl:w-[83.33%] flex flex-col gap-12 md:gap-14 2xl:gap-16">

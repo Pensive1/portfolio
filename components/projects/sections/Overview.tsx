@@ -9,6 +9,7 @@ export default function Overview({
   techStack,
   gitHubUrl,
   liveUrl,
+  demoUrl,
 }: projectOverview) {
   return (
     <section className="flex flex-col w-full md:items-center gap-6 pb-4 md:gap-10 md:pb-5 xl:pb-14 xl:gap-14 2xl:pb-16">
@@ -27,6 +28,7 @@ export default function Overview({
           techStack={techStack}
           gitHubUrl={gitHubUrl}
           liveUrl={liveUrl}
+          demoUrl={demoUrl}
         />
       </div>
     </section>

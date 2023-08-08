@@ -8,6 +8,7 @@ export default function ProjectThumbnail({
   desc,
   techList,
   liveUrl,
+  demoUrl,
   caseStudyUrl,
 }: ProjectThumbnailProps) {
   return (
@@ -44,15 +45,20 @@ export default function ProjectThumbnail({
           )}
         </section>
 
-        <div className={`flex gap-4 flex-col md:flex-row-reverse`}>
-          {liveUrl && (
-            <Button href={liveUrl} linkType="external">
-              See live
-            </Button>
-          )}
+        <div className={`flex gap-4 flex-col md:flex-row`}>
           {caseStudyUrl && (
             <Button href={`/projects/${caseStudyUrl}`} btnType="secondary">
               Details
+            </Button>
+          )}
+          {demoUrl && (
+            <Button href={demoUrl} linkType="external">
+              View demo
+            </Button>
+          )}
+          {liveUrl && (
+            <Button href={liveUrl} linkType="external">
+              See live
             </Button>
           )}
         </div>

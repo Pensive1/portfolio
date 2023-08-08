@@ -95,6 +95,12 @@ const project = {
       group: "overview",
     },
     {
+      name: "demoUrl",
+      title: "Demo Link",
+      type: "url",
+      group: "overview",
+    },
+    {
       name: "projDisplay",
       title: "Hero project",
       type: "boolean",

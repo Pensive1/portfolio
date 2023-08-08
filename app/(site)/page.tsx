@@ -1,4 +1,4 @@
-import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 import ProjectThumbnail from "@/components/home/ProjectThumbnail";
 import { getProjects, getHomeContent } from "@/sanity/sanity-utils";
 
@@ -20,7 +20,7 @@ export default async function Home() {
           className="col-span-full flex flex-col gap-8 items-center md:flex-row-reverse"
           id="about"
         >
-          <img
+          <Image
             src=""
             alt="me"
             className="bg-gray-400 rounded-full aspect-square w-48 md:w-[25%]"
@@ -60,6 +60,7 @@ export default async function Home() {
                 techList={project.technologies}
                 caseStudyUrl={project.slug}
                 liveUrl={project.liveUrl}
+                demoUrl={project.demoUrl}
               />
             ))}
           </div>

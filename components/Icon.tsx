@@ -18,6 +18,7 @@ export default function Icon({ iconType = "question", size = 1 }: iconProps) {
     linkedin: dynamic(() => import("./icons/icn_linkedin")),
     email: dynamic(() => import("./icons/icn_email")),
     info: dynamic(() => import("./icons/icn_info")),
+    video: dynamic(() => import("./icons/icn_video")),
   };
 
   const IconComponent = iconCollection[iconType]

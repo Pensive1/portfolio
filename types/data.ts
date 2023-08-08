@@ -8,6 +8,7 @@ export interface Project {
   heroImage: string;
   slug: string;
   liveUrl: string;
+  demoUrl: string;
   gitHubUrl: string;
   synopsis: string;
   projDisplay: boolean;
