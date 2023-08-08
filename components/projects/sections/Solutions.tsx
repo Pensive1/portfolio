@@ -9,11 +9,6 @@ export default function Solutions({ outline, solutions }: solutions) {
       <SectionHeading iconType="wand">Solutions</SectionHeading>
 
       <div className="flex flex-col gap-8 md:gap-10">
-        {outline && (
-          <div className="content text-[var(--body-colour)] flex flex-col gap-2 md:gap-3 xl:gap-4">
-            <PortableText value={outline} />
-          </div>
-        )}
         <div className="flex flex-col gap-12 md:gap-16 xl:gap-24">
           {solutions.map((solution, index) => (
             <Feature
@@ -25,6 +20,12 @@ export default function Solutions({ outline, solutions }: solutions) {
             </Feature>
           ))}
         </div>
+
+        {outline && (
+          <div className="content text-[var(--body-colour)] flex flex-col gap-2 md:gap-3 xl:gap-4">
+            <PortableText value={outline} />
+          </div>
+        )}
       </div>
     </section>
   );

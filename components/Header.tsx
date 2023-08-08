@@ -9,8 +9,8 @@ export default function Header() {
           <Link href={"/"}>Richard Acquaye</Link>
         </div>
         <nav className="flex gap-4 xl:gap-6">
-          <Link href={"/"}>Work</Link>
-          <Link href={"/"}>About</Link>
+          <Link href={"/#projects"}>Projects</Link>
+          <Link href={"/#about"}>About</Link>
           <Link href={"/"}>Blog</Link>
         </nav>
       </div>

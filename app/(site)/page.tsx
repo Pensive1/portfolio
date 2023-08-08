@@ -16,7 +16,10 @@ export default async function Home() {
       )}
 
       {Object.keys(about).length > 0 && (
-        <section className="col-span-full flex flex-col gap-8 items-center md:flex-row-reverse">
+        <section
+          className="col-span-full flex flex-col gap-8 items-center md:flex-row-reverse"
+          id="about"
+        >
           <img
             src=""
             alt="me"
@@ -43,8 +46,8 @@ export default async function Home() {
       )}
 
       {projects.length > 0 && (
-        <section className="col-span-full flex flex-col gap-4">
-          <h4>Work</h4>
+        <section className="col-span-full flex flex-col gap-4" id="projects">
+          <h4>Projects</h4>
 
           <div className="grid grid-cols-4 gap-4 md:grid-cols-8 xl:grid-cols-12">
             {projects.map((project) => (
