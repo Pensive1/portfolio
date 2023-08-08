@@ -9,7 +9,7 @@ export default function Problems({ content, conclusion }: problems) {
       <SectionHeading iconType="question">Problems</SectionHeading>
 
       <div className="flex flex-col gap-6">
-        <div className="text-[var(--body-colour)] gap-y-6 grid grid-cols-4 md:grid-cols-8 xl:grid-cols-10 md:gap-4 xl:gap-6">
+        <div className="gap-y-6 grid grid-cols-4 md:grid-cols-8 xl:grid-cols-10 md:gap-4 xl:gap-6">
           {content.map((point, index) => (
             <ProblemPoint
               key={index}
@@ -22,7 +22,7 @@ export default function Problems({ content, conclusion }: problems) {
           ))}
         </div>
         {conclusion && (
-          <div className="content text-[var(--body-colour)] flex flex-col gap-1 md:gap-2 2xl:gap-3">
+          <div className="content flex flex-col gap-1 md:gap-2 2xl:gap-3">
             <PortableText value={conclusion} />
           </div>
         )}

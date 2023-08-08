@@ -39,6 +39,7 @@ export interface iconLinkProps extends iconProps {
 
 export interface buttonProps extends iconProps {
   href: string;
+  linkType?: "internal" | "external";
   showIcon?: boolean;
   btnType?: "primary" | "secondary" | "tertiary";
   children: React.ReactNode;

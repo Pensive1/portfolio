@@ -13,7 +13,7 @@ export default function Overview({
   return (
     <section className="flex flex-col w-full md:items-center gap-6 pb-4 md:gap-10 md:pb-5 xl:pb-14 xl:gap-14 2xl:pb-16">
       <div className="w-full flex flex-col gap-4 xl:gap-5">
-        <h1>{projectName}</h1>
+        <h1 className="text-[var(--heading-colour)]">{projectName}</h1>
         <h2>{synopsis}</h2>
       </div>
 

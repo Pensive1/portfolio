@@ -51,7 +51,7 @@ body {
   }
   /* Body Title */
   h4 {
-    @apply text-sm font-medium md:text-base 2xl:text-lg;
+    @apply text-[var(--heading-colour)] text-sm font-medium md:text-base 2xl:text-lg;
   }
   /* Button Labels and Links Text */
   .label{

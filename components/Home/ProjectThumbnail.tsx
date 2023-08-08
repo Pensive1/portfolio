@@ -35,7 +35,7 @@ export default function ProjectThumbnail({
               <ul className="flex gap-x-4 flex-wrap text-xs">
                 {techList.length > 0 &&
                   techList.map((tech, index) => (
-                    <li className="tech-name" key={index}>
+                    <li className="label tech-name" key={index}>
                       {tech}
                     </li>
                   ))}
@@ -45,7 +45,11 @@ export default function ProjectThumbnail({
         </section>
 
         <div className={`flex gap-4 flex-col md:flex-row-reverse`}>
-          {liveUrl && <Button href={`${liveUrl}`}>See live</Button>}
+          {liveUrl && (
+            <Button href={liveUrl} linkType="external">
+              See live
+            </Button>
+          )}
           {caseStudyUrl && (
             <Button href={`/projects/${caseStudyUrl}`} btnType="secondary">
               Details
