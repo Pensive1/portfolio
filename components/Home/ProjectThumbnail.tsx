@@ -1,5 +1,7 @@
 import { ProjectThumbnailProps } from "@/types/componentProps";
+import { sanityImg } from "@/sanity/sanity-utils";
 import Button from "../Button";
+import Image from "next/image";
 
 export default function ProjectThumbnail({
   hero,
@@ -17,9 +19,11 @@ export default function ProjectThumbnail({
         hero ? "md:col-span-full md:flex-row" : "md:col-span-4"
       }`}
     >
-      <img
-        src={imgSrc}
-        alt={`${title} project`}
+      <Image
+        src={imgSrc.asset._ref && sanityImg(imgSrc.asset._ref).url()}
+        alt={imgSrc?.alt ? imgSrc.alt : `${title} project`}
+        width={1280}
+        height={720}
         className={`aspect-video w-full bg-gray-500 ${hero && "md:w-[62.5%]"}`}
       />
 

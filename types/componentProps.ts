@@ -50,7 +50,12 @@ export interface buttonProps extends iconProps {
 export type ProjectThumbnailProps = {
   hero?: boolean;
   title: string;
-  imgSrc: string;
+  imgSrc: {
+    alt: string;
+    asset: {
+      _ref: string;
+    };
+  };
   desc: string;
   techList: string[];
   liveUrl: string;

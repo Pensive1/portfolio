@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ProjectThumbnail from "@/components/home/ProjectThumbnail";
-import { getProjects, getHomeContent } from "@/sanity/sanity-utils";
+import { getProjects, getHomeContent, sanityImg } from "@/sanity/sanity-utils";
 
 export default async function Home() {
   const projects = await getProjects();
@@ -21,8 +21,17 @@ export default async function Home() {
           id="about"
         >
           <Image
-            src=""
-            alt="me"
+            src={
+              about.aboutImage.asset._ref &&
+              sanityImg(about.aboutImage.asset._ref).url()
+            }
+            alt={
+              about.aboutImage.aboutImageAlt
+                ? about.aboutImage.aboutImageAlt
+                : "Headshot of Richard Acquaye"
+            }
+            width={276}
+            height={276}
             className="bg-gray-400 rounded-full aspect-square w-48 md:w-[25%]"
           />
 

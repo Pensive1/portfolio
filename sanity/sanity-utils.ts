@@ -37,7 +37,7 @@ export async function getProjects(): Promise<Project[]> {
             projectName,
             synopsis,
             "slug": slug.current,
-            "heroImage": image.asset->url,
+            "heroImage": heroImage,
             liveUrl,
             demoUrl,
             technologies,
