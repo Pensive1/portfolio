@@ -1,5 +1,6 @@
 import { featureProps } from "@/types/componentProps";
 import Image from "next/image";
+import { sanityImg } from "@/sanity/sanity-utils";
 
 export default function Feature({
   featimg,
@@ -10,8 +11,10 @@ export default function Feature({
     <article className="flex flex-col gap-3 md:flex-row-reverse">
       {/* Embed gif here */}
       <Image
-        src={featimg}
+        src={featimg?.asset._ref && sanityImg(featimg.asset._ref).url()}
         alt={`${featTitle} in action`}
+        width={268}
+        height={268}
         className="bg-gray-400 aspect-square rounded-xl md:h-64 md:sticky md:top-3 xl:top-6"
       />
 

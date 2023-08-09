@@ -3,8 +3,14 @@ import heroType from "@/types/hero";
 import { Project, ProjectPage } from "@/types/data";
 import { createClient, groq } from "next-sanity";
 import config from "./config/client-config";
+import imageUrlBuilder from "@sanity/image-url";
 
 const client = createClient(config);
+const imgBuilder = imageUrlBuilder(client);
+
+export function sanityImg(source: string) {
+  return imgBuilder.image(source);
+}
 
 // Gets homepage content
 export async function getHomeContent(): Promise<{

@@ -14,7 +14,7 @@ export default function Problems({ content, conclusion }: problems) {
             <ProblemPoint
               key={index}
               pointTitle={`${index + 1}. ${point.title}`}
-              probImg={point.problemImg}
+              probImg={point.problemImg.asset._ref}
               probAlt="Problem alt desc"
             >
               {point.problemDesc}

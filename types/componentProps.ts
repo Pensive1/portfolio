@@ -68,7 +68,11 @@ export type problemPointProps = {
 
 /* --- Features */
 export type featureProps = {
-  featimg: string;
+  featimg: {
+    asset: {
+      _ref: string;
+    };
+  };
   featTitle: string;
   children: React.ReactNode;
 };
@@ -77,7 +81,12 @@ export type featureProps = {
 export interface projectOverview extends projectMeta {
   projectName: string;
   synopsis: string;
-  heroImage: string;
+  heroImage: {
+    alt: string;
+    asset: {
+      _ref: string;
+    };
+  };
 }
 
 export interface projectMeta {
@@ -89,7 +98,11 @@ export interface projectMeta {
 
 export interface problemContent {
   title: string;
-  problemImg: string;
+  problemImg: {
+    asset: {
+      _ref: string;
+    };
+  };
   problemDesc: string;
 }
 
