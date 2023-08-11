@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className="bg-[rgb(var(--header-bg))] flex flex-col xl:items-center xl:w-[100vw]">
-      <div className="responsive-wrapper flex justify-between h-[4.375rem] items-center xl:w-[54.75rem] 2xl:w-[70.5rem]">
+      <div className="responsive-wrapper flex justify-center md:justify-between h-[4.375rem] items-center xl:w-[54.75rem] 2xl:w-[70.5rem]">
         <div className="logo">
           <Link
             href={"/"}
@@ -13,7 +13,7 @@ export default function Header() {
             Richard Acquaye
           </Link>
         </div>
-        <nav className="flex gap-4 xl:gap-6 text-[rgb(var(--txt-link))]">
+        <nav className="hidden gap-4 md:flex xl:gap-6 text-[rgb(var(--txt-link))]">
           <Link href={"/#projects"}>Projects</Link>
           <Link href={"/#about"}>About</Link>
           <Link href={"/"}>Blog</Link>
