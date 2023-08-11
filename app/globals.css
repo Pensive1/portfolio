@@ -15,7 +15,7 @@
   
   /* Blues */
   --color-indigo-dye: 41, 75, 102;
-  --color-outer-space: 72, 90, 92;
+  --color-outer-space: 62, 78, 79;
   
   /* Teals */
   --color-slate-grey-dark: 35, 66, 69;
@@ -34,6 +34,9 @@
   --bg: var(--color-isabelline);
   --header-bg: white;
   --container-fill: white;
+  --gradient-border-start: 224,224,224, 1;
+  --gradient-border-mid: 173,173,173, 1;
+  --gradient-border-end: 224,224,224, 0;
 
   /* Text */
   --txt-heading: var(--color-indigo-dye);
@@ -44,6 +47,7 @@
   --txt-link: var(--color-carrib-current);
   --txt-footnote: var(--color-battle-grey);
   --txt-list-item: var(--color-grey);
+  --txt-project-link: var(--color-ash-grey);
 
   /* Buttons */
   --btn-primary-fill: var(--color-carrib-current);
@@ -55,6 +59,7 @@
   /* Icon Fills */
   --icn-fill: var(--color-cocoa-brown);
   --icn-footer: var(--color-indigo-dye);
+  --icn-project-link-icon: var(--color-carrib-current);
 
 /* Dimensions */
   --1280-wrapper:876px;
@@ -72,6 +77,9 @@
   --bg: var(--color-gunmetal);
   --header-bg: var(--color-outer-space);
   --container-fill: var(--color-eerie-black);
+  --gradient-border-start: 66,82,84, 1;
+  --gradient-border-mid: 56,70,71, 1;
+  --gradient-border-end: 56,70,71, 0.05;
 
   /* Text */
   --txt-heading: var(--color-ash-grey);
@@ -82,6 +90,7 @@
   --txt-link: var(--color-slate-grey-dark);
   --txt-footnote: var(--color-outer-space);
   --txt-list-item: var(--color-cadet-grey);
+  --txt-project-link: var(--color-ash-grey);
 
   /* Buttons */
   --btn-primary-fill: var(--color-slate-grey);
@@ -93,6 +102,7 @@
   /* Icon Fills */
   --icn-fill: var(--color-shamrock);
   --icn-footer: var(--color-battle-grey);
+  --icn-project-link-icon: var(--color-carrib-current);
   }
 }
 
@@ -197,6 +207,6 @@ body {
   .gradient-border{
     border-top-width: 1px;
     border-top-style: solid;
-    border-image: radial-gradient(rgba(173,173,173, 1), rgba(224,224,224, 1), rgba(224,224,224, 0)) 1;   
+    border-image: radial-gradient(rgba(var(--gradient-border-start)), rgba(var(--gradient-border-mid)), rgba(var(--gradient-border-end))) 1;   
   }
 }

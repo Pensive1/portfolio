@@ -2,7 +2,11 @@ import { iconCollection } from "@/types/components";
 import { iconProps } from "../types/componentProps";
 import dynamic from "next/dynamic";
 
-export default function Icon({ iconType = "question", size = 1 }: iconProps) {
+export default function Icon({
+  iconType = "question",
+  size = 1,
+  use = "default",
+}: iconProps) {
   let dimensions = size === 1 ? 16 : size === 2 ? 24 : size === 3 ? 32 : 16;
 
   const iconCollection: iconCollection = {
@@ -25,5 +29,14 @@ export default function Icon({ iconType = "question", size = 1 }: iconProps) {
     ? iconCollection[iconType]
     : iconCollection["question"];
 
-  return <IconComponent size={dimensions} />;
+  const iconFill = {
+    default: "rgb(var(--txt-link))",
+    sectionHeading: "rgb(var(--icn-fill))",
+    projectMeta: "rgb(var(--icn-project-link-icon))",
+    footer: "rgb(var(--icn-footer))",
+  };
+
+  const fillColor = iconFill[use] ? iconFill[use] : iconFill["default"];
+
+  return <IconComponent size={dimensions} fillColor={fillColor} />;
 }

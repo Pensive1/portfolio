@@ -11,7 +11,9 @@ export default function SectionHeading({
 
   return (
     <div className="text-[var(--heading-colour)] flex items-center gap-3 mb-3">
-      {showIcon && <Icon iconType={iconType} size={size} />}
+      {showIcon && (
+        <Icon iconType={iconType} size={size} use="sectionHeading" />
+      )}
       <h3>{children}</h3>
     </div>
   );

@@ -13,8 +13,10 @@ export default function FooterIconLink({
       target="_blank"
       className="inline-flex gap-2 items-center"
     >
-      <Icon iconType={iconType} />
-      <span className="sm:hidden md:inline">{children}</span>
+      <Icon iconType={iconType} use={"footer"} />
+      <span className="sm:hidden md:inline text-[rgb(var(--txt-link))]">
+        {children}
+      </span>
     </Link>
   );
 }

@@ -24,6 +24,7 @@ export type svgIconProps = {
 
 export interface iconProps extends iconList {
   size?: 1 | 2 | 3;
+  use?: "default" | "sectionHeading" | "projectMeta" | "footer";
 }
 
 export interface SectionHeadingProps extends iconProps {

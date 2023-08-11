@@ -10,7 +10,7 @@ export default function IconLink({
 }: iconLinkProps) {
   return (
     <Link href={href} className="label flex items-center gap-2" target="_blank">
-      {showIcon && <Icon iconType={iconType} />}
+      {showIcon && <Icon iconType={iconType} use="projectMeta" />}
       {children}
     </Link>
   );

@@ -23,7 +23,7 @@ export default function Footer() {
             Email
           </FooterIconLink>
         </div>
-        <span className="footnote text-center">
+        <span className="footnote text-center text-[rgb(var(--txt-footnote))]">
           Designed and built by Richard Acquaye
         </span>
       </div>
