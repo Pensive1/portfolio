@@ -31,6 +31,7 @@ export default function Icon({
 
   const iconFill = {
     default: "rgb(var(--txt-link))",
+    button: "rgb(var(--btn-primary-txt))",
     sectionHeading: "rgb(var(--icn-fill))",
     projectMeta: "rgb(var(--icn-project-link-icon))",
     footer: "rgb(var(--icn-footer))",

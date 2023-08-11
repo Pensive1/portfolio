@@ -14,7 +14,7 @@ export default function FooterIconLink({
       className="inline-flex gap-2 items-center"
     >
       <Icon iconType={iconType} use={"footer"} />
-      <span className="sm:hidden md:inline text-[rgb(var(--txt-link))]">
+      <span className="sm:hidden md:inline text-[rgb(var(--project-link))]">
         {children}
       </span>
     </Link>

@@ -192,17 +192,18 @@ body {
 @layer utilities {
   .btn-primary{
     /* CHANGE LATER */
-    background: var(--gray-3,  #828282);
-    color: #fff;
+    background: rgb(var(--btn-primary-fill));
+    color: rgb(var(--btn-primary-txt));
   }
   .btn-secondary{
     /* CHANGE LATER */
     background:none;
-    border-radius: 6px;
-    border: 2px solid var(--gray-2, #4F4F4F);
+    color: rgb(var(--btn-secondary-txt));
+    border: 2px solid rgb(var(--btn-secondary-border));
   }
   .btn-tertiary{
     background:none;
+    color: rgb(var(--btn-tertiary-txt))
   }
   .gradient-border{
     border-top-width: 1px;
