@@ -9,9 +9,9 @@ export default async function Home() {
   return (
     <>
       {Object.keys(hero).length > 0 && (
-        <section className="col-span-full flex flex-col gap-2 rounded-md bg-slate-600 p-4">
-          <h1>{hero.heading}</h1>
-          <h2>{hero.tagline}</h2>
+        <section className="col-span-full flex flex-col gap-2 rounded-md p-4 text-center justify-center h-[50dvh]">
+          <h1 className="text-[rgb(var(--txt-heading))]">{hero.heading}</h1>
+          <h2 className="text-[rgb(var(--txt-headline))]">{hero.tagline}</h2>
         </section>
       )}
 
