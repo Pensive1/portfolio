@@ -37,13 +37,13 @@ export default async function Home() {
 
           <div className="flex flex-col items-center gap-4 md:w-[75%]">
             <div className="flex flex-col gap-2">
-              <h4>About</h4>
+              <h4 className="text-[rgb(var(--txt-section-title))]">About</h4>
               <p>{about.aboutContent}</p>
             </div>
 
             <div className="flex flex-col gap-2 w-[100%]">
-              <h4>Skills</h4>
-              <ul className="flex gap-x-4 flex-wrap">
+              <h5 className="text-[rgb(var(--txt-section-title))]">Skills</h5>
+              <ul className="flex gap-x-4 flex-wrap text-[rgb(var(--txt-list-item))]">
                 {about.skillList.length > 0 &&
                   about.skillList.map((skill: string, index: number) => (
                     <li key={index}>{skill}</li>
@@ -56,7 +56,7 @@ export default async function Home() {
 
       {projects.length > 0 && (
         <section className="col-span-full flex flex-col gap-4" id="projects">
-          <h4>Projects</h4>
+          <h4 className="text-[rgb(var(--txt-section-title))]">Projects</h4>
 
           <div className="grid grid-cols-4 gap-4 md:grid-cols-8 xl:grid-cols-12">
             {projects.map((project) => (

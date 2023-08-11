@@ -32,8 +32,8 @@
   /* --- ELEMENTS --- */
   /* Fills */
   --bg: var(--color-isabelline);
-  --header-bg: white;
-  --container-fill: white;
+  --header-bg: 255, 255, 255;
+  --container-fill: 255, 255, 255;
   --gradient-border-start: 224,224,224, 1;
   --gradient-border-mid: 173,173,173, 1;
   --gradient-border-end: 224,224,224, 0;
@@ -51,7 +51,7 @@
 
   /* Buttons */
   --btn-primary-fill: var(--color-carrib-current);
-  --btn-primary-txt: white;
+  --btn-primary-txt: 255, 255, 255;
   --btn-secondary-border: var(--color-carrib-current);
   --btn-secondary-txt: var(--color-carrib-current);
   --btn-tertiary-txt: var(--color-carrib-current);
@@ -164,7 +164,6 @@ body {
     justify-content: center;
     align-items: center;
     gap: 8px;
-    background: var(--gray-3, #828282);
     font-size: 0.75rem;
     @media screen and (min-width: 1440px) {
       font-size: 0.875rem;
@@ -191,12 +190,10 @@ body {
 
 @layer utilities {
   .btn-primary{
-    /* CHANGE LATER */
-    background: rgb(var(--btn-primary-fill));
     color: rgb(var(--btn-primary-txt));
+    background: rgb(var(--btn-primary-fill));
   }
   .btn-secondary{
-    /* CHANGE LATER */
     background:none;
     color: rgb(var(--btn-secondary-txt));
     border: 2px solid rgb(var(--btn-secondary-border));

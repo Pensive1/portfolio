@@ -10,11 +10,11 @@ export default function SectionHeading({
   // CREATE LOGIC TO SCALE ICONS PER BREAKPOINT
 
   return (
-    <div className="text-[var(--heading-colour)] flex items-center gap-3 mb-3">
+    <div className="flex items-center gap-3 mb-3">
       {showIcon && (
         <Icon iconType={iconType} size={size} use="sectionHeading" />
       )}
-      <h3>{children}</h3>
+      <h3 className="text-[rgb(var(--txt-section-title))]">{children}</h3>
     </div>
   );
 }
