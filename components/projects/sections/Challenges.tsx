@@ -10,7 +10,9 @@ export default function Challenges({ challengeList }: challenges) {
       <div className="flex flex-col gap-4">
         {challengeList.map((challenge, index) => (
           <div key={index}>
-            <h5 className="challenge-title">{challenge.challengeTitle}</h5>
+            <h5 className="text-[rgb(var(--txt-body-title))]">
+              {challenge.challengeTitle}
+            </h5>
             <div className="content flex flex-col gap-1 md:gap-2 2xl:gap-3">
               <PortableText value={challenge.challengeDesc} />
             </div>

@@ -19,7 +19,9 @@ export default function Feature({
       />
 
       <section className="flex flex-col gap-2 md:gap-2 2xl:gap-3 md:w-[62.5%] md:flex-grow xl:w-[50%]">
-        <h4 className="feat-title">{featTitle}</h4>
+        <h4 className="feat-title text-[rgb(var(--txt-body-title))]">
+          {featTitle}
+        </h4>
         <div className="content feat-desc flex flex-col gap-2">{children}</div>
       </section>
     </article>

@@ -36,7 +36,7 @@
   --header-bg: 255, 255, 255;
   --container-fill: 255, 255, 255;
   --action-bg-fill: 72, 134, 140, 0.03;
-  --border-meta: 0, 0, 0, 1;
+  --border-meta: 0, 0, 0, 0.15;
   --gradient-border-start: 224,224,224, 1;
   --gradient-border-mid: 173,173,173, 1;
   --gradient-border-end: 224,224,224, 0;
@@ -50,7 +50,7 @@
   --txt-link: var(--color-carrib-current);
   --txt-footnote: var(--color-battle-grey);
   --txt-list-item: var(--color-grey);
-  --txt-project-link: var(--color-ash-grey);
+  --txt-project-link: var(--color-carrib-current);
 
   /* Buttons */
   --btn-primary-fill: var(--color-carrib-current);

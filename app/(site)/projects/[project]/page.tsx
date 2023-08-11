@@ -40,7 +40,7 @@ export default async function Project({
           {project.bgContent && (
             <section>
               <SectionHeading iconType="route">Background</SectionHeading>
-              <div className="content flex flex-col gap-1 md:gap-2 2xl:gap-3">
+              <div className="content flex flex-col gap-1 md:gap-2 2xl:gap-3)]">
                 <PortableText value={project.bgContent} />
               </div>
             </section>
