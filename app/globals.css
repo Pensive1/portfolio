@@ -15,7 +15,8 @@
   
   /* Blues */
   --color-indigo-dye: 41, 75, 102;
-  --color-outer-space: 62, 78, 79;
+  --color-outer-space-dark: 62, 78, 79;
+  --color-outer-space: 72, 90, 92;
   
   /* Teals */
   --color-slate-grey-dark: 35, 66, 69;
@@ -75,7 +76,7 @@
   /* --- ELEMENTS --- */
   /* Fills */
   --bg: var(--color-gunmetal);
-  --header-bg: var(--color-outer-space);
+  --header-bg: var(--color-outer-space-dark);
   --container-fill: var(--color-eerie-black);
   --gradient-border-start: 66,82,84, 1;
   --gradient-border-mid: 56,70,71, 1;
@@ -87,15 +88,15 @@
   --txt-section-title: var(--color-cadet-grey-light);
   --txt-body-title: var(--color-cadet-grey-light);
   --txt-body: var(--color-battle-grey);
-  --txt-link: var(--color-slate-grey-dark);
+  --txt-link: var(--color-ash-grey);
   --txt-footnote: var(--color-outer-space);
   --txt-list-item: var(--color-cadet-grey);
   --txt-project-link: var(--color-ash-grey);
 
   /* Buttons */
-  --btn-primary-fill: var(--color-slate-grey);
+  --btn-primary-fill: var(--color-slate-grey-dark);
   --btn-primary-txt: var(--color-ash-grey);
-  --btn-secondary-border: var(--color-slate-grey);
+  --btn-secondary-border: var(--color-slate-grey-dark);
   --btn-secondary-txt: var(--color-ash-grey);
   --btn-tertiary-txt: var(--color-ash-grey);
 

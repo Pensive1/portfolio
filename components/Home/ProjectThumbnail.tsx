@@ -16,7 +16,7 @@ export default function ProjectThumbnail({
 }: ProjectThumbnailProps) {
   return (
     <article
-      className={`rounded-md bg-[#e0e0e0] text-[#333333] col-span-full flex flex-col overflow-hidden ${
+      className={`rounded-md bg-[rgb(var(--container-fill))] col-span-full flex flex-col overflow-hidden ${
         hero ? "md:col-span-full md:flex-row" : "md:col-span-4"
       }`}
     >
@@ -38,13 +38,15 @@ export default function ProjectThumbnail({
       <div className="flex flex-col gap-6 p-4">
         <section className="flex flex-col gap-4 flex-grow">
           <div className="flex flex-col gap-2">
-            <h4 className="proj-title">{title}</h4>
-            <p className="proj-desc">{desc}</p>
+            <h4 className="text-[rgb(var(--txt-section-title))]">{title}</h4>
+            <p className="text-[rgb(var(--txt-body))]">{desc}</p>
           </div>
 
           {techList && (
             <div className={`${!hero && "hidden"} flex flex-col gap-y-1`}>
-              <h5 className="text-sm font-medium">Tech</h5>
+              <h5 className="text-sm font-medium text-[rgb(var(--txt-section-title))]">
+                Tech
+              </h5>
               <ul className="flex gap-x-4 flex-wrap text-xs">
                 {techList.length > 0 &&
                   techList.map((tech, index) => (
@@ -57,12 +59,7 @@ export default function ProjectThumbnail({
           )}
         </section>
 
-        <div className={`flex gap-4 flex-col md:flex-row`}>
-          {caseStudyUrl && (
-            <Button href={`/projects/${caseStudyUrl}`} btnType="secondary">
-              Details
-            </Button>
-          )}
+        <div className={`flex gap-4 flex-col md:flex-row-reverse`}>
           {demoUrl && (
             <Button href={demoUrl} linkType="external">
               View demo
@@ -71,6 +68,11 @@ export default function ProjectThumbnail({
           {liveUrl && (
             <Button href={liveUrl} linkType="external">
               See live
+            </Button>
+          )}
+          {caseStudyUrl && (
+            <Button href={`/projects/${caseStudyUrl}`} btnType="secondary">
+              Details
             </Button>
           )}
         </div>
