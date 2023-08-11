@@ -6,11 +6,14 @@ export default function Header() {
     <header className="bg-[rgb(var(--header-bg))] flex flex-col xl:items-center xl:w-[100vw]">
       <div className="responsive-wrapper flex justify-between h-[4.375rem] items-center xl:w-[54.75rem] 2xl:w-[70.5rem]">
         <div className="logo">
-          <Link href={"/"} className="text-[var(--txt-link)]">
+          <Link
+            href={"/"}
+            className="text-[rgb(var(--txt-heading))] uppercase font-semibold tracking-widest"
+          >
             Richard Acquaye
           </Link>
         </div>
-        <nav className="flex gap-4 xl:gap-6 text-[var(--txt-link)]">
+        <nav className="flex gap-4 xl:gap-6 text-[rgb(var(--txt-link))]">
           <Link href={"/#projects"}>Projects</Link>
           <Link href={"/#about"}>About</Link>
           <Link href={"/"}>Blog</Link>

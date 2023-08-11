@@ -204,7 +204,7 @@ body {
     color: rgb(var(--btn-tertiary-txt))
   }
   .gradient-border{
-    border-top-width: 1px;
+    border-top-width: 2px;
     border-top-style: solid;
     border-image: radial-gradient(rgba(var(--gradient-border-start)), rgba(var(--gradient-border-mid)), rgba(var(--gradient-border-end))) 1;   
   }
