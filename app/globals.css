@@ -3,9 +3,60 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* COLOURS */
+  /* Neutrals */
+  --color-eerie-black: 30, 37, 38;
+  --color-gunmetal: 36, 45, 46;
+  --color-battle-grey: 126, 139, 140;
+  --color-dim-grey: 102, 102, 102;
+  --color-grey: 128, 128, 128;
+  --color-battle-grey-light: 153, 153, 153;
+  --color-isabelline: 242, 241, 235;
+  
+  /* Blues */
+  --color-indigo-dye: 41, 75, 102;
+  --color-outer-space: 72, 90, 92;
+  
+  /* Teals */
+  --color-slate-grey-dark: 35, 66, 69;
+  --color-carrib-current: 59, 110, 115;
+  --color-slate-grey: 102, 125, 128;
+  --color-cadet-grey: 130, 151, 153;
+  --color-cadet-grey-light: 152, 176, 178;
+  --color-ash-grey: 163, 189, 191;
+  
+  /* Accents */
+  --color-cocoa-brown: 210, 112, 55;
+  --color-shamrock: 0, 163, 98;
+  
+  /* --- ELEMENTS --- */
+  /* Fills */
+  --bg: var(--color-isabelline);
+  --header-bg: white;
+  --container-fill: white;
+
+  /* Text */
+  --txt-heading: var(--color-indigo-dye);
+  --txt-headline: var(--color-slate-grey);
+  --txt-section-title: var(--color-indigo-dye);
+  --txt-body-title: var(--color-indigo-dye);
+  --txt-body: var(--color-dim-grey);
+  --txt-link: var(--color-carrib-current);
+  --txt-footnote: var(--color-battle-grey);
+  --txt-list-item: var(--color-grey);
+
+  /* Buttons */
+  --btn-primary-fill: var(--color-carrib-current);
+  --btn-primary-txt: white;
+  --btn-secondary-border: var(--color-carrib-current);
+  --btn-secondary-txt: var(--color-carrib-current);
+  --btn-tertiary-txt: var(--color-carrib-current);
+
+  /* Icon Fills */
+  --icn-fill: var(--color-cocoa-brown);
+  --icn-footer: var(--color-indigo-dye);
+
+/* Dimensions */
   --1280-wrapper:876px;
   --1440-wrapper:1128px;
   --trans-border: #00000050;
@@ -15,25 +66,39 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    
+  /* --- ELEMENTS --- */
+  /* Fills */
+  --bg: var(--color-gunmetal);
+  --header-bg: var(--color-outer-space);
+  --container-fill: var(--color-eerie-black);
+
+  /* Text */
+  --txt-heading: var(--color-ash-grey);
+  --txt-headline: var(--color-cadet-grey);
+  --txt-section-title: var(--color-cadet-grey-light);
+  --txt-body-title: var(--color-cadet-grey-light);
+  --txt-body: var(--color-battle-grey);
+  --txt-link: var(--color-slate-grey-dark);
+  --txt-footnote: var(--color-outer-space);
+  --txt-list-item: var(--color-cadet-grey);
+
+  /* Buttons */
+  --btn-primary-fill: var(--color-slate-grey);
+  --btn-primary-txt: var(--color-ash-grey);
+  --btn-secondary-border: var(--color-slate-grey);
+  --btn-secondary-txt: var(--color-ash-grey);
+  --btn-tertiary-txt: var(--color-ash-grey);
+
+  /* Icon Fills */
+  --icn-fill: var(--color-shamrock);
+  --icn-footer: var(--color-battle-grey);
   }
 }
 
-/* html {
-  font-size: 62.5%;
-} */
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-    /* font-size: 1.6rem; */
+  color: rgb(var(--txt-body));
+  background-color: rgb(var(--bg));
 }
 
 @layer base {
