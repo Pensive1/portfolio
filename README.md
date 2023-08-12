@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Personal Portfolio V1
 
-## Getting Started
+Thanks for checking this repo. This website showcases my development work done thus far. I used this project as an opportunity to learn Next 13, TypeScript, CSS Grid and Tailwind CSS.
 
-First, run the development server:
+In the coming weeks, I aim to add more tweaks and features as I improve my knowledge of Next 13 and explore more design options.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Fully Responsive
+- Light and dark mode UIs
+- Content gathered from Sanity's CMS
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tools
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Figma: Designed from the ground up
+- [Coolors](https://coolors.co/): For creating the site colour pallette ([Theme](https://coolors.co/242d2e-3b6e73-cccccc-d9d9d9-f2f1eb-294b66-cc6c35-00a362)).
+- [Asana](https://asana.com/?noredirect): Task tracking
+- [Visual Studio Code](https://code.visualstudio.com/): Code editor and IDE
+- [Sanity](https://www.sanity.io/): Content Management System
+- TypeScript
+- Next 13
+- Tailwind CSS
 
-## Learn More
+## Acknowledgements
 
-To learn more about Next.js, take a look at the following resources:
+- [Josh.W Comeau](https://github.com/joshwcomeau) – For [detailed pointers](https://www.joshwcomeau.com/effective-portfolio/) on creating a developer portfolio.
+- [DonTheDeveloper](https://www.youtube.com/@DonTheDeveloper) ([Don Hansen](https://github.com/donthedeveloper)) – For advice and a collection of portfolio reviews.
+- [Kapehe (via FreeCodeCamp)](https://youtu.be/OcTPaUfay5I) - Personal website tutorial powered by [Sanity](https://www.sanity.io/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Credits
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [MingCute Icons](https://www.mingcute.com/)
+- [Unsplash](https://unsplash.com/): Stock photos
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+_I'm happy to hear your thoughts and feedback._

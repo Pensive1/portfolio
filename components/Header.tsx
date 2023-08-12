@@ -1,5 +1,6 @@
 "use-client";
 import Link from "next/link";
+import Button from "./Button";
 
 export default function Header() {
   return (
@@ -13,9 +14,12 @@ export default function Header() {
             Richard Acquaye
           </Link>
         </div>
-        <nav className="hidden gap-4 md:flex xl:gap-6 text-[rgb(var(--txt-link))]">
+        <nav className="hidden gap-4 md:flex md:items-center xl:gap-6 text-[rgb(var(--txt-link))]">
           <Link href={"/#projects"}>Projects</Link>
           <Link href={"/#about"}>About</Link>
+          <Button href={"/Richard-Acquaye_CV.pdf"} linkType="external">
+            Resume
+          </Button>
           {/* <Link href={"/"}>Blog</Link> */}
         </nav>
       </div>
