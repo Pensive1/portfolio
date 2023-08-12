@@ -17,13 +17,15 @@ export default function ProjectThumbnail({
   return (
     <article
       className={`rounded-md bg-[rgb(var(--container-fill))] col-span-full flex flex-col overflow-hidden ${
-        hero ? "md:col-span-full md:flex-row" : "md:col-span-4"
+        hero
+          ? "md:col-span-full md:grid md:grid-cols-8 md:gap-x-4 xl:grid-cols-10 xl:gap-x-6"
+          : "md:col-span-4"
       }`}
     >
       <Link
         href={`/projects/${caseStudyUrl}`}
         className={`bg-gray-500 aspect-video md:aspect-auto md:flex ${
-          hero && "md:w-[67%]"
+          hero && "md:col-span-4 xl:col-span-5"
         }`}
       >
         <Image
@@ -35,7 +37,11 @@ export default function ProjectThumbnail({
         />
       </Link>
 
-      <div className="flex flex-col gap-6 p-4">
+      <div
+        className={`flex flex-col gap-6 p-4 ${
+          hero && "md:col-span-4 md:pl-0 md:pr-4 xl:col-span-5 xl:pl-0 xl:pr-6"
+        }`}
+      >
         <section className="flex flex-col gap-4 flex-grow">
           <div className="flex flex-col gap-2">
             <h4 className="text-[rgb(var(--txt-section-title))]">{title}</h4>
@@ -59,7 +65,7 @@ export default function ProjectThumbnail({
           )}
         </section>
 
-        <div className={`flex gap-4 flex-col md:flex-row-reverse`}>
+        <div className={"flex gap-4 flex-col md:flex-row-reverse"}>
           {demoUrl && (
             <Button href={demoUrl} linkType="external">
               View demo
