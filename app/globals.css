@@ -135,14 +135,13 @@ body {
     @apply text-xs font-medium 2xl:text-sm;
   }
   /*  Body */
-  p, ul li {
-    @apply text-sm font-normal md:text-base 2xl:text-lg;
+  p, ul li, ol li {
+    @apply text-sm font-light md:text-base 2xl:text-lg;
   }
   /* Content lists */
   .content > ul li, .content > ol li {
     list-style: disc;
     margin-left: 1.5rem;
-    @apply text-sm font-normal md:text-base 2xl:text-lg;
   }
 
   .content > ul, .content > ol{
@@ -153,7 +152,7 @@ body {
 
   /* Footnote */
   footer, .footnote {
-    @apply text-xs md:text-sm 2xl:text-base;
+    @apply font-light text-xs md:text-sm 2xl:text-base;
   }
 }
 

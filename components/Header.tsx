@@ -16,7 +16,7 @@ export default function Header() {
         <nav className="hidden gap-4 md:flex xl:gap-6 text-[rgb(var(--txt-link))]">
           <Link href={"/#projects"}>Projects</Link>
           <Link href={"/#about"}>About</Link>
-          <Link href={"/"}>Blog</Link>
+          {/* <Link href={"/"}>Blog</Link> */}
         </nav>
       </div>
     </header>

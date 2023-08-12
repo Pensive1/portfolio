@@ -7,7 +7,7 @@ export default function Icon({
   size = 1,
   use = "default",
 }: iconProps) {
-  let dimensions = size === 1 ? 16 : size === 2 ? 24 : size === 3 ? 32 : 16;
+  let dimensions = size === 1 ? 16 : size === 2 ? 20 : size === 3 ? 32 : 16;
 
   const iconCollection: iconCollection = {
     //Import icon svgs based on phrase
