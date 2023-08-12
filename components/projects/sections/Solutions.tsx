@@ -8,20 +8,25 @@ export default function Solutions({ outline, solutions }: solutions) {
     <section className="project__solutions">
       <SectionHeading iconType="wand">Solutions</SectionHeading>
 
-      {outline && (
-        <div className="solutions_outline">
-          <PortableText value={outline} />
+      <div className="flex flex-col gap-8 md:gap-10">
+        <div className="flex flex-col gap-12 md:gap-16 xl:gap-24">
+          {solutions.map((solution, index) => (
+            <Feature
+              key={index}
+              featTitle={solution.featureTitle}
+              featimg={solution.featureImg}
+            >
+              <PortableText value={solution.featureDesc} />
+            </Feature>
+          ))}
         </div>
-      )}
 
-      {solutions.map((solution) => (
-        <Feature
-          featTitle={solution.featureTitle}
-          featimg={solution.featureImg}
-        >
-          <PortableText value={solution.featureDesc} />
-        </Feature>
-      ))}
+        {outline && (
+          <div className="content flex flex-col gap-2 md:gap-3 xl:gap-4">
+            <PortableText value={outline} />
+          </div>
+        )}
+      </div>
     </section>
   );
 }

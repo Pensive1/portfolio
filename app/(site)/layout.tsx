@@ -21,10 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${outfit.variable} font-sans`}>
+    <html lang="en" className="scroll-smooth">
+      <body
+        className={`${outfit.variable} font-sans xl:flex xl:flex-col xl:items-center xl:overflow-x-hidden`}
+      >
         <Header />
-        {children}
+        <main className="py-10 grid grid-cols-4 gap-x-8 px-4 md:px-8 xl:px-0 md:grid-cols-8 xl:grid-cols-12 xl:gap-x-6 xl:w-[54.75rem] 2xl:w-[70.5rem] gap-y-16 md:gap-y-16">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

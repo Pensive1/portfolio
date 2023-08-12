@@ -6,15 +6,26 @@ import { buttonProps } from "@/types/componentProps";
 
 export default function Button({
   href,
+  linkType = "internal",
   btnType = "primary",
   showIcon = false,
   iconType,
   size,
   children,
 }: buttonProps) {
+  const buttonStyle = {
+    primary: "btn-primary",
+    secondary: "btn-secondary",
+    tertiary: "btn-tertiary",
+  };
+
   return (
-    <Link href={href} className={`cta-btn cta-btn--${btnType}`}>
-      {showIcon && <Icon iconType={iconType} size={size} />}
+    <Link
+      href={href}
+      className={`cta-btn ${buttonStyle[btnType]} w-full`}
+      target={linkType === "external" ? "_blank" : "_self"}
+    >
+      {showIcon && <Icon iconType={iconType} size={size} use="button" />}
       {children}
     </Link>
   );

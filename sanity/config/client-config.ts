@@ -1,8 +1,8 @@
 const config = {
-  projectId: "8x4tdu0d",
-  dataset: "production",
-  apiVersion: "2023-07-19",
-  useCdn: false,
+  projectId: process.env.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_STUDIO_DATASET,
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_STUDIO_API_VERSION,
+  useCdn: true,
 };
 
 export default config;

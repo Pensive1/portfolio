@@ -2,8 +2,12 @@ import { iconCollection } from "@/types/components";
 import { iconProps } from "../types/componentProps";
 import dynamic from "next/dynamic";
 
-export default function Icon({ iconType = "question", size = 1 }: iconProps) {
-  let dimensions = size === 1 ? 16 : size === 2 ? 24 : size === 3 ? 32 : 16;
+export default function Icon({
+  iconType = "question",
+  size = 1,
+  use = "default",
+}: iconProps) {
+  let dimensions = size === 1 ? 16 : size === 2 ? 20 : size === 3 ? 32 : 16;
 
   const iconCollection: iconCollection = {
     //Import icon svgs based on phrase
@@ -18,11 +22,22 @@ export default function Icon({ iconType = "question", size = 1 }: iconProps) {
     linkedin: dynamic(() => import("./icons/icn_linkedin")),
     email: dynamic(() => import("./icons/icn_email")),
     info: dynamic(() => import("./icons/icn_info")),
+    video: dynamic(() => import("./icons/icn_video")),
   };
 
   const IconComponent = iconCollection[iconType]
     ? iconCollection[iconType]
     : iconCollection["question"];
 
-  return <IconComponent size={dimensions} />;
+  const iconFill = {
+    default: "rgb(var(--txt-link))",
+    button: "rgb(var(--btn-primary-txt))",
+    sectionHeading: "rgb(var(--icn-fill))",
+    projectMeta: "rgb(var(--icn-project-link-icon))",
+    footer: "rgb(var(--icn-footer))",
+  };
+
+  const fillColor = iconFill[use] ? iconFill[use] : iconFill["default"];
+
+  return <IconComponent size={dimensions} fillColor={fillColor} />;
 }

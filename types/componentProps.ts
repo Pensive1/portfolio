@@ -13,8 +13,9 @@ interface iconList {
     | "github"
     | "externalLink"
     | "linkedin"
-    | "mail"
-    | "info";
+    | "email"
+    | "info"
+    | "video";
 }
 
 export type svgIconProps = {
@@ -23,6 +24,7 @@ export type svgIconProps = {
 
 export interface iconProps extends iconList {
   size?: 1 | 2 | 3;
+  use?: "default" | "button" | "sectionHeading" | "projectMeta" | "footer";
 }
 
 export interface SectionHeadingProps extends iconProps {
@@ -39,6 +41,7 @@ export interface iconLinkProps extends iconProps {
 
 export interface buttonProps extends iconProps {
   href: string;
+  linkType?: "internal" | "external";
   showIcon?: boolean;
   btnType?: "primary" | "secondary" | "tertiary";
   children: React.ReactNode;
@@ -46,12 +49,18 @@ export interface buttonProps extends iconProps {
 
 /* --- HOME PAGE --- */
 export type ProjectThumbnailProps = {
-  thumbType?: boolean;
+  hero?: boolean;
   title: string;
-  imgSrc: string;
+  imgSrc: {
+    alt: string;
+    asset: {
+      _ref: string;
+    };
+  };
   desc: string;
   techList: string[];
   liveUrl: string;
+  demoUrl: string;
   caseStudyUrl: string;
 };
 
@@ -59,36 +68,47 @@ export type ProjectThumbnailProps = {
 export type problemPointProps = {
   pointTitle: string;
   probImg: string;
-  probAlt?: string;
+  probAlt: string;
   children: React.ReactNode;
 };
 
 /* --- Features */
 export type featureProps = {
-  featimg: string;
+  featimg: {
+    asset: {
+      _ref: string;
+    };
+  };
   featTitle: string;
   children: React.ReactNode;
 };
 
 /* --- PROJECT PAGE --- */
-export interface projectOverview {
+export interface projectOverview extends projectMeta {
   projectName: string;
   synopsis: string;
-  heroImage: string;
-  techStack: string[];
-  gitHubUrl?: string;
-  liveUrl?: string;
+  heroImage: {
+    alt: string;
+    asset: {
+      _ref: string;
+    };
+  };
 }
 
 export interface projectMeta {
   techStack: string[];
   gitHubUrl?: string;
   liveUrl?: string;
+  demoUrl?: string;
 }
 
 export interface problemContent {
   title: string;
-  problemImg: string;
+  problemImg: {
+    asset: {
+      _ref: string;
+    };
+  };
   problemDesc: string;
 }
 

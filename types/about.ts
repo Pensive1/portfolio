@@ -1,8 +1,12 @@
 type aboutSectionType = {
   aboutContent: string;
   skillList: string[];
-  _type: string;
-  _key: string;
+  aboutImage: {
+    aboutImageAlt: string;
+    asset: {
+      _ref: string;
+    };
+  };
 };
 
 export default aboutSectionType;

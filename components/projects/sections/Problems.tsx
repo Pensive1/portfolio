@@ -8,24 +8,25 @@ export default function Problems({ content, conclusion }: problems) {
     <section className="project__problems">
       <SectionHeading iconType="question">Problems</SectionHeading>
 
-      <div className="problem-points">
-        {content.map((point, index) => (
-          <ProblemPoint
-            key={index}
-            pointTitle={point.title}
-            probImg={point.problemImg}
-            probAlt="Problem alt desc"
-          >
-            {point.problemDesc}
-          </ProblemPoint>
-        ))}
-      </div>
-
-      {conclusion && (
-        <div className="problem-conclusion">
-          <PortableText value={conclusion} />
+      <div className="flex flex-col gap-6">
+        <div className="gap-y-6 grid grid-cols-4 md:grid-cols-8 xl:grid-cols-10 md:gap-4 xl:gap-6">
+          {content.map((point, index) => (
+            <ProblemPoint
+              key={index}
+              pointTitle={`${index + 1}. ${point.title}`}
+              probImg={point.problemImg.asset._ref}
+              probAlt="Problem alt desc"
+            >
+              {point.problemDesc}
+            </ProblemPoint>
+          ))}
         </div>
-      )}
+        {conclusion && (
+          <div className="content flex flex-col gap-1 md:gap-2 2xl:gap-3">
+            <PortableText value={conclusion} />
+          </div>
+        )}
+      </div>
     </section>
   );
 }

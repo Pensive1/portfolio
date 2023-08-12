@@ -95,6 +95,12 @@ const project = {
       group: "overview",
     },
     {
+      name: "demoUrl",
+      title: "Demo Link",
+      type: "url",
+      group: "overview",
+    },
+    {
       name: "projDisplay",
       title: "Hero project",
       type: "boolean",
@@ -291,8 +297,8 @@ const project = {
       type: "string",
       options: {
         list: [
-          { title: "Impact", value: "impact" },
-          { title: "Reception", value: "reception" },
+          { title: "Impact", value: "Impact" },
+          { title: "Reception", value: "Reception" },
         ],
         layout: "dropdown",
       },
