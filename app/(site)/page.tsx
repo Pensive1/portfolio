@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ProjectThumbnail from "@/components/home/ProjectThumbnail";
+import ProjectThumbnail from "../../components/home/ProjectThumbnail";
 import { getProjects, getHomeContent, sanityImg } from "@/sanity/sanity-utils";
 
 export default async function Home() {
