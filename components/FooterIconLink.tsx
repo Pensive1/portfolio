@@ -2,8 +2,7 @@ import Link from "next/link";
 import Icon from "./Icon";
 import { iconLinkProps } from "@/types/componentProps";
 
-export default function IconLink({
-  showIcon = true,
+export default function FooterIconLink({
   iconType,
   href,
   children,
@@ -11,11 +10,13 @@ export default function IconLink({
   return (
     <Link
       href={href}
-      className="label flex items-center gap-2 text-[rgb(var(--txt-project-link))]"
       target="_blank"
+      className="inline-flex gap-2 items-center"
     >
-      {showIcon && <Icon iconType={iconType} use="projectMeta" />}
-      {children}
+      <Icon iconType={iconType} use={"footer"} />
+      <span className="sm:hidden md:inline text-[rgb(var(--project-link))]">
+        {children}
+      </span>
     </Link>
   );
 }

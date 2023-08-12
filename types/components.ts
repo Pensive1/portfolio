@@ -1,3 +1,3 @@
 export type iconCollection = {
-  [key: string]: React.ComponentType<{ size: number }>;
+  [key: string]: React.ComponentType<{ size: number; fillColor?: string }>;
 };

@@ -5,9 +5,15 @@ export interface Project {
   _id: string;
   _createdAt: Date;
   projectName: string;
-  heroImage: string;
+  heroImage: {
+    alt: string;
+    asset: {
+      _ref: string;
+    };
+  };
   slug: string;
   liveUrl: string;
+  demoUrl: string;
   gitHubUrl: string;
   synopsis: string;
   projDisplay: boolean;
@@ -30,7 +36,11 @@ export interface ProjectPage extends Project {
 
 export interface solution {
   featureTitle: string;
-  featureImg: string;
+  featureImg: {
+    asset: {
+      _ref: string;
+    };
+  };
   featureDesc: PortableTextBlock[];
 }
 [];

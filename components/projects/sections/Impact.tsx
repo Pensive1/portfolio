@@ -6,7 +6,10 @@ export default function Impact({ type, content }: impact) {
   return (
     <section className="project__impact">
       <SectionHeading iconType="medal">{type}</SectionHeading>
-      <PortableText value={content} />
+
+      <div className="content flex flex-col gap-1 md:gap-2 2xl:gap-3">
+        <PortableText value={content} />
+      </div>
     </section>
   );
 }

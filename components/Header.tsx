@@ -1,17 +1,26 @@
 "use-client";
 import Link from "next/link";
+import Button from "./Button";
 
 export default function Header() {
   return (
-    <header>
-      <div className="responsive-wrapper">
+    <header className="bg-[rgb(var(--header-bg))] flex flex-col xl:items-center xl:w-[100vw]">
+      <div className="responsive-wrapper flex justify-center md:justify-between h-[4.375rem] items-center xl:w-[54.75rem] 2xl:w-[70.5rem]">
         <div className="logo">
-          <Link href={"/"}>Richard Acquaye</Link>
+          <Link
+            href={"/"}
+            className="text-[rgb(var(--txt-heading))] uppercase font-semibold tracking-widest"
+          >
+            Richard Acquaye
+          </Link>
         </div>
-        <nav className="navigation">
-          <Link href={"/"}>Work</Link>
-          <Link href={"/"}>About</Link>
-          <Link href={"/"}>Blog</Link>
+        <nav className="hidden gap-4 md:flex md:items-center xl:gap-6 text-[rgb(var(--txt-link))]">
+          <Link href={"/#projects"}>Projects</Link>
+          <Link href={"/#about"}>About</Link>
+          <Button href={"/Richard-Acquaye_CV.pdf"} linkType="external">
+            Resume
+          </Button>
+          {/* <Link href={"/"}>Blog</Link> */}
         </nav>
       </div>
     </header>
