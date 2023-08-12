@@ -10,13 +10,15 @@ export default function Feature({
   return (
     <article className="flex flex-col gap-3 md:flex-row-reverse">
       {/* Embed gif here */}
-      <Image
-        src={featimg?.asset._ref && sanityImg(featimg.asset._ref).url()}
-        alt={`${featTitle} in action`}
-        width={268}
-        height={268}
-        className="bg-gray-400 aspect-square rounded-xl md:h-64 md:sticky md:top-3 xl:top-6"
-      />
+      <div className="w-full flex justify-center md:w-fit">
+        <Image
+          src={featimg?.asset._ref && sanityImg(featimg.asset._ref).url()}
+          alt={`${featTitle} in action`}
+          width={268}
+          height={268}
+          className="bg-gray-400 aspect-square rounded-xl md:h-64 md:sticky md:top-3 xl:top-6"
+        />
+      </div>
 
       <section className="flex flex-col gap-2 md:gap-2 2xl:gap-3 md:w-[62.5%] md:flex-grow xl:w-[50%]">
         <h4 className="feat-title text-[rgb(var(--txt-body-title))]">
