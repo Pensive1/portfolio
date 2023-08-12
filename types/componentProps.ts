@@ -20,6 +20,7 @@ interface iconList {
 
 export type svgIconProps = {
   size: number;
+  fillColor: string;
 };
 
 export interface iconProps extends iconList {

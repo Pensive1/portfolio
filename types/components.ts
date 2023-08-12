@@ -1,3 +1,4 @@
+import { svgIconProps } from "./componentProps";
 export type iconCollection = {
-  [key: string]: React.ComponentType<{ size: number; fillColor?: string }>;
+  [key: string]: React.ComponentType<svgIconProps>;
 };
