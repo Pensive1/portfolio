@@ -25,7 +25,7 @@ In the coming weeks, I aim to add more tweaks and features as I improve my knowl
 
 - [Josh.W Comeau](https://github.com/joshwcomeau) – For [detailed pointers](https://www.joshwcomeau.com/effective-portfolio/) on creating a developer portfolio.
 - [DonTheDeveloper](https://www.youtube.com/@DonTheDeveloper) ([Don Hansen](https://github.com/donthedeveloper)) – For advice and a collection of portfolio reviews.
-- [Kapehe (via FreeCodeCamp)](https://youtu.be/OcTPaUfay5I) - Personal website tutorial powered by [Sanity](https://www.sanity.io/).
+- [Kapehe (via FreeCodeCamp)](https://youtu.be/OcTPaUfay5I) - Video tutorial on building a [Sanity](https://www.sanity.io/) powered personal website.
 
 ## Credits
 
