@@ -16,7 +16,7 @@ export default function Feature({
           alt={`${featTitle} in action`}
           width={268}
           height={268}
-          className="bg-gray-400 aspect-square rounded-xl md:h-64 md:sticky md:top-3 xl:top-6"
+          className="bg-gray-400 aspect-square w-auto rounded-xl md:h-64 md:sticky md:top-3 xl:top-6"
         />
       </div>
 
