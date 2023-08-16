@@ -30,7 +30,7 @@ export default function Overview({
           width={1280}
           height={720}
           sizes="100vw"
-          loading="lazy"
+          priority={true}
           className="aspect-video w-full bg-gray-400 rounded-lg md:rounded-xl xl:rounded-2xl 2xl:rounded-3xl"
         />
         <OverviewMeta

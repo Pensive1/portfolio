@@ -17,9 +17,9 @@ export default function Considerations({ overview, factors }: considerations) {
         <ul className="flex flex-col gap-4">
           {factors.map((factor, index) => (
             <li key={index}>
-              <h5 className="text-[rgb(var(--txt-body-title))]">
+              <h4 className="text-[rgb(var(--txt-body-title))]">
                 {factor.uiFactorPointTitle}
-              </h5>
+              </h4>
               <div className="content flex flex-col gap-1 md:gap-2 2xl:gap-3">
                 <PortableText value={factor.uiFactorPoints.description} />
               </div>

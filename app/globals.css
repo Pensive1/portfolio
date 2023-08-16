@@ -28,7 +28,9 @@
   
   /* Accents */
   --color-cocoa-brown: 210, 112, 55;
+  --color-cocoa-brown-light: 222, 160, 124;
   --color-shamrock: 0, 163, 98;
+  --color-shamrock-light: 29, 215, 141;
   
   /* --- ELEMENTS --- */
   /* Fills */
@@ -61,6 +63,7 @@
 
   /* Icon Fills */
   --icn-fill: var(--color-cocoa-brown);
+  --icn-fill-hover: var(--color-cocoa-brown-light);
   --icn-footer: var(--color-indigo-dye);
   --icn-project-link-icon: var(--color-carrib-current);
 
@@ -103,6 +106,7 @@
 
   /* Icon Fills */
   --icn-fill: var(--color-shamrock);
+  --icn-fill-hover: var(--color-shamrock-light);
   --icn-footer: var(--color-battle-grey);
   --icn-project-link-icon: var(--color-ash-grey);
   }
@@ -136,7 +140,7 @@ body {
   }
   /*  Body */
   p, ul li, ol li {
-    @apply text-sm font-light md:text-base 2xl:text-lg;
+    @apply text-sm font-normal md:text-base 2xl:text-lg;
   }
   /* Content lists */
   .content > ul li, .content > ol li {
@@ -148,6 +152,15 @@ body {
     display: flex;
     flex-direction: column;
     gap: .5rem;
+  }
+  
+  .content > p a{
+    color: rgb(var(--icn-fill));
+    transition: color .2s;
+  }
+  
+  .content > p a:hover{
+    color: rgb(var(--icn-fill-hover));
   }
 
   /* Footnote */
