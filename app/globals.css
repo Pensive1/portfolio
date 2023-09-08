@@ -173,14 +173,14 @@ body {
   .cta-btn {
     border-radius: 6px;
     padding: 0 1.6rem;
-    height: 2.5rem;
+    height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     @media screen and (min-width: 1440px) {
-      font-size: 0.875rem;
+      font-size: 1rem;
     }
   }
   .responsive-wrapper{
