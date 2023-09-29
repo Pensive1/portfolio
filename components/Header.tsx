@@ -17,10 +17,12 @@ export default function Header() {
         <nav className="hidden gap-4 md:flex md:items-center xl:gap-6 text-[rgb(var(--txt-link))]">
           <Link href={"/#projects"}>Projects</Link>
           <Link href={"/#about"}>About</Link>
+          <Link href={"https://medium.com/@racquaye89"} target="_blank">
+            Blog
+          </Link>
           <Button href={"/Richard-Acquaye_CV.pdf"} linkType="external">
             Resume
           </Button>
-          {/* <Link href={"/"}>Blog</Link> */}
         </nav>
       </div>
     </header>
