@@ -33,6 +33,7 @@ export default async function Home() {
             }
             width={276}
             height={276}
+            priority={true}
             className="bg-gray-400 rounded-full aspect-square w-48 md:w-[25%]"
           />
 
