@@ -78,7 +78,7 @@ export default function ProjectThumbnail({
           )}
           {caseStudyUrl && (
             <Button href={`/projects/${caseStudyUrl}`} btnType="secondary">
-              Details
+              Case study
             </Button>
           )}
         </div>
