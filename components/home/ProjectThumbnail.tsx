@@ -53,10 +53,13 @@ export default function ProjectThumbnail({
               <h5 className="text-sm font-medium text-[rgb(var(--txt-section-title))]">
                 Tech
               </h5>
-              <ul className="flex gap-x-4 flex-wrap text-xs">
+              <ul className="flex gap-2 flex-wrap text-xs">
                 {techList.length > 0 &&
                   techList.map((tech, index) => (
-                    <li className="label tech-name" key={index}>
+                    <li
+                      className="label tech-name bg-[rgba(var(--txt-body))]/[.15] px-2 rounded-xl"
+                      key={index}
+                    >
                       {tech}
                     </li>
                   ))}
