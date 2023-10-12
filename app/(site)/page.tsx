@@ -19,7 +19,7 @@ export default async function Home() {
       {Object.keys(about).length > 0 && (
         <section className="col-span-full" id="about">
           <SectionHeading showIcon={false}>About</SectionHeading>
-          <div className="rounded-2xl bg-[rgba(0,0,0,.05)] p-4 flex flex-col gap-8 items-center md:flex-row-reverse">
+          <div className="rounded-2xl bg-[rgba(var(--txt-body),.06)] p-4 flex flex-col gap-8 items-center md:flex-row-reverse">
             <Image
               src={
                 about.aboutImage.asset._ref &&
