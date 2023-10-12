@@ -17,45 +17,42 @@ export default async function Home() {
       )}
 
       {Object.keys(about).length > 0 && (
-        <section
-          className="col-span-full flex flex-col gap-8 items-center md:flex-row-reverse"
-          id="about"
-        >
-          <Image
-            src={
-              about.aboutImage.asset._ref &&
-              sanityImg(about.aboutImage.asset._ref).url()
-            }
-            alt={
-              about.aboutImage.aboutImageAlt
-                ? about.aboutImage.aboutImageAlt
-                : "Headshot of Richard Acquaye"
-            }
-            width={276}
-            height={276}
-            priority={true}
-            className="bg-gray-400 rounded-full aspect-square w-48 md:w-[25%]"
-          />
-
-          <div className="flex flex-col items-center gap-4 md:w-[75%]">
-            <div className="flex flex-col gap-2">
-              <SectionHeading showIcon={false}>About</SectionHeading>
-              <p>{about.aboutContent}</p>
-            </div>
-
-            <div className="flex flex-col gap-2 w-[100%]">
-              <h5 className="text-[rgb(var(--txt-section-title))]">Skills</h5>
-              <ul className="flex gap-2 flex-wrap text-[rgb(var(--txt-list-item))]">
-                {about.skillList.length > 0 &&
-                  about.skillList.map((skill: string, index: number) => (
-                    <li
-                      key={index}
-                      className="bg-[rgba(var(--icn-fill))]/[.1] text-[rgba(var(--icn-fill))]/[.85] px-2 rounded-xl"
-                    >
-                      {skill}
-                    </li>
-                  ))}
-              </ul>
+        <section className="col-span-full" id="about">
+          <SectionHeading showIcon={false}>About</SectionHeading>
+          <div className="rounded-2xl bg-[rgba(0,0,0,.05)] p-4 flex flex-col gap-8 items-center md:flex-row-reverse">
+            <Image
+              src={
+                about.aboutImage.asset._ref &&
+                sanityImg(about.aboutImage.asset._ref).url()
+              }
+              alt={
+                about.aboutImage.aboutImageAlt
+                  ? about.aboutImage.aboutImageAlt
+                  : "Headshot of Richard Acquaye"
+              }
+              width={276}
+              height={276}
+              priority={true}
+              className="bg-gray-400 rounded-full aspect-square w-48 md:w-[25%]"
+            />
+            <div className="flex flex-col items-center text-center gap-6 md:w-[75%] md:text-left justify-around">
+              <div className="flex flex-col gap-2">
+                <p>{about.aboutContent}</p>
+              </div>
+              <div className="flex flex-col gap-4 w-[100%]">
+                <h5 className="text-[rgb(var(--txt-section-title))]">Skills</h5>
+                <ul className="flex gap-2 flex-wrap text-[rgb(var(--txt-list-item))] justify-center md:justify-start">
+                  {about.skillList.length > 0 &&
+                    about.skillList.map((skill: string, index: number) => (
+                      <li
+                        key={index}
+                        className="bg-[rgba(var(--icn-fill))]/[.1] text-[rgba(var(--icn-fill))]/[.85] px-2 rounded-xl"
+                      >
+                        {skill}
+                      </li>
+                    ))}
+                </ul>
+              </div>
             </div>
           </div>
         </section>
