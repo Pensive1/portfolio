@@ -8,8 +8,6 @@ export default function SectionHeading({
   size,
   children,
 }: SectionHeadingProps) {
-  // CREATE LOGIC TO SCALE ICONS PER BREAKPOINT
-
   return (
     <div className="flex items-center gap-3 mb-3">
       {showIcon && <Icon iconType={iconType} size={2} use="sectionHeading" />}

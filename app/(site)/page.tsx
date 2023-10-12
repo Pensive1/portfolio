@@ -45,10 +45,15 @@ export default async function Home() {
 
             <div className="flex flex-col gap-2 w-[100%]">
               <h5 className="text-[rgb(var(--txt-section-title))]">Skills</h5>
-              <ul className="flex gap-x-4 flex-wrap text-[rgb(var(--txt-list-item))]">
+              <ul className="flex gap-2 flex-wrap text-[rgb(var(--txt-list-item))]">
                 {about.skillList.length > 0 &&
                   about.skillList.map((skill: string, index: number) => (
-                    <li key={index}>{skill}</li>
+                    <li
+                      key={index}
+                      className="bg-[rgba(var(--icn-fill))]/[.1] text-[rgba(var(--icn-fill))]/[.85] px-2 rounded-xl"
+                    >
+                      {skill}
+                    </li>
                   ))}
               </ul>
             </div>
