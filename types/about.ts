@@ -1,5 +1,7 @@
+import { PortableTextBlock } from "sanity";
+
 type aboutSectionType = {
-  aboutContent: string;
+  aboutContent: PortableTextBlock[];
   skillList: string[];
   aboutImage: {
     aboutImageAlt: string;

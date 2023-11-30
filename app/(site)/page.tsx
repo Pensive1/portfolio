@@ -2,6 +2,7 @@ import Image from "next/image";
 import ProjectThumbnail from "../../components/home/ProjectThumbnail";
 import { getProjects, getHomeContent, sanityImg } from "@/sanity/sanity-utils";
 import SectionHeading from "@/components/SectionHeading";
+import { PortableText } from "@portabletext/react";
 
 export default async function Home() {
   const projects = await getProjects();
@@ -19,7 +20,7 @@ export default async function Home() {
       {Object.keys(about).length > 0 && (
         <section className="col-span-full" id="about">
           <SectionHeading showIcon={false}>About</SectionHeading>
-          <div className="rounded-2xl bg-[rgba(var(--txt-body),.06)] p-4 flex flex-col gap-8 items-center md:flex-row-reverse">
+          <div className="rounded-2xl bg-[rgba(var(--txt-body),.06)] p-4 flex flex-col gap-8 items-center md:flex-row-reverse md:items-start">
             <Image
               src={
                 about.aboutImage.asset._ref &&
@@ -36,8 +37,8 @@ export default async function Home() {
               className="bg-gray-400 rounded-full aspect-square w-48 md:w-[25%]"
             />
             <div className="flex flex-col items-center text-center gap-6 md:w-[75%] md:text-left justify-around">
-              <div className="flex flex-col gap-2">
-                <p>{about.aboutContent}</p>
+              <div className="content flex flex-col gap-2">
+                <PortableText value={about.aboutContent} />
               </div>
               <div className="flex flex-col gap-4 w-[100%]">
                 <h5 className="text-[rgb(var(--txt-section-title))]">Skills</h5>
