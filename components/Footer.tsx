@@ -1,5 +1,4 @@
-"use-client";
-import Link from "next/link";
+"use client";
 import FooterIconLink from "./FooterIconLink";
 
 export default function Footer() {
