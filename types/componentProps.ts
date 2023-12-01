@@ -4,18 +4,19 @@ import { challenge, factor, solution } from "./data";
 // ICON COMPONENTS
 interface iconList {
   iconType?:
+    | "code"
+    | "externalLink"
+    | "email"
+    | "github"
+    | "info"
+    | "linkedin"
+    | "medal"
+    | "medium"
     | "question"
     | "route"
-    | "code"
-    | "wand"
-    | "medal"
     | "sword"
-    | "github"
-    | "externalLink"
-    | "linkedin"
-    | "email"
-    | "info"
-    | "video";
+    | "video"
+    | "wand";
 }
 
 export type svgIconProps = {

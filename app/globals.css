@@ -163,6 +163,17 @@ body {
     color: rgb(var(--icn-fill-hover));
   }
 
+  footer a path, footer a span{
+    transition: all .2s;
+  }
+
+  footer a:hover svg path{
+    fill: rgb(var(--btn-primary-txt));
+  }
+  
+  footer a:hover span{
+    color: rgb(var(--btn-secondary-txt));
+  }
   /* Footnote */
   footer, .footnote {
     @apply font-light text-xs md:text-sm 2xl:text-base;

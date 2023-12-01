@@ -2,8 +2,8 @@ import { defineField, defineType } from "sanity";
 
 const aboutSection = defineType({
   name: "aboutSection",
-  type: "object",
   title: "About Section",
+  type: "object",
   fields: [
     defineField({
       name: "aboutImage",
@@ -19,9 +19,10 @@ const aboutSection = defineType({
       ],
     }),
     defineField({
-      name: "aboutContent",
-      type: "text",
       title: "Bio",
+      name: "aboutContent",
+      type: "array",
+      of: [{ type: "block" }],
     }),
     defineField({
       name: "skillList",

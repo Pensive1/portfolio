@@ -11,18 +11,19 @@ export default function Icon({
 
   const iconCollection: iconCollection = {
     //Import icon svgs based on phrase
+    code: dynamic(() => import("./icons/icn_code")),
+    email: dynamic(() => import("./icons/icn_email")),
+    externalLink: dynamic(() => import("./icons/icn_externalLink")),
+    github: dynamic(() => import("./icons/icn_github")),
+    info: dynamic(() => import("./icons/icn_info")),
+    medal: dynamic(() => import("./icons/icn_medal")),
+    medium: dynamic(() => import("./icons/icn_medium")),
+    linkedin: dynamic(() => import("./icons/icn_linkedin")),
     question: dynamic(() => import("./icons/icn_question")),
     route: dynamic(() => import("./icons/icn_route")),
-    code: dynamic(() => import("./icons/icn_code")),
-    wand: dynamic(() => import("./icons/icn_wand")),
-    medal: dynamic(() => import("./icons/icn_medal")),
     sword: dynamic(() => import("./icons/icn_sword")),
-    github: dynamic(() => import("./icons/icn_github")),
-    externalLink: dynamic(() => import("./icons/icn_externalLink")),
-    linkedin: dynamic(() => import("./icons/icn_linkedin")),
-    email: dynamic(() => import("./icons/icn_email")),
-    info: dynamic(() => import("./icons/icn_info")),
     video: dynamic(() => import("./icons/icn_video")),
+    wand: dynamic(() => import("./icons/icn_wand")),
   };
 
   const IconComponent = iconCollection[iconType]
