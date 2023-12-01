@@ -1,8 +1,8 @@
 ## Personal Portfolio V1
 
-Thanks for checking this repo. This website showcases my development work done thus far. I used this project as an opportunity to learn Next 13, TypeScript, CSS Grid and Tailwind CSS.
+Thanks for checking this repo. This website showcases my development work done thus far. I used this project as an opportunity to learn Next 14, TypeScript, CSS Grid and Tailwind CSS.
 
-In the coming weeks, I aim to add more tweaks and features as I improve my knowledge of Next 13 and explore more design options.
+In the coming weeks, I aim to add more tweaks and features as I improve my knowledge of Next 14 and explore more design options.
 
 ## Features
 
@@ -12,14 +12,14 @@ In the coming weeks, I aim to add more tweaks and features as I improve my knowl
 
 ## Tools
 
-- Figma: Designed from the ground up
+- [Figma](https://www.figma.com/): Designed from the ground up
 - [Coolors](https://coolors.co/): For creating the site colour pallette ([Theme](https://coolors.co/242d2e-3b6e73-cccccc-d9d9d9-f2f1eb-294b66-cc6c35-00a362)).
 - [Asana](https://asana.com/?noredirect): Task tracking
 - [Visual Studio Code](https://code.visualstudio.com/): Code editor and IDE
 - [Sanity](https://www.sanity.io/): Content Management System
-- TypeScript
-- Next 13
-- Tailwind CSS
+- [TypeScript](https://www.typescriptlang.org/)
+- [Next 14](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ## Acknowledgements
 
