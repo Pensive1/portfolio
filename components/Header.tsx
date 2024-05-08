@@ -20,7 +20,11 @@ export default function Header() {
           <Link href={"https://medium.com/@racquaye89"} target="_blank">
             Blog
           </Link>
-          <Button href={"/Richard-Acquaye_CV.pdf"} linkType="external">
+          <Button
+            href={"/Richard-Acquaye_CV.pdf"}
+            linkType="external"
+            isFile={true}
+          >
             Resume
           </Button>
         </nav>
