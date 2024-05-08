@@ -26,6 +26,7 @@ export default function Button({
       className={`cta-btn ${buttonStyle[btnType]} w-full`}
       target={linkType === "external" ? "_blank" : "_self"}
       download={isFile}
+      rel={linkType === "external" ? "noopener noreferrer" : ""}
     >
       {showIcon && <Icon iconType={iconType} size={size} use="button" />}
       {children}
