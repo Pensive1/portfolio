@@ -19,14 +19,13 @@ export default function Button({
     secondary: "btn-secondary",
     tertiary: "btn-tertiary",
   };
-
   return (
     <Link
       href={href}
       className={`cta-btn ${buttonStyle[btnType]} w-full`}
       target={linkType === "external" ? "_blank" : "_self"}
       download={isFile}
-      rel={linkType === "external" ? "noopener noreferrer" : ""}
+      prefetch={false}
     >
       {showIcon && <Icon iconType={iconType} size={size} use="button" />}
       {children}
