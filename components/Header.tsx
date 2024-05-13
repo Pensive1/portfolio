@@ -1,11 +1,22 @@
 "use client";
 import Link from "next/link";
 import Button from "./Button";
+import Icon from "./Icon";
+// import "./icons/icn_burgerMenu";
+// import "./icons/icn_close";
+import { SyntheticEvent, useState } from "react";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleBurgerModal = (e: SyntheticEvent) => {
+    e.preventDefault();
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="bg-[rgb(var(--header-bg))] flex flex-col xl:items-center xl:w-[100vw]">
-      <div className="responsive-wrapper flex justify-center md:justify-between h-[4.375rem] items-center xl:w-[54.75rem] 2xl:w-[70.5rem]">
+      <div className="responsive-wrapper flex justify-between md:justify-between h-[4.375rem] items-center xl:w-[54.75rem] 2xl:w-[70.5rem]">
         <div className="logo">
           <Link
             href={"/"}
@@ -28,6 +39,17 @@ export default function Header() {
             Resume
           </Button>
         </nav>
+        <Link
+          href="#"
+          className="burger-menu md:hidden"
+          onClick={toggleBurgerModal}
+        >
+          {isMenuOpen ? (
+            <Icon iconType="close" size={2} />
+          ) : (
+            <Icon iconType="burgerMenu" size={2} />
+          )}
+        </Link>
       </div>
     </header>
   );

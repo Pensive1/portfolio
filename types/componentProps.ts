@@ -4,12 +4,15 @@ import { challenge, factor, solution } from "./data";
 // ICON COMPONENTS
 interface iconList {
   iconType?:
+    | "burgerMenu"
+    | "close"
     | "code"
     | "externalLink"
     | "email"
     | "github"
     | "info"
     | "linkedin"
+    | "list"
     | "medal"
     | "medium"
     | "question"
