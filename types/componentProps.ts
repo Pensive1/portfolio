@@ -1,5 +1,6 @@
 import { PortableTextBlock } from "sanity";
 import { challenge, factor, solution } from "./data";
+import { MutableRefObject } from "react";
 
 // ICON COMPONENTS
 interface iconList {
@@ -51,6 +52,15 @@ export interface buttonProps extends iconProps {
   showIcon?: boolean;
   btnType?: "primary" | "secondary" | "tertiary";
   children: React.ReactNode;
+}
+
+export interface modalProps {
+  isOpen: boolean;
+}
+
+export interface burgerModalProps extends modalProps {
+  renderLinks: Function;
+  setBurgerMenuOpen: Function;
 }
 
 /* --- HOME PAGE --- */
