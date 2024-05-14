@@ -1,6 +1,6 @@
 import { PortableTextBlock } from "sanity";
 import { challenge, factor, solution } from "./data";
-import { MutableRefObject } from "react";
+import { MutableRefObject, RefObject } from "react";
 
 // ICON COMPONENTS
 interface iconList {

@@ -163,6 +163,10 @@ body {
     color: rgb(var(--icn-fill-hover));
   }
 
+  .disable-scroll{
+    overflow-y: hidden;
+  }
+
   footer a path, footer a span{
     transition: all .2s;
   }

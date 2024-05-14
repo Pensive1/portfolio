@@ -68,13 +68,11 @@ export default function Header() {
           </Link>
         </div>
       </header>
-      {isBurgerMenuOpen && (
-        <BurgerModal
-          isOpen={isBurgerMenuOpen}
-          setBurgerMenuOpen={setBurgerMenuOpen}
-          renderLinks={renderLinks}
-        />
-      )}
+      <BurgerModal
+        isOpen={isBurgerMenuOpen}
+        setBurgerMenuOpen={setBurgerMenuOpen}
+        renderLinks={renderLinks}
+      />
     </>
   );
 }

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Button from "./Button";
 import { burgerModalProps } from "@/types/componentProps";
-import { BaseSyntheticEvent, SyntheticEvent, useEffect, useRef } from "react";
+import { BaseSyntheticEvent, useEffect, useRef } from "react";
 
 export default function BurgerModal({
   isOpen,
@@ -14,31 +14,33 @@ export default function BurgerModal({
   const linkList = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    console.log(`Modal is open: ${isOpen}`);
-    if (isOpen) {
-      burgerMenu.current?.show();
+    const menu = burgerMenu.current;
+
+    if (isOpen && menu) {
+      menu?.show();
+      disableScroll();
     } else {
-      burgerMenu.current?.close();
+      menu?.close();
     }
   }, [isOpen]);
 
-  //   const closeModal = () => {
-  //     burgerMenu.current?.close();
-  //     setBurgerMenuOpen(false);
-  //   };
-
   const handleLinkClick = (e: BaseSyntheticEvent) => {
-    // console.dir(e.target);
-    console.log("Burger menu link clicked");
-    console.dir(e);
-
     setBurgerMenuOpen(false);
+  };
+
+  const disableScroll = () => {
+    document.body.classList.add("disable-scroll");
+  };
+
+  const enableScroll = () => {
+    document.body.classList.remove("disable-scroll");
   };
 
   return (
     <dialog
-      className="burger-menu w-full fixed top-[70px] p-4 flex flex-col gap-8 bg-[rgba(var(--header-bg))]/[.7] backdrop-blur-sm md:hidden"
+      className="burger-menu w-full min-h-screen fixed top-[70px] p-4 flex flex-col gap-8 bg-[rgba(var(--header-bg))]/[.7] backdrop-blur-sm md:hidden"
       ref={burgerMenu}
+      onClose={enableScroll}
     >
       <nav
         className="burger__list flex flex-col gap-6 text-[rgb(var(--txt-link))]"
