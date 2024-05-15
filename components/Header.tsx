@@ -2,8 +2,8 @@
 import Link from "next/link";
 import Button from "./Button";
 import Icon from "./Icon";
-// import "./icons/icn_burgerMenu";
-// import "./icons/icn_close";
+// import icn_burgerMenu from "./icons/icn_burgerMenu";
+// import icn_close from "./icons/icn_close";
 import { SyntheticEvent, useState } from "react";
 import BurgerModal from "./BurgerModal";
 
@@ -72,7 +72,7 @@ export default function Header() {
         isOpen={isBurgerMenuOpen}
         setBurgerMenuOpen={setBurgerMenuOpen}
         renderLinks={renderLinks}
-      />
+      ></BurgerModal>
     </>
   );
 }
