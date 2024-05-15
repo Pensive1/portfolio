@@ -1,6 +1,6 @@
 import { svgIconProps } from "@/types/componentProps";
 
-export default function Code({ size, fillColor }: svgIconProps) {
+export default function IcnClose({ size, fillColor }: svgIconProps) {
   return (
     <svg
       width={size}

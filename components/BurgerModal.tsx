@@ -2,6 +2,9 @@
 import Button from "./Button";
 import { burgerModalProps } from "@/types/componentProps";
 import { BaseSyntheticEvent, useEffect, useRef } from "react";
+import IcnList from "./icons/icn_list";
+//TODO: close modal if navigating away
+//TODO: close modal if screen width changes
 
 export default function BurgerModal({
   isOpen,
@@ -52,10 +55,9 @@ export default function BurgerModal({
           href="/Richard-Acquaye_CV.pdf"
           isFile={true}
           linkType="external"
-          showIcon={true}
-          iconType="list"
           size={2}
         >
+          <IcnList size={24} fillColor="rgb(var(--btn-primary-txt))" />
           Resume
         </Button>
       </div>

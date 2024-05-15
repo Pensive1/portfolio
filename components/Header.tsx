@@ -2,8 +2,8 @@
 import Link from "next/link";
 import Button from "./Button";
 import Icon from "./Icon";
-// import icn_burgerMenu from "./icons/icn_burgerMenu";
-// import icn_close from "./icons/icn_close";
+import IcnBurgerMenu from "./icons/icn_burgerMenu";
+import IcnClose from "./icons/icn_close";
 import { SyntheticEvent, useState } from "react";
 import BurgerModal from "./BurgerModal";
 
@@ -31,6 +31,7 @@ export default function Header() {
     e.preventDefault();
     setBurgerMenuOpen(!isBurgerMenuOpen);
   };
+  console.log(window);
 
   return (
     <>
@@ -61,9 +62,11 @@ export default function Header() {
             onClick={toggleBurgerModal}
           >
             {isBurgerMenuOpen ? (
-              <Icon iconType="close" size={2} />
+              // <Icon iconType="close" size={2} />
+              <IcnClose size={24} fillColor="rgb(var(--txt-link))" />
             ) : (
-              <Icon iconType="burgerMenu" size={2} />
+              // <Icon iconType="burgerMenu" size={2} />
+              <IcnBurgerMenu size={24} fillColor="rgb(var(--txt-link))" />
             )}
           </Link>
         </div>
