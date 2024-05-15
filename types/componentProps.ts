@@ -61,6 +61,7 @@ export interface modalProps {
 export interface burgerModalProps extends modalProps {
   renderLinks: Function;
   setBurgerMenuOpen: Function;
+  isMobileBreakpoint: boolean;
 }
 
 /* --- HOME PAGE --- */

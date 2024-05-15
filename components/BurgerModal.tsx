@@ -1,12 +1,12 @@
 "use client";
 import Button from "./Button";
 import { burgerModalProps } from "@/types/componentProps";
-import { BaseSyntheticEvent, useEffect, useRef } from "react";
+import { BaseSyntheticEvent, useEffect, useRef, useState } from "react";
 import IcnList from "./icons/icn_list";
 //TODO: close modal if navigating away
-//TODO: close modal if screen width changes
 
 export default function BurgerModal({
+  isMobileBreakpoint,
   isOpen,
   renderLinks,
   setBurgerMenuOpen,
@@ -14,6 +14,7 @@ export default function BurgerModal({
   const burgerMenu = useRef<HTMLDialogElement>(null);
   const linkList = useRef<HTMLElement>(null);
 
+  //Modal status check
   useEffect(() => {
     const menu = burgerMenu.current;
 
@@ -24,6 +25,14 @@ export default function BurgerModal({
       menu?.close();
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!isMobileBreakpoint) {
+      setBurgerMenuOpen(false);
+      burgerMenu.current?.close();
+      enableScroll();
+    }
+  }, [isMobileBreakpoint]);
 
   const handleLinkClick = (e: BaseSyntheticEvent) => {
     setBurgerMenuOpen(false);
