@@ -1,9 +1,9 @@
 "use client";
 import Button from "./Button";
 import { burgerModalProps } from "@/types/componentProps";
-import { BaseSyntheticEvent, useEffect, useRef, useState } from "react";
+import { BaseSyntheticEvent, useEffect, useRef } from "react";
 import IcnList from "./icons/icn_list";
-//TODO: close modal if navigating away
+import { usePathname } from "next/navigation";
 
 export default function BurgerModal({
   isMobileBreakpoint,
@@ -13,6 +13,7 @@ export default function BurgerModal({
 }: burgerModalProps) {
   const burgerMenu = useRef<HTMLDialogElement>(null);
   const linkList = useRef<HTMLElement>(null);
+  const pathName = usePathname();
 
   //Modal status check
   useEffect(() => {
@@ -26,16 +27,26 @@ export default function BurgerModal({
     }
   }, [isOpen]);
 
+  // Breakpoint check
   useEffect(() => {
     if (!isMobileBreakpoint) {
-      setBurgerMenuOpen(false);
-      burgerMenu.current?.close();
-      enableScroll();
+      fullBurgerMenuClose();
     }
   }, [isMobileBreakpoint]);
 
+  // Route change check
+  useEffect(() => {
+    fullBurgerMenuClose();
+  }, [pathName]);
+
   const handleLinkClick = (e: BaseSyntheticEvent) => {
     setBurgerMenuOpen(false);
+  };
+
+  const fullBurgerMenuClose = () => {
+    setBurgerMenuOpen(false);
+    burgerMenu.current?.close();
+    enableScroll();
   };
 
   const disableScroll = () => {
@@ -64,7 +75,6 @@ export default function BurgerModal({
           href="/Richard-Acquaye_CV.pdf"
           isFile={true}
           linkType="external"
-          size={2}
         >
           <IcnList size={24} fillColor="rgb(var(--btn-primary-txt))" />
           Resume
