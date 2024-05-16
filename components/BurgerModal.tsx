@@ -2,8 +2,8 @@
 import Button from "./Button";
 import { burgerModalProps } from "@/types/componentProps";
 import { BaseSyntheticEvent, useEffect, useRef } from "react";
-import IcnList from "./icons/icn_list";
 import { usePathname } from "next/navigation";
+import IcnList from "./icons/icn_list";
 
 export default function BurgerModal({
   isMobileBreakpoint,
@@ -58,28 +58,32 @@ export default function BurgerModal({
   };
 
   return (
-    <dialog
-      className="burger-menu w-full min-h-screen fixed top-[70px] p-4 bg-[rgba(var(--header-bg))]/[.7] backdrop-blur-sm md:hidden"
-      ref={burgerMenu}
-      onClose={enableScroll}
-    >
-      <div className="menu__content flex flex-col gap-8">
-        <nav
-          className="burger__list flex flex-col gap-6 text-[rgb(var(--txt-link))]"
-          ref={linkList}
-          onClick={handleLinkClick}
-        >
-          {renderLinks()}
-        </nav>
-        <Button
-          href="/Richard-Acquaye_CV.pdf"
-          isFile={true}
-          linkType="external"
-        >
-          <IcnList size={24} fillColor="rgb(var(--btn-primary-txt))" />
-          Resume
-        </Button>
-      </div>
-    </dialog>
+    <>
+      <dialog
+        className="burger-menu w-full fixed top-[70px] p-4 pt-8 bg-[rgba(var(--modal-fill))] z-20 rounded-b-xl md:hidden"
+        ref={burgerMenu}
+        onClose={enableScroll}
+      >
+        <div className="menu__content flex flex-col gap-16">
+          <nav
+            className="burger__list flex flex-col gap-8 text-[rgb(var(--txt-burger-menu))]"
+            ref={linkList}
+            onClick={handleLinkClick}
+          >
+            {renderLinks()}
+          </nav>
+          <Button
+            href="/Richard-Acquaye_CV.pdf"
+            isFile={true}
+            linkType="external"
+            btnType="burgerMenu"
+          >
+            <IcnList size={24} fillColor="white" />
+            Resume
+          </Button>
+        </div>
+      </dialog>
+      {isOpen && <div className="burger-menu__backdrop"></div>}
+    </>
   );
 }

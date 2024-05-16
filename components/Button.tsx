@@ -18,6 +18,7 @@ export default function Button({
     primary: "btn-primary",
     secondary: "btn-secondary",
     tertiary: "btn-tertiary",
+    burgerMenu: "btn-burger",
   };
   return (
     <Link

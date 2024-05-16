@@ -51,12 +51,12 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full bg-[rgb(var(--header-bg))] flex flex-col sticky top-0 xl:items-center xl:w-[100vw]">
+      <header className="w-full bg-[rgb(var(--header-bg))] flex flex-col sticky top-0  z-20 xl:items-center xl:w-[100vw]">
         <div className="responsive-wrapper flex justify-between md:justify-between h-[4.375rem] items-center xl:w-[54.75rem] 2xl:w-[70.5rem]">
           <div className="logo">
             <Link
               href={"/"}
-              className="text-[rgb(var(--txt-heading))] uppercase font-semibold tracking-widest"
+              className="text-[rgb(var(--txt-heading))] uppercase font-semibold tracking-widest text-xl"
             >
               Richard Acquaye
             </Link>

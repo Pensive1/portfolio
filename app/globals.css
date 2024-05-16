@@ -42,6 +42,8 @@
   --gradient-border-start: 224,224,224, 1;
   --gradient-border-mid: 173,173,173, 1;
   --gradient-border-end: 224,224,224, 0;
+  --modal-fill: var(--color-isabelline), .8;
+  --modal-bg-fill: var(--color-cadet-grey-light);
 
   /* Text */
   --txt-heading: var(--color-indigo-dye);
@@ -53,6 +55,7 @@
   --txt-footnote: var(--color-battle-grey);
   --txt-list-item: var(--color-grey);
   --txt-project-link: var(--color-carrib-current);
+  --txt-burger-menu: var(--color-carrib-current);
 
   /* Buttons */
   --btn-primary-fill: var(--color-carrib-current);
@@ -60,7 +63,8 @@
   --btn-secondary-border: var(--color-carrib-current);
   --btn-secondary-txt: var(--color-carrib-current);
   --btn-tertiary-txt: var(--color-carrib-current);
-
+  --btn-burger-menu-fill: var(--color-indigo-dye);
+  
   /* Icon Fills */
   --icn-fill: var(--color-cocoa-brown);
   --icn-fill-hover: var(--color-cocoa-brown-light);
@@ -85,6 +89,8 @@
   --gradient-border-start: 66,82,84, 1;
   --gradient-border-mid: 56,70,71, 1;
   --gradient-border-end: 56,70,71, 0.05;
+  --modal-fill: var(--color-eerie-black), .7;
+  --modal-bg-fill: var(--color-eerie-black);
 
   /* Text */
   --txt-heading: var(--color-ash-grey);
@@ -96,6 +102,7 @@
   --txt-footnote: var(--color-outer-space);
   --txt-list-item: var(--color-cadet-grey);
   --txt-project-link: var(--color-ash-grey);
+  --txt-burger-menu: var(--color-isabelline);
 
   /* Buttons */
   --btn-primary-fill: var(--color-slate-grey-dark);
@@ -103,6 +110,7 @@
   --btn-secondary-border: var(--color-slate-grey-dark);
   --btn-secondary-txt: var(--color-ash-grey);
   --btn-tertiary-txt: var(--color-ash-grey);
+  --btn-burger-menu-fill: var(--color-carrib-current);
 
   /* Icon Fills */
   --icn-fill: var(--color-shamrock);
@@ -193,7 +201,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 8px;
-    font-size: 0.875rem;
+    font-size: 1rem;
     @media screen and (min-width: 1440px) {
       font-size: 1rem;
     }
@@ -215,12 +223,28 @@ body {
       width: 1128px;
     }
   }
+
+  .burger-menu__backdrop{
+    content: 'hello';
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(var(--modal-bg-fill), .3);
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    backdrop-filter: blur(4px);
+  }
 }
 
 @layer utilities {
   .btn-primary{
     color: rgb(var(--btn-primary-txt));
     background: rgb(var(--btn-primary-fill));
+  }
+  .btn-burger{
+    color: white;
+    background: rgb(var(--btn-burger-menu-fill));
   }
   .btn-secondary{
     background:none;
