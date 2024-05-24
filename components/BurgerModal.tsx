@@ -30,20 +30,16 @@ export default function BurgerModal({
   // Breakpoint check
   useEffect(() => {
     if (!isMobileBreakpoint) {
-      fullBurgerMenuClose();
+      closeBurgerMenu();
     }
   }, [isMobileBreakpoint]);
 
   // Route change check
   useEffect(() => {
-    fullBurgerMenuClose();
+    closeBurgerMenu();
   }, [pathName]);
 
-  const handleLinkClick = (e: BaseSyntheticEvent) => {
-    setBurgerMenuOpen(false);
-  };
-
-  const fullBurgerMenuClose = () => {
+  const closeBurgerMenu = () => {
     setBurgerMenuOpen(false);
     burgerMenu.current?.close();
     enableScroll();
@@ -68,7 +64,7 @@ export default function BurgerModal({
           <nav
             className="burger__list flex flex-col gap-8 text-[rgb(var(--txt-burger-menu))]"
             ref={linkList}
-            onClick={handleLinkClick}
+            onClick={closeBurgerMenu}
           >
             {renderLinks()}
           </nav>
@@ -76,14 +72,16 @@ export default function BurgerModal({
             href="/Richard-Acquaye_CV.pdf"
             isFile={true}
             linkType="external"
-            btnType="burgerMenu"
+            btnType="header"
           >
             <IcnList size={24} fillColor="white" />
             Resume
           </Button>
         </div>
       </dialog>
-      {isOpen && <div className="burger-menu__backdrop"></div>}
+      {isOpen && (
+        <div className="burger-menu__backdrop" onClick={closeBurgerMenu}></div>
+      )}
     </>
   );
 }

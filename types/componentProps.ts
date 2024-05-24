@@ -50,7 +50,7 @@ export interface buttonProps extends iconProps {
   linkType?: "internal" | "external";
   isFile?: boolean;
   showIcon?: boolean;
-  btnType?: "primary" | "secondary" | "tertiary" | "burgerMenu";
+  btnType?: "primary" | "secondary" | "tertiary" | "header";
   children: React.ReactNode;
 }
 

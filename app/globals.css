@@ -46,6 +46,7 @@
   --modal-bg-fill: var(--color-cadet-grey-light);
 
   /* Text */
+  --txt-logo: var(--color-indigo-dye);
   --txt-heading: var(--color-indigo-dye);
   --txt-headline: var(--color-slate-grey);
   --txt-section-title: var(--color-indigo-dye);
@@ -90,9 +91,10 @@
   --gradient-border-mid: 56,70,71, 1;
   --gradient-border-end: 56,70,71, 0.05;
   --modal-fill: var(--color-eerie-black), .7;
-  --modal-bg-fill: var(--color-eerie-black);
+  --modal-bg-fill: var(--color-outer-space-dark);
 
   /* Text */
+  --txt-logo: var(--color-isabelline);
   --txt-heading: var(--color-ash-grey);
   --txt-headline: var(--color-cadet-grey);
   --txt-section-title: var(--color-cadet-grey-light);
@@ -210,8 +212,8 @@ body {
     display: flex;
     padding: 0 1rem;
 
-    @media (min-width: 768px) {
-      padding: 0 2rem;
+    @media (min-width: 744px) {
+      padding: 0 1.6rem;
     }
 
     @media (min-width: 1280px) {
@@ -242,7 +244,7 @@ body {
     color: rgb(var(--btn-primary-txt));
     background: rgb(var(--btn-primary-fill));
   }
-  .btn-burger{
+  .btn-header{
     color: white;
     background: rgb(var(--btn-burger-menu-fill));
   }

@@ -51,40 +51,41 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full bg-[rgb(var(--header-bg))] flex flex-col sticky top-0  z-20 xl:items-center xl:w-[100vw]">
-        <div className="responsive-wrapper flex justify-between md:justify-between h-[4.375rem] items-center xl:w-[54.75rem] 2xl:w-[70.5rem]">
-          <div className="logo">
+      <header className="w-full bg-[rgb(var(--header-bg))] flex flex-col sticky top-0 z-20 md:relative md:bg-[rgb(var(--bg))] md:px-8 md:pt-5 xl:w-[100vw] xl:px-5 xl:pt-5">
+        <div className="responsive-wrapper md:rounded-xl md:h-auto md:p-4 md:bg-[rgb(var(--header-bg))] xl:w-full xl:justify-center ">
+          <div className="header__content flex justify-between h-[4.375rem] items-center w-full md:h-auto xl:w-[54.75rem] 2xl:w-[70.5rem]">
+            <div className="logo">
+              <Link
+                href={"/"}
+                className="text-[rgb(var(--txt-logo))] uppercase font-semibold tracking-widest text-xl"
+              >
+                Richard Acquaye
+              </Link>
+            </div>
+
+            <nav className="hidden md:flex md:gap-12 md:items-center text-[rgb(var(--txt-link))]">
+              <div className="flex gap-4">{renderLinks()}</div>
+              <Button
+                href={"/Richard-Acquaye_CV.pdf"}
+                linkType="external"
+                isFile={true}
+                btnType="header"
+              >
+                Resume
+              </Button>
+            </nav>
             <Link
-              href={"/"}
-              className="text-[rgb(var(--txt-heading))] uppercase font-semibold tracking-widest text-xl"
+              href="#"
+              className="burger-trigger md:hidden"
+              onClick={toggleBurgerModalIcn}
             >
-              Richard Acquaye
+              {isBurgerMenuOpen ? (
+                <IcnClose size={24} fillColor="rgb(var(--txt-link))" />
+              ) : (
+                <IcnBurgerMenu size={24} fillColor="rgb(var(--txt-link))" />
+              )}
             </Link>
           </div>
-          <nav className="hidden gap-4 md:flex md:items-center xl:gap-6 text-[rgb(var(--txt-link))]">
-            {renderLinks()}
-
-            <Button
-              href={"/Richard-Acquaye_CV.pdf"}
-              linkType="external"
-              isFile={true}
-            >
-              Resume
-            </Button>
-          </nav>
-          <Link
-            href="#"
-            className="burger-trigger md:hidden"
-            onClick={toggleBurgerModalIcn}
-          >
-            {isBurgerMenuOpen ? (
-              // <Icon iconType="close" size={2} />
-              <IcnClose size={24} fillColor="rgb(var(--txt-link))" />
-            ) : (
-              // <Icon iconType="burgerMenu" size={2} />
-              <IcnBurgerMenu size={24} fillColor="rgb(var(--txt-link))" />
-            )}
-          </Link>
         </div>
       </header>
       <BurgerModal
