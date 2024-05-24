@@ -56,6 +56,8 @@
   --txt-footnote: var(--color-battle-grey);
   --txt-list-item: var(--color-grey);
   --txt-project-link: var(--color-carrib-current);
+  --txt-footer-link: var(--color-indigo-dye);
+  --txt-footer-link-hover: var(--color-carrib-current);
   --txt-burger-menu: var(--color-carrib-current);
 
   /* Buttons */
@@ -70,6 +72,7 @@
   --icn-fill: var(--color-cocoa-brown);
   --icn-fill-hover: var(--color-cocoa-brown-light);
   --icn-footer: var(--color-indigo-dye);
+  --icn-footer-hover: var(--color-carrib-current);
   --icn-project-link-icon: var(--color-carrib-current);
 
 /* Dimensions */
@@ -104,6 +107,8 @@
   --txt-footnote: var(--color-outer-space);
   --txt-list-item: var(--color-cadet-grey);
   --txt-project-link: var(--color-ash-grey);
+  --txt-footer-link: var(--color-battle-grey);
+  --txt-footer-link-hover: var(--color-ash-grey);
   --txt-burger-menu: var(--color-isabelline);
 
   /* Buttons */
@@ -118,6 +123,7 @@
   --icn-fill: var(--color-shamrock);
   --icn-fill-hover: var(--color-shamrock-light);
   --icn-footer: var(--color-battle-grey);
+  --icn-footer-hover: var(--color-ash-grey);
   --icn-project-link-icon: var(--color-ash-grey);
   }
 }
@@ -177,16 +183,20 @@ body {
     overflow-y: hidden;
   }
 
+  footer a {
+    color:rgb(var(--txt-footer-link));
+  }
+
   footer a path, footer a span{
     transition: all .2s;
   }
 
   footer a:hover svg path{
-    fill: rgb(var(--btn-primary-txt));
+    fill: rgb(var(--icn-footer-hover));
   }
   
   footer a:hover span{
-    color: rgb(var(--btn-secondary-txt));
+    color: rgb(var(--txt-footer-link-hover));
   }
   /* Footnote */
   footer, .footnote {
