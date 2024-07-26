@@ -5,7 +5,7 @@ import { createClient, groq } from "next-sanity";
 import config from "./config/client-config";
 import imageUrlBuilder from "@sanity/image-url";
 
-const client = createClient(config);
+export const client = createClient(config);
 const imgBuilder = imageUrlBuilder(client);
 
 export function sanityImg(source: string) {
