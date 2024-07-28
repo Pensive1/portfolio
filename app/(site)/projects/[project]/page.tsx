@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import { getProject } from "@/sanity/sanity-utils";
+import { sanityFetch } from "@/sanity/sanity-utils";
+import { PROJECT_QUERY } from "@/sanity/lib/queries";
 import { ProjectPage } from "@/types/data";
 import { PortableText } from "@portabletext/react";
 import SectionHeading from "@/components/SectionHeading";
@@ -16,7 +17,10 @@ export default async function Project({
   params: { project: string };
 }) {
   const slug = params.project;
-  const project: ProjectPage = await getProject(slug);
+  const project: ProjectPage = await sanityFetch({
+    query: PROJECT_QUERY,
+    params: {slug}
+  });
 
   // If project is null, link to 404 page
   if (!project) {
