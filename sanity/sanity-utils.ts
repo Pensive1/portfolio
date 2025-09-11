@@ -7,9 +7,11 @@ import { Project, ProjectPage } from "@/types/data";
 import {
   createClient,
   groq,
+  defineQuery,
   type QueryOptions,
   type QueryParams,
 } from "next-sanity";
+
 import { token } from "./lib/token";
 import config from "./config/client-config";
 import imageUrlBuilder from "@sanity/image-url";
@@ -32,13 +34,13 @@ export async function sanityFetch<QueryResponse>({
   revalidate?: number | false;
   tags?: string[];
 }) {
-  const isDraftMode = (await draftMode()).isEnabled;
-  if (isDraftMode && !token) {
+  const { isEnabled } = await draftMode();
+  if (isEnabled && !token) {
     throw new Error("Missing environment variable SANITY_API_READ_TOKEN");
   }
 
   let dynamicRevalidate = revalidate;
-  if (isDraftMode) {
+  if (isEnabled) {
     // Do not cache in Draft Mode
     dynamicRevalidate = 0;
   } else if (tags.length) {
@@ -47,11 +49,12 @@ export async function sanityFetch<QueryResponse>({
   }
 
   return client.fetch<QueryResponse>(query, params, {
-    ...(isDraftMode &&
+    ...(isEnabled &&
       ({
+        perspective: "drafts",
         token: token,
-        perspective: "previewDrafts",
         stega: true,
+        useCdn: false
       } satisfies QueryOptions)),
     next: {
       revalidate: dynamicRevalidate,
@@ -66,10 +69,12 @@ export async function getHomeContent(): Promise<{
   about: aboutSectionType;
 }> {
   const data = await client.fetch(
-    groq`*[_type == "page" && title == "Home Page"]{
-      "hero": pageBuilder[0],
-      "about": pageBuilder[1]
-    }`
+    defineQuery(
+      `*[_type == "page" && title == "Home Page"]{
+        "hero": pageBuilder[0],
+        "about": pageBuilder[1]
+      }`
+    )
   );
 
   const [{ hero, about }] = data;
@@ -79,18 +84,20 @@ export async function getHomeContent(): Promise<{
 // Gets project thumbnails for homepage
 export async function getProjects(): Promise<Project[]> {
   return await client.fetch(
-    groq`*[_type == "project"]{
-            _id,
-            _createdAt,
-            projectName,
-            synopsis,
-            "slug": slug.current,
-            "heroImage": heroImage,
-            liveUrl,
-            demoUrl,
-            technologies,
-            projDisplay
+    defineQuery(
+      `*[_type == "project"]{
+          _id,
+          _createdAt,
+          projectName,
+          synopsis,
+          "slug": slug.current,
+          "heroImage": heroImage,
+          liveUrl,
+          demoUrl,
+          technologies,
+          projDisplay
         }`
+    )
   );
 }
 

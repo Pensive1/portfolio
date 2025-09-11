@@ -16,10 +16,10 @@ export default async function Project({
 }: {
   params: { project: string };
 }) {
-  const slug = params.project;
+  const { project: slug } = await params;
   const project: ProjectPage = await sanityFetch({
     query: PROJECT_QUERY,
-    params: {slug}
+    params: { slug },
   });
 
   // If project is null, link to 404 page

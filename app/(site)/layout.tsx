@@ -1,5 +1,6 @@
+import { VisualEditing } from "next-sanity/visual-editing";
 import { draftMode } from "next/headers";
-import { VisualEditing } from "next-sanity";
+import { DisableDraftMode } from "@/components/DisableDraftMode";
 
 import { Analytics } from "@vercel/analytics/react";
 import { Outfit } from "next/font/google";
@@ -24,12 +25,13 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const { isEnabled } = await draftMode();
   return (
     <html lang="en" className="scroll-smooth scroll-p-28">
       <body
         className={`${outfit.variable} font-sans xl:flex xl:flex-col xl:items-center xl:overflow-x-hidden`}
       >
-        {(await draftMode()).isEnabled && (
+        {isEnabled && (
           <a
             className="fixed right-0 bottom-0 bg-blue-500 text-white p-4 m-4"
             href="/api/draft-mode/disable"
@@ -43,7 +45,12 @@ export default async function RootLayout({
         </main>
         <Footer />
         <Analytics />
-        {(await draftMode()).isEnabled && <VisualEditing />}
+        {isEnabled && (
+          <>
+            <VisualEditing />
+            <DisableDraftMode />
+          </>
+        )}
       </body>
     </html>
   );
