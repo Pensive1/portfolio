@@ -4,7 +4,12 @@ import { draftMode } from "next/headers";
 import aboutSectionType from "@/types/about";
 import heroType from "@/types/hero";
 import { Project, ProjectPage } from "@/types/data";
-import { createClient, groq, type QueryOptions, type QueryParams } from "next-sanity";
+import {
+  createClient,
+  groq,
+  type QueryOptions,
+  type QueryParams,
+} from "next-sanity";
 import { token } from "./lib/token";
 import config from "./config/client-config";
 import imageUrlBuilder from "@sanity/image-url";
@@ -27,7 +32,7 @@ export async function sanityFetch<QueryResponse>({
   revalidate?: number | false;
   tags?: string[];
 }) {
-  const isDraftMode = draftMode().isEnabled;
+  const isDraftMode = (await draftMode()).isEnabled;
   if (isDraftMode && !token) {
     throw new Error("Missing environment variable SANITY_API_READ_TOKEN");
   }
@@ -96,6 +101,3 @@ export async function getProject(slug: string): Promise<ProjectPage> {
     { slug }
   );
 }
-
-
-

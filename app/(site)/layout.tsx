@@ -1,5 +1,5 @@
-import { VisualEditing } from "next-sanity";
 import { draftMode } from "next/headers";
+import { VisualEditing } from "next-sanity";
 
 import { Analytics } from "@vercel/analytics/react";
 import { Outfit } from "next/font/google";
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: "Creative portfolio of Richard Acquaye.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} font-sans xl:flex xl:flex-col xl:items-center xl:overflow-x-hidden`}
       >
-         {draftMode().isEnabled && (
+        {(await draftMode()).isEnabled && (
           <a
             className="fixed right-0 bottom-0 bg-blue-500 text-white p-4 m-4"
             href="/api/draft-mode/disable"
@@ -43,7 +43,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <Analytics />
-        {draftMode().isEnabled && <VisualEditing />}
+        {(await draftMode()).isEnabled && <VisualEditing />}
       </body>
     </html>
   );
