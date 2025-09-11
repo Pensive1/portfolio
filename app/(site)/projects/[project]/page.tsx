@@ -14,7 +14,7 @@ import Impact from "@/components/projects/sections/Impact";
 export default async function Project({
   params,
 }: {
-  params: { project: string };
+  params: Promise<{ project: string }>;
 }) {
   const { project: slug } = await params;
   const project: ProjectPage = await sanityFetch({
@@ -64,11 +64,11 @@ export default async function Project({
           {(project.uiFactorDesc ||
             (project.uiFactors &&
               Object.keys(project.uiFactors).length > 0)) && (
-            <Considerations
-              overview={project.uiFactorDesc}
-              factors={project.uiFactors}
-            />
-          )}
+              <Considerations
+                overview={project.uiFactorDesc}
+                factors={project.uiFactors}
+              />
+            )}
           {project.challengeList &&
             Object.keys(project.challengeList).length > 0 && (
               <Challenges challengeList={project.challengeList} />
