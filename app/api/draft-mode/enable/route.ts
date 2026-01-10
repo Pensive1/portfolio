@@ -18,7 +18,5 @@ const clientWithToken = client.withConfig({ token });
 //   }
 
 export const { GET } = defineEnableDraftMode({
-  client: client.withConfig({
-    token: token
-  }),
+  client: clientWithToken,
 });
