@@ -11,6 +11,8 @@ export default function Icon({
 
   const iconCollection: iconCollection = {
     //Import icon svgs based on phrase
+    burgerMenu: dynamic(() => import("./icons/icn_burgerMenu")),
+    close: dynamic(() => import("./icons/icn_close")),
     code: dynamic(() => import("./icons/icn_code")),
     email: dynamic(() => import("./icons/icn_email")),
     externalLink: dynamic(() => import("./icons/icn_externalLink")),
@@ -19,6 +21,7 @@ export default function Icon({
     medal: dynamic(() => import("./icons/icn_medal")),
     medium: dynamic(() => import("./icons/icn_medium")),
     linkedin: dynamic(() => import("./icons/icn_linkedin")),
+    list: dynamic(() => import("./icons/icn_list")),
     question: dynamic(() => import("./icons/icn_question")),
     route: dynamic(() => import("./icons/icn_route")),
     sword: dynamic(() => import("./icons/icn_sword")),

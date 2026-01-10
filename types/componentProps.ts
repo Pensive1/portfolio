@@ -1,15 +1,19 @@
 import { PortableTextBlock } from "sanity";
 import { challenge, factor, solution } from "./data";
+import { MutableRefObject, RefObject } from "react";
 
 // ICON COMPONENTS
 interface iconList {
   iconType?:
+    | "burgerMenu"
+    | "close"
     | "code"
     | "externalLink"
     | "email"
     | "github"
     | "info"
     | "linkedin"
+    | "list"
     | "medal"
     | "medium"
     | "question"
@@ -44,9 +48,20 @@ export interface iconLinkProps extends iconProps {
 export interface buttonProps extends iconProps {
   href: string;
   linkType?: "internal" | "external";
+  isFile?: boolean;
   showIcon?: boolean;
-  btnType?: "primary" | "secondary" | "tertiary";
+  btnType?: "primary" | "secondary" | "tertiary" | "header";
   children: React.ReactNode;
+}
+
+export interface modalProps {
+  isOpen: boolean;
+}
+
+export interface burgerModalProps extends modalProps {
+  renderLinks: Function;
+  setBurgerMenuOpen: Function;
+  isMobileBreakpoint: boolean;
 }
 
 /* --- HOME PAGE --- */
