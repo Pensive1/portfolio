@@ -1,26 +1,27 @@
 import { PortableTextBlock } from "sanity";
 import { challenge, factor, solution } from "./data";
 import { MutableRefObject, RefObject } from "react";
+import { UrlObject } from "url";
 
 // ICON COMPONENTS
 interface iconList {
   iconType?:
-    | "burgerMenu"
-    | "close"
-    | "code"
-    | "externalLink"
-    | "email"
-    | "github"
-    | "info"
-    | "linkedin"
-    | "list"
-    | "medal"
-    | "medium"
-    | "question"
-    | "route"
-    | "sword"
-    | "video"
-    | "wand";
+  | "burgerMenu"
+  | "close"
+  | "code"
+  | "externalLink"
+  | "email"
+  | "github"
+  | "info"
+  | "linkedin"
+  | "list"
+  | "medal"
+  | "medium"
+  | "question"
+  | "route"
+  | "sword"
+  | "video"
+  | "wand";
 }
 
 export type svgIconProps = {
@@ -40,13 +41,13 @@ export interface SectionHeadingProps extends iconProps {
 }
 
 export interface iconLinkProps extends iconProps {
-  href: string;
+  href: UrlObject;
   showIcon?: boolean;
   children: React.ReactNode;
 }
 
 export interface buttonProps extends iconProps {
-  href: string;
+  href: UrlObject;
   linkType?: "internal" | "external";
   isFile?: boolean;
   showIcon?: boolean;
