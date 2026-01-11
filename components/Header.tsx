@@ -73,7 +73,7 @@ export default function Header() {
             <nav className="hidden md:flex md:gap-12 md:items-center text-[rgb(var(--txt-link))]">
               <div className="flex gap-6">{renderLinks()}</div>
               <Button
-                href={new URL("/Richard-Acquaye_CV.pdf")}
+                href={"/Richard-Acquaye_CV.pdf"}
                 linkType="external"
                 isFile={true}
                 btnType="header"
