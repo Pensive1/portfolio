@@ -115,9 +115,9 @@ export interface projectOverview extends projectMeta {
 
 export interface projectMeta {
   techStack: string[];
-  gitHubUrl?: UrlObject;
-  liveUrl?: UrlObject;
-  demoUrl?: UrlObject;
+  gitHubUrl?: string;
+  liveUrl?: string;
+  demoUrl?: string;
 }
 
 export interface problemContent {
