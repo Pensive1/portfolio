@@ -17,8 +17,8 @@ export default function ProjectThumbnail({
   return (
     <article
       className={`rounded-md bg-[rgb(var(--container-fill))] col-span-full flex flex-col overflow-hidden ${hero
-          ? "md:col-span-full md:grid md:grid-cols-8 md:gap-x-4 xl:grid-cols-10 xl:gap-x-6"
-          : "md:col-span-4"
+        ? "md:col-span-full md:grid md:grid-cols-8 md:gap-x-4 xl:grid-cols-10 xl:gap-x-6"
+        : "md:col-span-4"
         }`}
     >
       <Link
@@ -77,7 +77,7 @@ export default function ProjectThumbnail({
             </Button>
           )}
           {caseStudyUrl && (
-            <Button href={new URL(`/projects/${caseStudyUrl}`)} btnType="secondary">
+            <Button href={`/projects/${caseStudyUrl}`} btnType="secondary">
               Case study
             </Button>
           )}

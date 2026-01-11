@@ -22,7 +22,7 @@ export default function Button({
   };
   return (
     <Link
-      href={href}
+      href={new URL(href)}
       className={`cta-btn ${buttonStyle[btnType]} w-full`}
       target={linkType === "external" ? "_blank" : "_self"}
       download={isFile}

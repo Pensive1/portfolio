@@ -13,9 +13,9 @@ export interface Project {
     };
   };
   slug: string;
-  liveUrl: UrlObject;
-  demoUrl: UrlObject;
-  gitHubUrl: UrlObject;
+  liveUrl: string;
+  demoUrl: string;
+  gitHubUrl: string;
   synopsis: string;
   projDisplay: boolean;
   content: PortableTextBlock[];
