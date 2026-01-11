@@ -9,7 +9,7 @@ import { UrlObject } from "url";
 
 type HeaderLink = {
   name: string,
-  url: UrlObject,
+  url: string,
   isExternal: boolean,
 }
 
@@ -17,16 +17,16 @@ export default function Header() {
   const [isBurgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const [isMobileBreakpoint, setIsMobileBreakpoint] = useState(false);
   const links: HeaderLink[] = [
-    { name: "Projects", url: new URL("/#projects"), isExternal: false },
-    { name: "About", url: new URL("/#about"), isExternal: false },
-    { name: "Blog", url: new URL("https://medium.com/@racquaye89"), isExternal: true },
+    { name: "Projects", url: "/#projects", isExternal: false },
+    { name: "About", url: "/#about", isExternal: false },
+    { name: "Blog", url: "https://medium.com/@racquaye89", isExternal: true },
   ];
 
   const renderLinks = () => {
     return links.map((link, i) => (
       <Link
         key={i}
-        href={link.url}
+        href={new URL(link.url)}
         target={link.isExternal ? "_blank" : "_self"}
       >
         {link.name}

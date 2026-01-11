@@ -10,7 +10,7 @@ export default function IconLink({
 }: iconLinkProps) {
   return (
     <Link
-      href={href}
+      href={new URL(href)}
       className="label flex items-center gap-2 text-[rgb(var(--txt-project-link))]"
       target="_blank"
     >

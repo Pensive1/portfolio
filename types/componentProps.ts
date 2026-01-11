@@ -41,7 +41,7 @@ export interface SectionHeadingProps extends iconProps {
 }
 
 export interface iconLinkProps extends iconProps {
-  href: UrlObject;
+  href: string;
   showIcon?: boolean;
   children: React.ReactNode;
 }
