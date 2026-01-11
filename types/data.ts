@@ -1,5 +1,6 @@
 import { PortableTextBlock } from "sanity";
 import { problemContent } from "./componentProps";
+import { UrlObject } from "url";
 
 export interface Project {
   _id: string;
@@ -12,9 +13,9 @@ export interface Project {
     };
   };
   slug: string;
-  liveUrl: string;
-  demoUrl: string;
-  gitHubUrl: string;
+  liveUrl: UrlObject;
+  demoUrl: UrlObject;
+  gitHubUrl: UrlObject;
   synopsis: string;
   projDisplay: boolean;
   content: PortableTextBlock[];

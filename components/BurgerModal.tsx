@@ -69,7 +69,7 @@ export default function BurgerModal({
             {renderLinks()}
           </nav>
           <Button
-            href="/Richard-Acquaye_CV.pdf"
+            href={new URL("/Richard-Acquaye_CV.pdf")}
             isFile={true}
             linkType="external"
             btnType="header"

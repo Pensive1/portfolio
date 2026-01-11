@@ -77,9 +77,9 @@ export type ProjectThumbnailProps = {
   };
   desc: string;
   techList: string[];
-  liveUrl: string;
-  demoUrl: string;
-  caseStudyUrl: string;
+  liveUrl: UrlObject;
+  demoUrl: UrlObject;
+  caseStudyUrl: UrlObject;
 };
 
 /* --- Problem Points --- */
@@ -115,9 +115,9 @@ export interface projectOverview extends projectMeta {
 
 export interface projectMeta {
   techStack: string[];
-  gitHubUrl?: string;
-  liveUrl?: string;
-  demoUrl?: string;
+  gitHubUrl?: UrlObject;
+  liveUrl?: UrlObject;
+  demoUrl?: UrlObject;
 }
 
 export interface problemContent {

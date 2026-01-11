@@ -16,17 +16,15 @@ export default function ProjectThumbnail({
 }: ProjectThumbnailProps) {
   return (
     <article
-      className={`rounded-md bg-[rgb(var(--container-fill))] col-span-full flex flex-col overflow-hidden ${
-        hero
+      className={`rounded-md bg-[rgb(var(--container-fill))] col-span-full flex flex-col overflow-hidden ${hero
           ? "md:col-span-full md:grid md:grid-cols-8 md:gap-x-4 xl:grid-cols-10 xl:gap-x-6"
           : "md:col-span-4"
-      }`}
+        }`}
     >
       <Link
         href={`/projects/${caseStudyUrl}`}
-        className={`bg-gray-500 aspect-video md:aspect-auto md:flex ${
-          hero && "md:col-span-4 xl:col-span-5"
-        }`}
+        className={`bg-gray-500 aspect-video md:aspect-auto md:flex ${hero && "md:col-span-4 xl:col-span-5"
+          }`}
       >
         <Image
           src={imgSrc.asset._ref && sanityImg(imgSrc.asset._ref).url()}
@@ -38,9 +36,8 @@ export default function ProjectThumbnail({
       </Link>
 
       <div
-        className={`flex flex-col gap-6 p-4 ${
-          hero && "md:col-span-4 md:pl-0 md:pr-4 xl:col-span-5 xl:pl-0 xl:pr-6"
-        }`}
+        className={`flex flex-col gap-6 p-4 ${hero && "md:col-span-4 md:pl-0 md:pr-4 xl:col-span-5 xl:pl-0 xl:pr-6"
+          }`}
       >
         <section className="flex flex-col gap-4 flex-grow">
           <div className="flex flex-col gap-2">
@@ -80,7 +77,7 @@ export default function ProjectThumbnail({
             </Button>
           )}
           {caseStudyUrl && (
-            <Button href={`/projects/${caseStudyUrl}`} btnType="secondary">
+            <Button href={new URL(`/projects/${caseStudyUrl}`)} btnType="secondary">
               Case study
             </Button>
           )}

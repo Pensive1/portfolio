@@ -5,14 +5,21 @@ import IcnBurgerMenu from "./icons/icn_burgerMenu";
 import IcnClose from "./icons/icn_close";
 import BurgerModal from "./BurgerModal";
 import { SyntheticEvent, useState, useEffect } from "react";
+import { UrlObject } from "url";
+
+type HeaderLink = {
+  name: string,
+  url: UrlObject,
+  isExternal: boolean,
+}
 
 export default function Header() {
   const [isBurgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const [isMobileBreakpoint, setIsMobileBreakpoint] = useState(false);
-  const links = [
-    { name: "Projects", url: "/#projects", isExternal: false },
-    { name: "About", url: "/#about", isExternal: false },
-    { name: "Blog", url: "https://medium.com/@racquaye89", isExternal: true },
+  const links: HeaderLink[] = [
+    { name: "Projects", url: new URL("/#projects"), isExternal: false },
+    { name: "About", url: new URL("/#about"), isExternal: false },
+    { name: "Blog", url: new URL("https://medium.com/@racquaye89"), isExternal: true },
   ];
 
   const renderLinks = () => {
@@ -66,7 +73,7 @@ export default function Header() {
             <nav className="hidden md:flex md:gap-12 md:items-center text-[rgb(var(--txt-link))]">
               <div className="flex gap-6">{renderLinks()}</div>
               <Button
-                href={"/Richard-Acquaye_CV.pdf"}
+                href={new URL("/Richard-Acquaye_CV.pdf")}
                 linkType="external"
                 isFile={true}
                 btnType="header"
