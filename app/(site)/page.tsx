@@ -5,14 +5,14 @@ import SectionHeading from "@/components/SectionHeading";
 import { HOMEPAGE_PROJECT_QUERY, HOMEPAGE_QUERY } from "@/sanity/lib/queries";
 import { PortableText } from "@portabletext/react";
 
-import {homepageContent} from "@/types/api"
+import { homepageContent } from "@/types/api"
 import { Project } from "@/types/data";
 
 export default async function Home() {
   const projects = await sanityFetch<Project[]>({
     query: HOMEPAGE_PROJECT_QUERY,
   });
-  const[ { hero, about }] = await sanityFetch<homepageContent>({
+  const [{ hero, about }] = await sanityFetch<homepageContent>({
     query: HOMEPAGE_QUERY
   });
 
@@ -80,8 +80,8 @@ export default async function Home() {
                 title={project.projectName}
                 desc={project.synopsis}
                 techList={project.technologies}
-                caseStudyUrl={project.slug}
-                liveUrl={project.liveUrl}
+                caseStudyUrl={new URL(project.slug)}
+                liveUrl={(project.liveUrl)}
                 demoUrl={project.demoUrl}
               />
             ))}
