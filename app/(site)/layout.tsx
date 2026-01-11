@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   const { isEnabled } = await draftMode();
   return (
     <html lang="en" className="scroll-smooth scroll-p-28">

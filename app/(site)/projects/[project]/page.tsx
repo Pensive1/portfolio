@@ -3,6 +3,7 @@ import { sanityFetch } from "@/sanity/sanity-utils";
 import { PROJECT_QUERY } from "@/sanity/lib/queries";
 import { ProjectPage } from "@/types/data";
 import { PortableText } from "@portabletext/react";
+
 import SectionHeading from "@/components/SectionHeading";
 import Overview from "@/components/projects/sections/Overview";
 import Problems from "@/components/projects/sections/Problems";
