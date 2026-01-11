@@ -77,8 +77,8 @@ export type ProjectThumbnailProps = {
   };
   desc: string;
   techList: string[];
-  liveUrl: UrlObject;
-  demoUrl: UrlObject;
+  liveUrl: string;
+  demoUrl: string;
   caseStudyUrl: UrlObject;
 };
 
