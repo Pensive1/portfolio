@@ -68,12 +68,12 @@ export default function ProjectThumbnail({
 
         <div className={"flex gap-4 flex-col md:flex-row-reverse"}>
           {demoUrl && (
-            <Button href={demoUrl} linkType="external">
+            <Button href={demoUrl} isExternal={true}>
               View demo
             </Button>
           )}
           {liveUrl && (
-            <Button href={liveUrl} linkType="external">
+            <Button href={liveUrl} isExternal={true}>
               See live
             </Button>
           )}
