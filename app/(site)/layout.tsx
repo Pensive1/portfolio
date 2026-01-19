@@ -27,7 +27,7 @@ export default async function RootLayout({
 }>) {
   const { isEnabled } = await draftMode();
   return (
-    <html lang="en" className="scroll-smooth scroll-p-28">
+    <html lang="en" className="scroll-smooth scroll-p-28" data-scroll-behaviour="smooth">
       <body
         className={`${outfit.variable} font-sans xl:flex xl:flex-col xl:items-center xl:overflow-x-hidden`}
       >

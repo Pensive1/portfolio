@@ -7,7 +7,7 @@ import { Route } from "next";
 
 export default function Button({
   href,
-  linkType = "internal",
+  isExternal = false,
   isFile = false,
   btnType = "primary",
   showIcon = false,
@@ -25,7 +25,7 @@ export default function Button({
     <Link
       href={href as Route}
       className={`cta-btn ${buttonStyle[btnType]} w-full`}
-      target={linkType === "external" ? "_blank" : "_self"}
+      target={isExternal ? "_blank" : "_self"}
       download={isFile}
       prefetch={false}
     >

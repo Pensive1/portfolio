@@ -40,15 +40,16 @@ export interface SectionHeadingProps extends iconProps {
 }
 
 export interface iconLinkProps extends iconProps {
-  href: Route;
+  href: string;
   showIcon?: boolean;
+  isExternal?: boolean;
   children: React.ReactNode;
 }
 
 export interface buttonProps extends iconProps {
   href: Route | string;
-  linkType?: "internal" | "external";
   isFile?: boolean;
+  isExternal?: boolean;
   showIcon?: boolean;
   btnType?: "primary" | "secondary" | "tertiary" | "header";
   children: React.ReactNode;

@@ -74,7 +74,6 @@ export default function Header() {
               <div className="flex gap-6">{renderLinks()}</div>
               <Button
                 href={"/Richard-Acquaye_CV.pdf"}
-                linkType="external"
                 isFile={true}
                 btnType="header"
               >
