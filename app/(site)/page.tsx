@@ -80,7 +80,7 @@ export default async function Home() {
                 title={project.projectName}
                 desc={project.synopsis}
                 techList={project.technologies}
-                caseStudyUrl={new URL(project.slug)}
+                caseStudyUrl={project.slug}
                 liveUrl={(project.liveUrl)}
                 demoUrl={project.demoUrl}
               />

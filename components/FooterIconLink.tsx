@@ -9,7 +9,7 @@ export default function FooterIconLink({
 }: iconLinkProps) {
   return (
     <Link
-      href={new URL(href)}
+      href={href}
       target="_blank"
       className="inline-flex gap-2 items-center"
     >

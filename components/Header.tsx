@@ -5,11 +5,11 @@ import IcnBurgerMenu from "./icons/icn_burgerMenu";
 import IcnClose from "./icons/icn_close";
 import BurgerModal from "./BurgerModal";
 import { SyntheticEvent, useState, useEffect } from "react";
-import { UrlObject } from "url";
+import type { Route } from "next";
 
 type HeaderLink = {
   name: string,
-  url: string,
+  url: Route,
   isExternal: boolean,
 }
 
@@ -26,7 +26,7 @@ export default function Header() {
     return links.map((link, i) => (
       <Link
         key={i}
-        href={new URL(link.url)}
+        href={link.url}
         target={link.isExternal ? "_blank" : "_self"}
       >
         {link.name}

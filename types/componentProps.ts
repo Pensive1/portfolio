@@ -1,7 +1,6 @@
 import { PortableTextBlock } from "sanity";
 import { challenge, factor, solution } from "./data";
-import { MutableRefObject, RefObject } from "react";
-import { UrlObject } from "url";
+import type { Route } from "next";
 
 // ICON COMPONENTS
 interface iconList {
@@ -41,13 +40,13 @@ export interface SectionHeadingProps extends iconProps {
 }
 
 export interface iconLinkProps extends iconProps {
-  href: string;
+  href: Route;
   showIcon?: boolean;
   children: React.ReactNode;
 }
 
 export interface buttonProps extends iconProps {
-  href: string;
+  href: Route | string;
   linkType?: "internal" | "external";
   isFile?: boolean;
   showIcon?: boolean;
@@ -79,7 +78,7 @@ export type ProjectThumbnailProps = {
   techList: string[];
   liveUrl: string;
   demoUrl: string;
-  caseStudyUrl: UrlObject;
+  caseStudyUrl: string;
 };
 
 /* --- Problem Points --- */

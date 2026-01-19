@@ -3,6 +3,7 @@ import { sanityImg } from "@/sanity/sanity-utils";
 import Button from "../Button";
 import Image from "next/image";
 import Link from "next/link";
+import type { Route } from "next";
 
 export default function ProjectThumbnail({
   hero,
@@ -77,7 +78,7 @@ export default function ProjectThumbnail({
             </Button>
           )}
           {caseStudyUrl && (
-            <Button href={`/projects/${caseStudyUrl}`} btnType="secondary">
+            <Button href={(`/projects/${caseStudyUrl}`) as Route} btnType="secondary">
               Case study
             </Button>
           )}
