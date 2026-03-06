@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
-import { getProject } from "@/sanity/sanity-utils";
+import { sanityFetch } from "@/sanity/sanity-utils";
+import { PROJECT_QUERY } from "@/sanity/lib/queries";
 import { ProjectPage } from "@/types/data";
 import { PortableText } from "@portabletext/react";
+
 import SectionHeading from "@/components/SectionHeading";
 import Overview from "@/components/projects/sections/Overview";
 import Problems from "@/components/projects/sections/Problems";
@@ -13,10 +15,13 @@ import Impact from "@/components/projects/sections/Impact";
 export default async function Project({
   params,
 }: {
-  params: { project: string };
+  params: Promise<{ project: string }>;
 }) {
-  const slug = params.project;
-  const project: ProjectPage = await getProject(slug);
+  const { project: slug } = await params;
+  const project: ProjectPage = await sanityFetch({
+    query: PROJECT_QUERY,
+    params: { slug },
+  });
 
   // If project is null, link to 404 page
   if (!project) {
@@ -60,11 +65,11 @@ export default async function Project({
           {(project.uiFactorDesc ||
             (project.uiFactors &&
               Object.keys(project.uiFactors).length > 0)) && (
-            <Considerations
-              overview={project.uiFactorDesc}
-              factors={project.uiFactors}
-            />
-          )}
+              <Considerations
+                overview={project.uiFactorDesc}
+                factors={project.uiFactors}
+              />
+            )}
           {project.challengeList &&
             Object.keys(project.challengeList).length > 0 && (
               <Challenges challengeList={project.challengeList} />

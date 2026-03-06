@@ -1,12 +1,20 @@
 import Image from "next/image";
 import ProjectThumbnail from "../../components/home/ProjectThumbnail";
-import { getProjects, getHomeContent, sanityImg } from "@/sanity/sanity-utils";
+import { sanityImg, sanityFetch } from "@/sanity/sanity-utils";
 import SectionHeading from "@/components/SectionHeading";
+import { HOMEPAGE_PROJECT_QUERY, HOMEPAGE_QUERY } from "@/sanity/lib/queries";
 import { PortableText } from "@portabletext/react";
 
+import { homepageContent } from "@/types/api"
+import { Project } from "@/types/data";
+
 export default async function Home() {
-  const projects = await getProjects();
-  const { hero, about } = await getHomeContent();
+  const projects = await sanityFetch<Project[]>({
+    query: HOMEPAGE_PROJECT_QUERY,
+  });
+  const [{ hero, about }] = await sanityFetch<homepageContent>({
+    query: HOMEPAGE_QUERY
+  });
 
   return (
     <>
@@ -73,7 +81,7 @@ export default async function Home() {
                 desc={project.synopsis}
                 techList={project.technologies}
                 caseStudyUrl={project.slug}
-                liveUrl={project.liveUrl}
+                liveUrl={(project.liveUrl)}
                 demoUrl={project.demoUrl}
               />
             ))}

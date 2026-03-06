@@ -9,6 +9,10 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    taint: true,
+  },
+  typedRoutes: true,
 };
 
 module.exports = nextConfig;

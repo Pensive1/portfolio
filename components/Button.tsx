@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Icon from "./Icon";
 import { buttonProps } from "@/types/componentProps";
+import { Route } from "next";
 
 //define types for the component parameters
 
 export default function Button({
   href,
-  linkType = "internal",
+  isExternal = false,
   isFile = false,
   btnType = "primary",
   showIcon = false,
@@ -18,12 +19,13 @@ export default function Button({
     primary: "btn-primary",
     secondary: "btn-secondary",
     tertiary: "btn-tertiary",
+    header: "btn-header",
   };
   return (
     <Link
-      href={href}
+      href={href as Route}
       className={`cta-btn ${buttonStyle[btnType]} w-full`}
-      target={linkType === "external" ? "_blank" : "_self"}
+      target={isExternal ? "_blank" : "_self"}
       download={isFile}
       prefetch={false}
     >
