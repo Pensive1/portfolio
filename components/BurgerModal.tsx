@@ -1,7 +1,7 @@
 "use client";
 import Button from "./Button";
 import { burgerModalProps } from "@/types/componentProps";
-import { BaseSyntheticEvent, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import IcnList from "./icons/icn_list";
 
@@ -13,37 +13,54 @@ export default function BurgerModal({
 }: burgerModalProps) {
   const burgerMenu = useRef<HTMLDialogElement>(null);
   const linkList = useRef<HTMLElement>(null);
-  const pathName = usePathname();
+  const prevPath = useRef(usePathname());
+  const currentPath = usePathname();
+
+  const closeBurgerMenu = useCallback(() => {
+    setBurgerMenuOpen(false);
+    burgerMenu.current?.close();
+    enableScroll();
+  }, []);
+
+  useEffect(() => {
+    // Close menu on hash change
+    const handleHashChange = () => {
+      closeBurgerMenu();
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, [closeBurgerMenu]);
 
   //Modal status check
   useEffect(() => {
     const menu = burgerMenu.current;
+    const isPathChanged = currentPath !== prevPath.current;
 
-    if (isOpen && menu) {
+    console.log(`The previous path is ${prevPath.current}`);
+    console.log(`The current path is ${currentPath}`);
+    console.log(`Has the path changed? : ${isPathChanged}`);
+
+    // If path changed, close the menu
+    if (isPathChanged) {
+      closeBurgerMenu();
+      prevPath.current = currentPath; // Update ref with current path (not usePathname()!)
+      return;
+    }
+
+    // Normal menu logic
+    if (isOpen && menu && isMobileBreakpoint) {
       menu?.show();
       disableScroll();
     } else {
-      menu?.close();
-    }
-  }, [isOpen]);
-
-  // Breakpoint check
-  useEffect(() => {
-    if (!isMobileBreakpoint) {
       closeBurgerMenu();
     }
-  }, [isMobileBreakpoint]);
+  }, [isOpen, isMobileBreakpoint, currentPath, closeBurgerMenu]);
 
-  // Route change check
-  useEffect(() => {
-    closeBurgerMenu();
-  }, [pathName]);
 
-  const closeBurgerMenu = () => {
-    setBurgerMenuOpen(false);
-    burgerMenu.current?.close();
-    enableScroll();
-  };
 
   const disableScroll = () => {
     document.body.classList.add("disable-scroll");
@@ -69,9 +86,8 @@ export default function BurgerModal({
             {renderLinks()}
           </nav>
           <Button
-            href="/Richard-Acquaye_CV.pdf"
+            href={"/Richard-Acquaye_CV.pdf"}
             isFile={true}
-            linkType="external"
             btnType="header"
           >
             <IcnList size={24} fillColor="white" />

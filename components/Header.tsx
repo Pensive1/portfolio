@@ -5,11 +5,18 @@ import IcnBurgerMenu from "./icons/icn_burgerMenu";
 import IcnClose from "./icons/icn_close";
 import BurgerModal from "./BurgerModal";
 import { SyntheticEvent, useState, useEffect } from "react";
+import type { Route } from "next";
+
+type HeaderLink = {
+  name: string,
+  url: Route,
+  isExternal: boolean,
+}
 
 export default function Header() {
   const [isBurgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const [isMobileBreakpoint, setIsMobileBreakpoint] = useState(false);
-  const links = [
+  const links: HeaderLink[] = [
     { name: "Projects", url: "/#projects", isExternal: false },
     { name: "About", url: "/#about", isExternal: false },
     { name: "Blog", url: "https://medium.com/@racquaye89", isExternal: true },
@@ -67,7 +74,6 @@ export default function Header() {
               <div className="flex gap-6">{renderLinks()}</div>
               <Button
                 href={"/Richard-Acquaye_CV.pdf"}
-                linkType="external"
                 isFile={true}
                 btnType="header"
               >

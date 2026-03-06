@@ -1,5 +1,6 @@
 import { PortableTextBlock } from "sanity";
 import { problemContent } from "./componentProps";
+import { UrlObject } from "url";
 
 export interface Project {
   _id: string;

@@ -15,9 +15,9 @@ const config = defineConfig({
     visionTool(),
     presentationTool({
       previewUrl: {
-        draftMode: {
+        initial: process.env.NEXT_PUBLIC_SANITY_STUDIO_URL,
+        previewMode: {
           enable: '/api/draft-mode/enable',
-          disable: '/api/draft-mode/disable',
         },
       },
       resolve: {

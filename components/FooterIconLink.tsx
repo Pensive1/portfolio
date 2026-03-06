@@ -8,13 +8,13 @@ export default function FooterIconLink({
   children,
 }: iconLinkProps) {
   return (
-    <Link
+    <a
       href={href}
       target="_blank"
       className="inline-flex gap-2 items-center"
     >
       <Icon iconType={iconType} use={"footer"} size={2} />
       <span className="sm:hidden md:inline">{children}</span>
-    </Link>
+    </a>
   );
 }
