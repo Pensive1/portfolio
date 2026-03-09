@@ -1,7 +1,7 @@
 "use client";
 import Button from "./Button";
 import { burgerModalProps } from "@/types/componentProps";
-import { useCallback, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import IcnList from "./icons/icn_list";
 
@@ -13,69 +13,55 @@ export default function BurgerModal({
 }: burgerModalProps) {
   const burgerMenu = useRef<HTMLDialogElement>(null);
   const linkList = useRef<HTMLElement>(null);
-  const prevPath = useRef(usePathname());
   const currentPath = usePathname();
 
-  const closeBurgerMenu = useCallback(() => {
+  const closeBurgerMenu = () => {
     setBurgerMenuOpen(false);
-    burgerMenu.current?.close();
-    enableScroll();
-  }, []);
+  };
 
-  useEffect(() => {
-    // Close menu on hash change
-    const handleHashChange = () => {
-      closeBurgerMenu();
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
-  }, [closeBurgerMenu]);
-
-  //Modal status check
   useEffect(() => {
     const menu = burgerMenu.current;
-    const isPathChanged = currentPath !== prevPath.current;
+    if (!menu) return;
 
-    console.log(`The previous path is ${prevPath.current}`);
-    console.log(`The current path is ${currentPath}`);
-    console.log(`Has the path changed? : ${isPathChanged}`);
-
-    // If path changed, close the menu
-    if (isPathChanged) {
-      closeBurgerMenu();
-      prevPath.current = currentPath; // Update ref with current path (not usePathname()!)
-      return;
-    }
-
-    // Normal menu logic
-    if (isOpen && menu && isMobileBreakpoint) {
-      menu?.show();
-      disableScroll();
+    if (isOpen && isMobileBreakpoint) {
+      menu.show();
+      document.body.classList.add("disable-scroll");
     } else {
-      closeBurgerMenu();
+      menu.close();
+      document.body.classList.remove("disable-scroll");
     }
-  }, [isOpen, isMobileBreakpoint, currentPath, closeBurgerMenu]);
+  }, [isOpen, isMobileBreakpoint]);
 
+  // Close on path or hash change (covers back button too)
+  useEffect(() => {
+    closeBurgerMenu();
+  }, [currentPath]);
 
+  useEffect(() => {
+    const handlePopState = () => closeBurgerMenu();
+    const handleHashChange = () => closeBurgerMenu();
 
-  const disableScroll = () => {
-    document.body.classList.add("disable-scroll");
-  };
+    window.addEventListener("popstate", handlePopState);
+    window.addEventListener("hashchange", handleHashChange);
 
-  const enableScroll = () => {
-    document.body.classList.remove("disable-scroll");
-  };
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
+  // Cleanup scroll lock on unmount
+  useEffect(() => {
+    return () => {
+      document.body.classList.remove("disable-scroll");
+    };
+  }, []);
 
   return (
     <>
       <dialog
         className="burger-menu w-full fixed top-[70px] p-4 pt-8 bg-[rgba(var(--modal-fill))] z-20 rounded-b-xl md:hidden"
         ref={burgerMenu}
-        onClose={enableScroll}
       >
         <div className="menu__content flex flex-col gap-16">
           <nav
