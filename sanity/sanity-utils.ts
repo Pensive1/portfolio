@@ -28,19 +28,23 @@ export async function sanityFetch<QueryResponse>({
   params = {},
   revalidate = 60,
   tags = [],
+  previewDrafts = false,
 }: {
   query: string;
   params?: QueryParams;
   revalidate?: number | false;
   tags?: string[];
+  previewDrafts?: boolean,
 }) {
   const { isEnabled } = await draftMode();
-  if (isEnabled && !token) {
+  const useDrafts = isEnabled && previewDrafts;
+
+  if (useDrafts && !token) {
     throw new Error("Missing environment variable SANITY_API_READ_TOKEN");
   }
 
   let dynamicRevalidate = revalidate;
-  if (isEnabled) {
+  if (useDrafts) {
     // Do not cache in Draft Mode
     dynamicRevalidate = 0;
   } else if (tags.length) {
@@ -48,19 +52,17 @@ export async function sanityFetch<QueryResponse>({
     dynamicRevalidate = false;
   }
 
-  return client.fetch<QueryResponse>(query, params, {
-    ...(isEnabled &&
-      ({
-        perspective: "drafts",
-        token: token,
-        stega: true,
-        useCdn: false
-      } satisfies QueryOptions)),
-    next: {
-      revalidate: dynamicRevalidate,
-      tags,
+  return client.fetch<QueryResponse>(query, params, useDrafts
+    ? {
+      perspective: "drafts",
+      token,
+      stega: true,
+      useCdn: false
+    }
+    : {
+      perspective: "published"
     },
-  });
+  );
 }
 
 // Gets homepage content
