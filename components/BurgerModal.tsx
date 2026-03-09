@@ -17,7 +17,7 @@ export default function BurgerModal({
 
   const closeBurgerMenu = useCallback(() => {
     setBurgerMenuOpen(false);
-  }, []);
+  }, [setBurgerMenuOpen]);
 
   useEffect(() => {
     const menu = burgerMenu.current;
