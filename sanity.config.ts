@@ -9,7 +9,7 @@ const config = defineConfig({
   dataset: 'production',
   title: 'My Dev Portfolio',
   apiVersion: process.env.NEXT_PUBLIC_SANITY_STUDIO_API_VERSION,
-  basePath: process.env.SANITY_CLIENT_BASEPATH,
+  basePath: process.env.NEXT_PUBLIC_SANITY_STUDIO_URL,
   plugins: [
     structureTool(),
     visionTool(),
@@ -37,7 +37,7 @@ const config = defineConfig({
   ],
   stega: {
     enabled: process.env.NEXT_PUBLIC_VERCEL_ENV === "preview",
-    studioUrl: process.env.SANITY_CLIENT_BASEPATH,
+    studioUrl: process.env.NEXT_PUBLIC_SANITY_STUDIO_URL,
   },
   schema: { types: schemas }
 });

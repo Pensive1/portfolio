@@ -6,7 +6,7 @@ const config = {
   token: process.env.SANITY_API_READ_TOKEN,
   stega: {
     enabled: process.env.NEXT_PUBLIC_VERCEL_ENV === "preview",
-    studioUrl: process.env.SANITY_CLIENT_BASEPATH,
+    studioUrl: process.env.NEXT_PUBLIC_SANITY_STUDIO_URL,
   },
 };
 
