@@ -41,7 +41,7 @@ export default function Header() {
 
   //Screen width check
   useEffect(() => {
-    const mobScreenSize = window.matchMedia("(width < 744px)");
+    const mobScreenSize = window.matchMedia("(width < 933px)");
 
     const handleScreenWidthChange = (e: MediaQueryListEvent) => {
       setIsMobileBreakpoint(e.matches);
