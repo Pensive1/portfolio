@@ -1,7 +1,7 @@
 "use client";
 import Button from "./Button";
 import { burgerModalProps } from "@/types/componentProps";
-import { useEffect, useRef } from "react";
+import { useEffect, useCallback, useRef } from "react";
 import { usePathname } from "next/navigation";
 import IcnList from "./icons/icn_list";
 
@@ -15,9 +15,9 @@ export default function BurgerModal({
   const linkList = useRef<HTMLElement>(null);
   const currentPath = usePathname();
 
-  const closeBurgerMenu = () => {
+  const closeBurgerMenu = useCallback(() => {
     setBurgerMenuOpen(false);
-  };
+  }, [setBurgerMenuOpen]);
 
   useEffect(() => {
     const menu = burgerMenu.current;
@@ -35,7 +35,7 @@ export default function BurgerModal({
   // Close on path or hash change (covers back button too)
   useEffect(() => {
     closeBurgerMenu();
-  }, [currentPath]);
+  }, [currentPath, closeBurgerMenu]);
 
   useEffect(() => {
     const handlePopState = () => closeBurgerMenu();
@@ -48,7 +48,7 @@ export default function BurgerModal({
       window.removeEventListener("popstate", handlePopState);
       window.removeEventListener("hashchange", handleHashChange);
     };
-  }, []);
+  }, [closeBurgerMenu]);
 
   // Cleanup scroll lock on unmount
   useEffect(() => {
