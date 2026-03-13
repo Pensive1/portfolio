@@ -71,6 +71,7 @@ const project = {
   ],
 
   fields: [
+    // PROJECT META
     {
       name: "projArchiveState",
       title: "Archived",
@@ -155,6 +156,8 @@ const project = {
       group: "meta",
       initialValue: false,
     },
+
+    // OVERVIEW
     {
       name: "projOverview",
       title: "Summary",
@@ -164,6 +167,8 @@ const project = {
       type: "array",
       of: [{ type: "block" }],
     },
+
+    // BACKGROUND
     {
       name: "bgContent",
       title: "Context",
@@ -173,6 +178,8 @@ const project = {
       type: "array",
       of: [{ type: "block" }],
     },
+
+    // BRIEF
     {
       name: "projBrief",
       title: "The Brief",
@@ -182,6 +189,8 @@ const project = {
       type: "array",
       of: [{ type: "block" }],
     },
+
+    // ROLE
     {
       name: "projRole",
       title: "Your Role",
@@ -191,6 +200,8 @@ const project = {
       type: "array",
       of: [{ type: "block" }],
     },
+
+    // PROBLEMS
     {
       name: "problemContent",
       title: "Pain Points",
@@ -236,6 +247,8 @@ const project = {
       of: [{ type: "block" }],
       group: "problems",
     },
+
+    // SOLUTIONS
     {
       title: "Solution outline",
       name: "solutionOutline",
@@ -278,7 +291,7 @@ const project = {
       },
     },
 
-    // TECHNICAL APPROACH GOES HERE
+    // TECHNICAL APPROACH
     {
       name: "projTechApproach",
       title: "Approaches",
@@ -305,7 +318,8 @@ const project = {
             {
               title: "Description",
               name: "approachDesc",
-              type: "text",
+              type: 'array',
+              of: [{ type: 'block' }]
             },
           ],
         },
@@ -323,7 +337,7 @@ const project = {
       group: "techApproach",
     },
 
-    // TECHNICAL RATIONALE GOES HERE
+    // TECHNICAL RATIONALE
     {
       name: "projTechStack",
       title: "Tech Stack",
@@ -345,7 +359,8 @@ const project = {
             {
               title: "Short Description",
               name: "desc",
-              type: "text",
+              type: "array",
+              of: [{ type: "block" }],
               description: "Explain why this technology was chosen",
             },
             {
@@ -533,7 +548,7 @@ const project = {
       options: { layout: "list" },
     },
 
-    // ADDITIONAL SCREENSHOTS GO HERE
+    // ADDITIONAL SCREENSHOTS
     {
       name: "projScreenshots",
       title: "Screenshots (Optional)",
@@ -572,7 +587,7 @@ const project = {
       },
     },
 
-    // PERFORMANCE AND QA GO HERE
+    // PERFORMANCE AND QA
     {
       name: "projPerformanceQA",
       title: "Performance and Quality Assurance Details",
@@ -583,7 +598,7 @@ const project = {
       of: [{ type: "block" }],
     },
 
-    // IMPACT GO HERE
+    // IMPACT
     {
       title: "Type",
       name: "impactType",
@@ -606,7 +621,7 @@ const project = {
       of: [{ type: "block" }],
     },
 
-    // LEARNINGS GO HERE
+    // LEARNINGS
     {
       name: "projLearnings",
       title: "Lessons Learned",
