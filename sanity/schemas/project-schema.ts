@@ -302,22 +302,22 @@ const project = {
       of: [
         {
           title: "Approach Details",
-          type: "object",
           name: "approachDetail",
+          type: "object",
           fields: [
             {
               title: "Title",
-              type: "string",
               name: "title",
+              type: "string",
             },
             {
               title: "Image",
+              name: "img",
               type: "image",
-              name: "approachImg",
             },
             {
               title: "Description",
-              name: "approachDesc",
+              name: "desc",
               type: 'array',
               of: [{ type: 'block' }]
             },
@@ -348,13 +348,13 @@ const project = {
       of: [
         {
           title: "Chosen Technology",
-          type: "object",
           name: "stackDetail",
+          type: "object",
           fields: [
             {
               title: "Name",
-              type: "string",
               name: "title",
+              type: "string",
             },
             {
               title: "Short Description",
@@ -364,8 +364,8 @@ const project = {
               description: "Explain why this technology was chosen",
             },
             {
-              name: "image",
               title: "Image (optional)",
+              name: "img",
               type: "image",
               options: { hotspot: true },
               fields: [
@@ -408,24 +408,24 @@ const project = {
       of: [
         {
           title: "Technical Challenge",
-          type: "object",
           name: "stackDetail",
+          type: "object",
           fields: [
             {
               title: "Title",
-              type: "string",
               name: "title",
+              type: "string",
             },
             {
               title: "Description",
               name: "desc",
-              description: "Were there any edge cases, limitations or constraints (eg time or knowledge)?",
               type: "array",
               of: [{ type: "block" }],
+              description: "Were there any edge cases, limitations or constraints (eg time or knowledge)?",
             },
             {
-              name: "image",
               title: "Image (optional)",
+              name: "img",
               type: "image",
               options: { hotspot: true },
               fields: [
@@ -558,12 +558,12 @@ const project = {
       of: [
         {
           title: "Screenshot",
-          type: "object",
           name: "projScreen",
+          type: "object",
           fields: [
             {
-              name: "image",
               title: "Image",
+              name: "img",
               type: "image",
               options: { hotspot: true },
               fields: [
@@ -576,8 +576,8 @@ const project = {
             },
             {
               title: "Caption (Optional)",
-              type: "string",
               name: "caption",
+              type: "string",
             },
           ],
         },
