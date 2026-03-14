@@ -146,6 +146,22 @@ export interface solutions {
   solutions: solution[];
 }
 
+/**
+ * A block section point consists of a title, description and an optional image.
+ * 
+ * As the name suggests, these are only for block sections containing a section title and text block.
+ * These are usually contained in arrays
+ */
+export interface BlockSectionPoint {
+  title: string;
+  desc: PortableTextBlock[];
+  img: {
+    asset: {
+      _ref: string;
+    };
+  };
+}
+
 export interface considerations {
   overview: PortableTextBlock[];
   factors: factor[];

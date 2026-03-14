@@ -33,7 +33,7 @@ export default async function Project({
   return (
     <>
       <div className="text-[var(--body-colour)] col-span-full flex flex-col items-center gap-12 md:gap-14 2xl:gap-16">
-        <Overview
+        <Overview //TODO: Rename to "Meta"
           projectName={project.projectName}
           synopsis={project.synopsis}
           heroImage={project.heroImage}
@@ -108,6 +108,14 @@ export default async function Project({
 
           {project.impactType && project.impactContent && (
             <Impact type={project.impactType} content={project.impactContent} />
+          )}
+
+          {project.projLearnings && (
+            <StandardSection
+              sectionIcon="question"
+              sectionTitle="Learnings"
+              textContent={project.projLearnings}
+            />
           )}
         </div>
       </div>
