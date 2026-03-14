@@ -11,6 +11,7 @@ import Solutions from "@/components/projects/sections/Solutions";
 import Considerations from "@/components/projects/sections/Considerations";
 import Challenges from "@/components/projects/sections/Challenges";
 import Impact from "@/components/projects/sections/Impact";
+import StandardSection from "@/components/projects/sections/StandardSection";
 
 export default async function Project({
   params,
@@ -28,6 +29,7 @@ export default async function Project({
     notFound();
   }
 
+  console.log(project);
   return (
     <>
       <div className="text-[var(--body-colour)] col-span-full flex flex-col items-center gap-12 md:gap-14 2xl:gap-16">
@@ -50,18 +52,29 @@ export default async function Project({
               </div>
             </section>
           )}
+
+          {project.projBrief && (
+            <StandardSection
+              sectionIcon="question"
+              sectionTitle="The Brief"
+              textContent={project.projBrief}
+            />
+          )}
+
           {project.problemContent && (
             <Problems
               content={project.problemContent}
               conclusion={project.problemConclusion}
             />
           )}
+
           {project.solutions && (
             <Solutions
               outline={project.solutionOutline}
               solutions={project.solutions}
             />
           )}
+
           {(project.uiFactorDesc ||
             (project.uiFactors &&
               Object.keys(project.uiFactors).length > 0)) && (
@@ -70,10 +83,13 @@ export default async function Project({
                 factors={project.uiFactors}
               />
             )}
+
           {project.challengeList &&
             Object.keys(project.challengeList).length > 0 && (
               <Challenges challengeList={project.challengeList} />
-            )}
+            )
+          }
+
           {project.impactType && project.impactContent && (
             <Impact type={project.impactType} content={project.impactContent} />
           )}

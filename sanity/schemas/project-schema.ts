@@ -41,16 +41,16 @@ const project = {
       title: "Technical Rationale",
     },
     {
+      name: "techChallenges",
+      title: "Technical Challenges",
+    },
+    {
       name: "uiConsiderations",
       title: "Visual Considerations",
     },
     {
       name: "screenshots",
       title: "Screenshots",
-    },
-    {
-      name: "techChallenges",
-      title: "Technical Challenges",
     },
     {
       name: "challenges",

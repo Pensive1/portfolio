@@ -120,6 +120,12 @@ export interface projectMeta {
   demoUrl?: string;
 }
 
+export interface standardSectionProps {
+  sectionTitle: string;
+  sectionIcon: SectionHeadingProps["iconType"];
+  textContent: PortableTextBlock[];
+}
+
 export interface problemContent {
   title: string;
   problemImg: {

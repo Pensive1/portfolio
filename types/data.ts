@@ -23,7 +23,10 @@ export interface Project {
 }
 
 export interface ProjectPage extends Project {
+  projOverview: PortableTextBlock[];
   bgContent: PortableTextBlock[];
+  projBrief: PortableTextBlock[];
+  projRole: PortableTextBlock[];
   problemContent: Array<problemContent>;
   challengeList: challenge[];
   impactType: string;
@@ -33,6 +36,7 @@ export interface ProjectPage extends Project {
   problemConclusion: PortableTextBlock[];
   uiFactorDesc: PortableTextBlock[];
   uiFactors: factor[];
+  projLearnings: PortableTextBlock[];
 }
 
 export interface solution {
