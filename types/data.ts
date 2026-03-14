@@ -32,6 +32,8 @@ export interface ProjectPage extends Project {
   impactContent: PortableTextBlock[];
   solutionOutline: PortableTextBlock[];
   solutions: Array<solution>;
+  projTechApproach: BlockSectionPoint[];
+  techApproachSummary: PortableTextBlock[];
   problemConclusion: PortableTextBlock[];
   uiFactorDesc: PortableTextBlock[];
   uiFactors: factor[];
@@ -64,3 +66,30 @@ export interface challenge {
   challengeDesc: PortableTextBlock[];
 }
 [];
+
+/**
+ * A block section point consists of a title, description and an optional image.
+ * 
+ * As the name suggests, these are only for block sections containing a section title and text block.
+ * These are usually contained in arrays
+ */
+export interface BlockSectionPoint {
+  _key: string;
+  title: string;
+  desc: PortableTextBlock[];
+  img: {
+    asset: {
+      _ref: string;
+    };
+  };
+}
+
+/**
+ * Standard images consist of an image URL and alt text (optional).
+ */
+export type StandardImage = {
+  alt?: string;
+  asset: {
+    _ref: string;
+  };
+}

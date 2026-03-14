@@ -1,5 +1,5 @@
 import SectionHeading from "@/components/SectionHeading";
-import Feature from "../Feature";
+import Feature from "./Feature";
 import { PortableText } from "@portabletext/react";
 import { solutions } from "@/types/componentProps";
 

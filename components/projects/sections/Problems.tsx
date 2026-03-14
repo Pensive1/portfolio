@@ -1,5 +1,5 @@
 import SectionHeading from "@/components/SectionHeading";
-import ProblemPoint from "../ProblemPoint";
+import ProblemPoint from "./ProblemPoint";
 import { PortableText } from "@portabletext/react";
 import { problems } from "@/types/componentProps";
 

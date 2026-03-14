@@ -12,6 +12,7 @@ import Considerations from "@/components/projects/sections/Considerations";
 import Challenges from "@/components/projects/sections/Challenges";
 import Impact from "@/components/projects/sections/Impact";
 import StandardSection from "@/components/projects/sections/StandardSection";
+import TechnicalApproach from "@/components/projects/sections/TechnicalApproach";
 
 export default async function Project({
   params,
@@ -29,6 +30,7 @@ export default async function Project({
     notFound();
   }
 
+  console.clear();
   console.log(project);
   return (
     <>
@@ -88,6 +90,13 @@ export default async function Project({
             <Solutions
               outline={project.solutionOutline}
               solutions={project.solutions}
+            />
+          )}
+
+          {project.projTechApproach && (
+            <TechnicalApproach
+              approaches={project.projTechApproach}
+              summary={project.techApproachSummary}
             />
           )}
 

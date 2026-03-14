@@ -1,5 +1,5 @@
 import { PortableTextBlock } from "sanity";
-import { challenge, factor, solution } from "./data";
+import { BlockSectionPoint, challenge, factor, solution, StandardImage } from "./data";
 import type { Route } from "next";
 
 // ICON COMPONENTS
@@ -146,20 +146,9 @@ export interface solutions {
   solutions: solution[];
 }
 
-/**
- * A block section point consists of a title, description and an optional image.
- * 
- * As the name suggests, these are only for block sections containing a section title and text block.
- * These are usually contained in arrays
- */
-export interface BlockSectionPoint {
-  title: string;
-  desc: PortableTextBlock[];
-  img: {
-    asset: {
-      _ref: string;
-    };
-  };
+export interface techApproachProps {
+  approaches: BlockSectionPoint[];
+  summary: PortableTextBlock[];
 }
 
 export interface considerations {
