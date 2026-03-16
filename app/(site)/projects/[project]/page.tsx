@@ -12,7 +12,7 @@ import Considerations from "@/components/projects/sections/Considerations";
 import Challenges from "@/components/projects/sections/Challenges";
 import Impact from "@/components/projects/sections/Impact";
 import StandardSection from "@/components/projects/sections/StandardSection";
-import TechnicalApproach from "@/components/projects/sections/TechnicalApproach";
+import NestedSection from "@/components/projects/sections/elements/NestedSection";
 
 export default async function Project({
   params,
@@ -94,9 +94,10 @@ export default async function Project({
           )}
 
           {project.projTechApproach && (
-            <TechnicalApproach
-              approaches={project.projTechApproach}
-              summary={project.techApproachSummary}
+            <NestedSection
+              title={"Technical Approach"}
+              subSectionData={project.projTechApproach}
+              summaryData={project.techApproachSummary}
             />
           )}
 

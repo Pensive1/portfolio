@@ -146,9 +146,11 @@ export interface solutions {
   solutions: solution[];
 }
 
-export interface techApproachProps {
-  approaches: BlockSectionPoint[];
-  summary: PortableTextBlock[];
+export interface nestedSectionProps {
+  iconType?: SectionHeadingProps["iconType"];
+  title: string;
+  subSectionData: BlockSectionPoint[];
+  summaryData?: PortableTextBlock[];
 }
 
 export interface considerations {

@@ -1,15 +1,15 @@
 import SectionHeading from "@/components/SectionHeading";
-import { techApproachProps } from "@/types/componentProps";
+import { nestedSectionProps } from "@/types/componentProps";
 import { PortableText } from "@portabletext/react";
 
-function TechnicalApproach({ approaches, summary }: techApproachProps) {
+export default function NestedSection({ iconType, title, subSectionData, summaryData }: nestedSectionProps) {
     return (
         <section className="project__tech-approach">
-            <SectionHeading iconType="question">
-                Technical Approach
+            <SectionHeading iconType={iconType}>
+                {title}
             </SectionHeading>
 
-            {approaches.length && approaches.map(
+            {subSectionData.length && subSectionData.map(
                 point => (
                     <div
                         key={point._key}
@@ -21,14 +21,12 @@ function TechnicalApproach({ approaches, summary }: techApproachProps) {
                 ))
             }
 
-            {summary && (
+            {summaryData && (
                 // TODO: PROVIDE PADDING ABOVE
                 <div className="tech-approach__summary">
-                    <PortableText value={summary} />
+                    <PortableText value={summaryData} />
                 </div>
             )}
         </section>
-    )
+    );
 }
-
-export default TechnicalApproach;
