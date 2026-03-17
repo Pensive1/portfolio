@@ -40,6 +40,7 @@ export interface ProjectPage extends Project {
   techChallengeSummaryImage: StandardImage;
   uiFactorDesc: PortableTextBlock[];
   uiFactors: factor[];
+  projScreenshots: screenshot[];
   projPerformanceQA: PortableTextBlock[];
   impactType: string;
   projLearnings: PortableTextBlock[];
@@ -62,15 +63,19 @@ export interface factor {
   uiFactorPoints: {
     description: PortableTextBlock[];
   };
-}
-[];
+}[];
 
 export interface challenge {
   index: number;
   challengeTitle: string;
   challengeDesc: PortableTextBlock[];
+}[];
+
+export interface screenshot {
+  _key: string;
+  caption?: string;
+  img: StandardImage;
 }
-[];
 
 /**
  * A block section point consists of a title, description and an optional image.

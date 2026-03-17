@@ -1,5 +1,5 @@
 import { PortableTextBlock } from "sanity";
-import { BlockSectionPoint, challenge, factor, solution, StandardImage } from "./data";
+import { BlockSectionPoint, challenge, factor, screenshot, solution, StandardImage } from "./data";
 import type { Route } from "next";
 
 // ICON COMPONENTS
@@ -160,6 +160,10 @@ export interface considerations {
 
 export interface challenges {
   challengeList: challenge[];
+}
+
+export interface screenshotProps {
+  mockups: screenshot[];
 }
 
 export interface impact {

@@ -13,6 +13,7 @@ import Challenges from "@/components/projects/sections/Challenges";
 import Impact from "@/components/projects/sections/Impact";
 import StandardSection from "@/components/projects/sections/StandardSection";
 import NestedSection from "@/components/projects/sections/elements/NestedSection";
+import Screenshots from "@/components/projects/sections/Screenshots";
 
 export default async function Project({
   params,
@@ -132,7 +133,9 @@ export default async function Project({
             )
           }
 
-          {/* SCREENSHOT SECTION GOES HERE */}
+          {project.projScreenshots &&
+            <Screenshots mockups={project.projScreenshots} />
+          }
 
           {project.projPerformanceQA && (
             <StandardSection
