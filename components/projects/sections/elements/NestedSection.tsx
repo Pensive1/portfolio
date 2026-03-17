@@ -1,6 +1,6 @@
 import Image from "next/image"
-import { sanityImg } from "@/sanity/sanity-utils";
 import SectionHeading from "@/components/SectionHeading";
+import { sanityImg } from "@/sanity/sanity-utils";
 import { nestedSectionProps } from "@/types/componentProps";
 import { PortableText } from "@portabletext/react";
 import { StandardImage } from "@/types/data";

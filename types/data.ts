@@ -36,6 +36,8 @@ export interface ProjectPage extends Project {
   projTechStack: BlockSectionPoint[];
   stackSummaryImage: StandardImage;
   techApproachSummary: PortableTextBlock[];
+  projTechChallenges: BlockSectionPoint[];
+  techChallengeSummaryImage: StandardImage;
   problemConclusion: PortableTextBlock[];
   uiFactorDesc: PortableTextBlock[];
   uiFactors: factor[];
