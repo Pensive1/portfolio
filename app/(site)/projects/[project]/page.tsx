@@ -132,6 +132,16 @@ export default async function Project({
             )
           }
 
+          {/* SCREENSHOT SECTION GOES HERE */}
+
+          {project.projPerformanceQA && (
+            <StandardSection
+              sectionIcon="question"
+              sectionTitle="Performance and Quality Assurance"
+              textContent={project.projPerformanceQA}
+            />
+          )}
+
           {project.impactType && project.impactContent && (
             <Impact type={project.impactType} content={project.impactContent} />
           )}

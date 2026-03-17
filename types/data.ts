@@ -27,8 +27,8 @@ export interface ProjectPage extends Project {
   projBrief: PortableTextBlock[];
   projRole: PortableTextBlock[];
   problemContent: Array<problemContent>;
+  problemConclusion: PortableTextBlock[];
   challengeList: challenge[];
-  impactType: string;
   impactContent: PortableTextBlock[];
   solutionOutline: PortableTextBlock[];
   solutions: Array<solution>;
@@ -38,9 +38,10 @@ export interface ProjectPage extends Project {
   techApproachSummary: PortableTextBlock[];
   projTechChallenges: BlockSectionPoint[];
   techChallengeSummaryImage: StandardImage;
-  problemConclusion: PortableTextBlock[];
   uiFactorDesc: PortableTextBlock[];
   uiFactors: factor[];
+  projPerformanceQA: PortableTextBlock[];
+  impactType: string;
   projLearnings: PortableTextBlock[];
 }
 
