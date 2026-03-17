@@ -33,6 +33,8 @@ export interface ProjectPage extends Project {
   solutionOutline: PortableTextBlock[];
   solutions: Array<solution>;
   projTechApproach: BlockSectionPoint[];
+  projTechStack: BlockSectionPoint[];
+  stackSummaryImage: StandardImage;
   techApproachSummary: PortableTextBlock[];
   problemConclusion: PortableTextBlock[];
   uiFactorDesc: PortableTextBlock[];
@@ -89,6 +91,7 @@ export interface BlockSectionPoint {
  */
 export type StandardImage = {
   alt?: string;
+  _type: string;
   asset: {
     _ref: string;
   };

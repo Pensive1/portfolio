@@ -150,7 +150,7 @@ export interface nestedSectionProps {
   iconType?: SectionHeadingProps["iconType"];
   title: string;
   subSectionData: BlockSectionPoint[];
-  summaryData?: PortableTextBlock[];
+  summaryData?: PortableTextBlock[] | StandardImage;
 }
 
 export interface considerations {

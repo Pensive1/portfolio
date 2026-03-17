@@ -101,6 +101,14 @@ export default async function Project({
             />
           )}
 
+          {project.projTechStack && (
+            <NestedSection
+              title={"Technical Rationale"}
+              subSectionData={project.projTechStack}
+              summaryData={project.stackSummaryImage}
+            />
+          )}
+
           {(project.uiFactorDesc ||
             (project.uiFactors &&
               Object.keys(project.uiFactors).length > 0)) && (
