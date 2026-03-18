@@ -24,6 +24,7 @@ interface iconList {
   | "speed"
   | "strategy"
   | "sword"
+  | "target"
   | "video"
   | "wand";
 }

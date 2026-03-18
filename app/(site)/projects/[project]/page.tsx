@@ -66,7 +66,7 @@ export default async function Project({
 
           {project.projBrief && (
             <StandardSection
-              sectionIcon="list"
+              sectionIcon="target"
               sectionTitle="The Brief"
               textContent={project.projBrief}
             />

@@ -23,6 +23,7 @@ const iconCollection: iconMap = {
   speed: dynamic(() => import("./icons/icn_speed")),
   strategy: dynamic(() => import("./icons/icn_strategy")),
   sword: dynamic(() => import("./icons/icn_sword")),
+  target: dynamic(() => import("./icons/icn_target")),
   video: dynamic(() => import("./icons/icn_video")),
   wand: dynamic(() => import("./icons/icn_wand")),
 };
