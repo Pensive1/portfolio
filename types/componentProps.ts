@@ -19,6 +19,7 @@ interface iconList {
   | "medium"
   | "question"
   | "route"
+  | "speed"
   | "sword"
   | "video"
   | "wand";

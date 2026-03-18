@@ -140,7 +140,7 @@ export default async function Project({
 
           {project.projPerformanceQA && (
             <StandardSection
-              sectionIcon="question"
+              sectionIcon="speed"
               sectionTitle="Performance and Quality Assurance"
               textContent={project.projPerformanceQA}
             />
