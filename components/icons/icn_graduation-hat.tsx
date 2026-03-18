@@ -12,7 +12,7 @@ export default function GradHat({ size, fillColor }: svgIconProps) {
       <g
         id="mortarboard_line"
         fill='none'
-        fill-rule='evenodd'
+        fillRule='evenodd'
       >
 
         <path

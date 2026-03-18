@@ -21,6 +21,7 @@ interface iconList {
   | "question"
   | "route"
   | "speed"
+  | "strategy"
   | "sword"
   | "video"
   | "wand";

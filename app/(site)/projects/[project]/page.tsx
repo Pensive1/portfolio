@@ -97,6 +97,7 @@ export default async function Project({
           {project.projTechApproach && (
             <NestedSection
               title={"Technical Approach"}
+              iconType="strategy"
               subSectionData={project.projTechApproach}
               summaryData={project.techApproachSummary}
             />
