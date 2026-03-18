@@ -11,6 +11,7 @@ const iconCollection: iconMap = {
   externalLink: dynamic(() => import("./icons/icn_externalLink")),
   education: dynamic(() => import("./icons/icn_graduation-hat")),
   github: dynamic(() => import("./icons/icn_github")),
+  images: dynamic(() => import("./icons/icn_images")),
   info: dynamic(() => import("./icons/icn_info")),
   linkedin: dynamic(() => import("./icons/icn_linkedin")),
   list: dynamic(() => import("./icons/icn_list")),

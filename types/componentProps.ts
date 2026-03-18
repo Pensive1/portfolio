@@ -12,6 +12,7 @@ interface iconList {
   | "education"
   | "email"
   | "github"
+  | "images"
   | "info"
   | "linkedin"
   | "list"

@@ -1,6 +1,6 @@
 import { svgIconProps } from "@/types/componentProps";
 
-export default function Code({ size, fillColor }: svgIconProps) {
+export default function GradHat({ size, fillColor }: svgIconProps) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

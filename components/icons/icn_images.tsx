@@ -1,6 +1,6 @@
 import { svgIconProps } from "@/types/componentProps";
 
-export default function Speed({ size, fillColor }: svgIconProps) {
+export default function Images({ size, fillColor }: svgIconProps) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -8,8 +8,10 @@ export default function Speed({ size, fillColor }: svgIconProps) {
       height={size}
       viewBox='0 0 24 24'
     >
+      <title>photo_album_line</title>
+
       <g
-        id="dashboard_4_line"
+        id="photo_album_line"
         fill='none'
       >
         <path
@@ -17,7 +19,7 @@ export default function Speed({ size, fillColor }: svgIconProps) {
         />
         <path
           fill={fillColor}
-          d='M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2m0 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16m0 2a6 6 0 0 1 4.8 9.6 1 1 0 1 1-1.6-1.2 4 4 0 0 0-4.002-6.32 1 1 0 0 1-.397-1.96A6.02 6.02 0 0 1 12 6m-5.88 4.801a1 1 0 1 1 1.96.398c-.052.258-.08.526-.08.801 0 .902.297 1.731.8 2.4a1 1 0 0 1-1.6 1.2A5.978 5.978 0 0 1 6 12c0-.41.041-.81.12-1.199m2.587-3.508 2.775 2.775a2 2 0 1 1-1.414 1.414L7.293 8.707a1 1 0 0 1 1.414-1.414'
+          d='M20 6a2 2 0 0 1 2 2v11.333a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm-8.268 7.944L7.136 18.54l-.066.06-.07.054v.68h13v-.68l-.07-.053-.066-.06-2.24-2.24-.353.354.055.055a1 1 0 0 1-1.32 1.497l-.094-.083zM17 3a2 2 0 0 1 1.995 1.85L19 5H5a1 1 0 0 0-.993.883L4 6v12a2 2 0 0 1-1.995-1.85L2 16V6a3 3 0 0 1 2.824-2.995L5 3zm3 5H7v7.848L10.848 12a1.25 1.25 0 0 1 1.768 0l3.241 3.24.884-.883a1.25 1.25 0 0 1 1.768 0L20 15.848zm-3.5 1.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3'
         />
       </g>
     </svg>

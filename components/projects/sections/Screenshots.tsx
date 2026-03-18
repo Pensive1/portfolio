@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Screenshots({ mockups }: screenshotProps) {
     return (
         <section className="project__screenshots">
-            <SectionHeading iconType="question">
+            <SectionHeading iconType="images">
                 Screenshots
             </SectionHeading>
 
