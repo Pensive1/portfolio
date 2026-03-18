@@ -105,7 +105,7 @@ export default async function Project({
 
           {project.projTechStack && (
             <NestedSection
-              title={"Technical Stack"}
+              title={"Technologies Used"}
               iconType="code"
               subSectionData={project.projTechStack}
               summaryData={project.stackSummaryImage}

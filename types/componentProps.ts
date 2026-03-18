@@ -8,6 +8,7 @@ interface iconList {
   | "brain"
   | "burgerMenu"
   | "close"
+  | "craft"
   | "code"
   | "externalLink"
   | "education"

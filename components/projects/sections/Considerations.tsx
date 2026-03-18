@@ -7,7 +7,7 @@ import { sanityImg } from "@/sanity/sanity-utils";
 export default function Considerations({ overview, factors }: considerations) {
   return (
     <section className="project__considerations">
-      <SectionHeading iconType="info">UI Considerations</SectionHeading>
+      <SectionHeading iconType="craft">UI Considerations</SectionHeading>
 
       {overview && (
         <div className="content flex flex-col pb-6 gap-1 md:gap-2 2xl:gap-3">

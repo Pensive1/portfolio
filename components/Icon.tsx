@@ -7,6 +7,7 @@ const iconCollection: iconMap = {
   brain: dynamic(() => import("./icons/icn_brain")),
   burgerMenu: dynamic(() => import("./icons/icn_burgerMenu")),
   close: dynamic(() => import("./icons/icn_close")),
+  craft: dynamic(() => import("./icons/icn_pencil-ruler")),
   code: dynamic(() => import("./icons/icn_code")),
   email: dynamic(() => import("./icons/icn_email")),
   externalLink: dynamic(() => import("./icons/icn_externalLink")),
