@@ -58,10 +58,11 @@ export interface solution {
 [];
 
 export interface factor {
-  index: number;
+  _key: string;
   uiFactorPointTitle: string;
   uiFactorPoints: {
     description: PortableTextBlock[];
+    image: StandardImage;
   };
 }[];
 
