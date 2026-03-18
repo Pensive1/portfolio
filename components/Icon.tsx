@@ -9,6 +9,7 @@ const iconCollection: iconMap = {
   code: dynamic(() => import("./icons/icn_code")),
   email: dynamic(() => import("./icons/icn_email")),
   externalLink: dynamic(() => import("./icons/icn_externalLink")),
+  education: dynamic(() => import("./icons/icn_graduation-hat")),
   github: dynamic(() => import("./icons/icn_github")),
   info: dynamic(() => import("./icons/icn_info")),
   medal: dynamic(() => import("./icons/icn_medal")),

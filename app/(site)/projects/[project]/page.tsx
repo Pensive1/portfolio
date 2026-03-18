@@ -66,7 +66,7 @@ export default async function Project({
 
           {project.projBrief && (
             <StandardSection
-              sectionIcon="question"
+              sectionIcon="list"
               sectionTitle="The Brief"
               textContent={project.projBrief}
             />
@@ -104,7 +104,8 @@ export default async function Project({
 
           {project.projTechStack && (
             <NestedSection
-              title={"Technical Rationale"}
+              title={"Technical Stack"}
+              iconType="code"
               subSectionData={project.projTechStack}
               summaryData={project.stackSummaryImage}
             />
@@ -151,7 +152,7 @@ export default async function Project({
 
           {project.projLearnings && (
             <StandardSection
-              sectionIcon="question"
+              sectionIcon="education"
               sectionTitle="Learnings"
               textContent={project.projLearnings}
             />

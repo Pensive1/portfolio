@@ -9,6 +9,7 @@ interface iconList {
   | "close"
   | "code"
   | "externalLink"
+  | "education"
   | "email"
   | "github"
   | "info"
