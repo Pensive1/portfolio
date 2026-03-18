@@ -17,6 +17,7 @@ const iconCollection: iconMap = {
   list: dynamic(() => import("./icons/icn_list")),
   medal: dynamic(() => import("./icons/icn_medal")),
   medium: dynamic(() => import("./icons/icn_medium")),
+  person: dynamic(() => import("./icons/icn_person")),
   question: dynamic(() => import("./icons/icn_question")),
   route: dynamic(() => import("./icons/icn_route")),
   speed: dynamic(() => import("./icons/icn_speed")),

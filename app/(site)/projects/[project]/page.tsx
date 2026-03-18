@@ -74,7 +74,7 @@ export default async function Project({
 
           {project.projRole && (
             <StandardSection
-              sectionIcon="question"
+              sectionIcon="person"
               sectionTitle="My Role"
               textContent={project.projRole}
             />

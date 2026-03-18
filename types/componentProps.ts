@@ -18,6 +18,7 @@ interface iconList {
   | "list"
   | "medal"
   | "medium"
+  | "person"
   | "question"
   | "route"
   | "speed"
