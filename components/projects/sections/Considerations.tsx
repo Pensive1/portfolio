@@ -26,7 +26,7 @@ export default function Considerations({ overview, factors }: considerations) {
                 <PortableText value={factor.uiFactorPoints.description} />
               </div>
 
-              {factor.uiFactorPoints.image.asset._ref && (<Image
+              {factor.uiFactorPoints.image?.asset._ref && (<Image
                 src={sanityImg(factor.uiFactorPoints.image.asset._ref).fit("max").url()}
                 alt={factor.uiFactorPoints.image.alt ?? `Am image summarising ${factor.uiFactorPointTitle}`}
                 width={1280}

@@ -49,7 +49,7 @@ export default async function Project({
         <div className="xl:w-[83.33%] flex flex-col gap-12 md:gap-14 2xl:gap-16">
           {project.projOverview && (
             <StandardSection
-              sectionIcon="question"
+              sectionIcon="info"
               sectionTitle="Overview"
               textContent={project.projOverview}
             />
