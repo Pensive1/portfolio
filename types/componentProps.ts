@@ -5,6 +5,7 @@ import type { Route } from "next";
 // ICON COMPONENTS
 interface iconList {
   iconType?:
+  | "brain"
   | "burgerMenu"
   | "close"
   | "code"

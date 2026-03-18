@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 const iconCollection: iconMap = {
   //Import icon svgs based on phrase
+  brain: dynamic(() => import("./icons/icn_brain")),
   burgerMenu: dynamic(() => import("./icons/icn_burgerMenu")),
   close: dynamic(() => import("./icons/icn_close")),
   code: dynamic(() => import("./icons/icn_code")),

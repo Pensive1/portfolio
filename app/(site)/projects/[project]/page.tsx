@@ -115,6 +115,7 @@ export default async function Project({
           {project.projTechChallenges && (
             <NestedSection
               title={"Technical Challenges"}
+              iconType="brain"
               subSectionData={project.projTechChallenges}
               summaryData={project.techChallengeSummaryImage}
             />
