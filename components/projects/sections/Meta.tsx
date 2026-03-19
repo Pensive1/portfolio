@@ -3,7 +3,7 @@ import { sanityImg } from "@/sanity/sanity-utils";
 import { projectOverview } from "@/types/componentProps";
 import OverviewMeta from "./OverviewMeta";
 
-export default function Overview({
+export default function Meta({
   projectName,
   synopsis,
   heroImage,
