@@ -15,28 +15,27 @@ export default function Considerations({ overview, factors }: considerations) {
         </div>
       )}
 
-      {Object.keys(factors).length > 0 && (
-        <ul className="section-content">
-          {factors.map((factor) => (
-            <li key={factor._key}>
-              <h4 className="text-[rgb(var(--txt-body-title))]">
-                {factor.uiFactorPointTitle}
-              </h4>
-              <div className="section-content">
-                <PortableText value={factor.uiFactorPoints.description} />
-              </div>
+      {Object.keys(factors).length > 0 &&
+        factors.map((factor) => (
+          <div
+            key={factor._key}
+            className="section-content"
+          >
+            <h4 className="text-[rgb(var(--txt-body-title))]">
+              {factor.uiFactorPointTitle}
+            </h4>
+            <PortableText value={factor.uiFactorPoints.description} />
 
-              {factor.uiFactorPoints.image?.asset._ref && (<Image
-                src={sanityImg(factor.uiFactorPoints.image.asset._ref).fit("max").url()}
-                alt={factor.uiFactorPoints.image.alt ?? `Am image summarising ${factor.uiFactorPointTitle}`}
-                width={1280}
-                height={720}
-                className="w-full h-auto max-h-[600px] object-contain"
-              />)}
-            </li>
-          ))}
-        </ul>
-      )}
+            {factor.uiFactorPoints.image?.asset._ref && (<Image
+              src={sanityImg(factor.uiFactorPoints.image.asset._ref).fit("max").url()}
+              alt={factor.uiFactorPoints.image.alt ?? `Am image summarising ${factor.uiFactorPointTitle}`}
+              width={1280}
+              height={720}
+              className="w-full h-auto max-h-[600px] object-contain"
+            />)}
+          </div>
+        ))
+      }
     </section>
   );
 }

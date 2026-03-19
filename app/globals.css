@@ -167,7 +167,7 @@ body {
 
   /* PROJECT SECTION CONTENT */
   .section-content{
-    @apply flex flex-col gap-2;
+    @apply flex flex-col gap-2 pl-9;
 
     @media (min-width: 744){
       gap: 1.125rem;
@@ -200,7 +200,8 @@ body {
   }
 
   .section-content strong{
-    color: rgb(var(--txt-section-subheading))
+    color: rgb(var(--txt-section-subheading));
+    font-weight: 600;
   }
 
   .section-content h4 {
@@ -212,6 +213,9 @@ body {
   .section-content > h4:first-child {
     margin-top: 0;
   }
+
+  /* TODO: Improve styling for sub-sections */
+  /* Contain them in a rounded container, a light background and inner padding */
 
   .disable-scroll{
     overflow-y: hidden;
