@@ -10,19 +10,19 @@ export default function Considerations({ overview, factors }: considerations) {
       <SectionHeading iconType="craft">UI Considerations</SectionHeading>
 
       {overview && (
-        <div className="content flex flex-col pb-6 gap-1 md:gap-2 2xl:gap-3">
+        <div className="section-content pb-6">
           <PortableText value={overview} />
         </div>
       )}
 
       {Object.keys(factors).length > 0 && (
-        <ul className="flex flex-col gap-4">
+        <ul className="section-content">
           {factors.map((factor) => (
             <li key={factor._key}>
               <h4 className="text-[rgb(var(--txt-body-title))]">
                 {factor.uiFactorPointTitle}
               </h4>
-              <div className="content flex flex-col gap-1 md:gap-2 2xl:gap-3">
+              <div className="section-content">
                 <PortableText value={factor.uiFactorPoints.description} />
               </div>
 

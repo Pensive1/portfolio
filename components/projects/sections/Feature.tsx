@@ -24,7 +24,7 @@ export default function Feature({
         <h4 className="feat-title text-[rgb(var(--txt-body-title))]">
           {featTitle}
         </h4>
-        <div className="content feat-desc flex flex-col gap-2">{children}</div>
+        <div className="section-content feat-desc">{children}</div>
       </section>
     </article>
   );

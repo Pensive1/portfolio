@@ -7,7 +7,7 @@ function StandardSection({ sectionTitle, sectionIcon, textContent }: standardSec
         <>
             <section>
                 <SectionHeading iconType={sectionIcon}>{sectionTitle}</SectionHeading>
-                <div className="content flex flex-col gap-1 md:gap-2 2xl:gap-3)]">
+                <div className="section-content">
                     <PortableText value={textContent} />
                 </div>
             </section>

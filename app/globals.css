@@ -50,6 +50,7 @@
   --txt-heading: var(--color-indigo-dye);
   --txt-headline: var(--color-slate-grey);
   --txt-section-title: var(--color-indigo-dye);
+  --txt-section-subheading: var(--color-carrib-current);
   --txt-body-title: var(--color-indigo-dye);
   --txt-body: var(--color-dim-grey);
   --txt-link: var(--color-carrib-current);
@@ -100,7 +101,8 @@
   --txt-logo: var(--color-isabelline);
   --txt-heading: var(--color-ash-grey);
   --txt-headline: var(--color-cadet-grey);
-  --txt-section-title: var(--color-cadet-grey-light);
+  --txt-section-title: var(--color-ash-grey);
+  --txt-section-subheading: var(--color-cadet-grey-light);
   --txt-body-title: var(--color-cadet-grey-light);
   --txt-body: var(--color-battle-grey);
   --txt-link: var(--color-ash-grey);
@@ -156,28 +158,59 @@ body {
   }
   /*  Body */
   p, ul li, ol li {
-    @apply text-sm font-normal md:text-base 2xl:text-lg;
+    @apply text-sm font-normal md:text-base;
   }
-  /* Content lists */
-  .content > ul li, .content > ol li {
+  
+  p {
+    @apply leading-6 xl:leading-7;
+  }
+
+  /* PROJECT SECTION CONTENT */
+  .section-content{
+    @apply flex flex-col gap-2;
+
+    @media (min-width: 744){
+      gap: 1.125rem;
+    }
+  }
+
+  .section-content > ul li, .section-content > ol li {
     list-style: disc;
     margin-left: 1.5rem;
   }
 
-  .content > ul, .content > ol{
+  .section-content > ul, .section-content > ol{
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    padding-block: .8rem;
+    padding-bottom: .8rem;
   }
   
-  .content > p a{
+  .section-content > p:nth-of-type(n+2){
+    padding-top: .5rem;
+  }
+
+  .section-content > p a{
     color: rgb(var(--icn-fill));
     transition: color .2s;
   }
   
-  .content > p a:hover{
+  .section-content > p a:hover{
     color: rgb(var(--icn-fill-hover));
+  }
+
+  .section-content strong{
+    color: rgb(var(--txt-section-subheading))
+  }
+
+  .section-content h4 {
+    color: rgb(var(--txt-section-subheading));
+    font-size: 1.125rem;
+    margin-top: 1.125rem;
+  }
+  
+  .section-content > h4:first-child {
+    margin-top: 0;
   }
 
   .disable-scroll{

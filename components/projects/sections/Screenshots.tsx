@@ -10,7 +10,7 @@ export default function Screenshots({ mockups }: screenshotProps) {
                 Screenshots
             </SectionHeading>
 
-            <div className="flex flex-col gap-4">
+            <div className="section-content">
                 {mockups.length && mockups.map(screen => (
                     <figure
                         className="flex flex-col gap-2"

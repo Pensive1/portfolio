@@ -13,7 +13,7 @@ export default function Challenges({ challengeList }: challenges) {
             <h4 className="text-[rgb(var(--txt-body-title))]">
               {challenge.challengeTitle}
             </h4>
-            <div className="content flex flex-col gap-1 md:gap-2 2xl:gap-3">
+            <div className="section-content flex flex-col gap-1 md:gap-2 2xl:gap-3">
               <PortableText value={challenge.challengeDesc} />
             </div>
           </div>

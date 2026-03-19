@@ -32,9 +32,9 @@ export default function NestedSection({ iconType, title, subSectionData, summary
                 point => (
                     <div
                         key={point._key}
-                        className="content tech-approach__point"
+                        className="section-content tech-approach__point"
                     >
-                        <h3>{point.title}</h3>
+                        <h4>{point.title}</h4>
                         <PortableText value={point.desc} />
                     </div>
                 ))

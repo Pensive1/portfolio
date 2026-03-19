@@ -22,7 +22,7 @@ export default function Problems({ content, conclusion }: problems) {
           ))}
         </div>
         {conclusion && (
-          <div className="content flex flex-col gap-1 md:gap-2 2xl:gap-3">
+          <div className="section-content">
             <PortableText value={conclusion} />
           </div>
         )}

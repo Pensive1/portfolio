@@ -22,7 +22,7 @@ export default function Solutions({ outline, solutions }: solutions) {
         </div>
 
         {outline && (
-          <div className="content flex flex-col gap-2 md:gap-3 xl:gap-4">
+          <div className="section-content">
             <PortableText value={outline} />
           </div>
         )}
