@@ -69,7 +69,8 @@
   --btn-tertiary-txt: var(--color-carrib-current);
   --btn-burger-menu-fill: var(--color-indigo-dye);
   
-  /* Icon Fills */
+  /* Fills */
+  --subsection-fill: var(--color-cocoa-brown-light), .03;
   --icn-fill: var(--color-cocoa-brown);
   --icn-fill-hover: var(--color-cocoa-brown-light);
   --icn-footer: var(--color-indigo-dye);
@@ -121,7 +122,8 @@
   --btn-tertiary-txt: var(--color-ash-grey);
   --btn-burger-menu-fill: var(--color-carrib-current);
 
-  /* Icon Fills */
+  /* Fills */
+  --subsection-fill: var(--color-ash-grey), .03;
   --icn-fill: var(--color-shamrock);
   --icn-fill-hover: var(--color-shamrock-light);
   --icn-footer: var(--color-battle-grey);
@@ -167,19 +169,19 @@ body {
 
   /* PROJECT SECTION CONTENT */
   .section-content{
-    @apply flex flex-col gap-2 pl-9;
+    @apply flex flex-col gap-2 pl-9 pr-4;
 
     @media (min-width: 744){
       gap: 1.125rem;
     }
   }
 
-  .section-content > ul li, .section-content > ol li {
+  .section-content ul li, .section-content ol li {
     list-style: disc;
     margin-left: 1.5rem;
   }
 
-  .section-content > ul, .section-content > ol{
+  .section-content ul, .section-content ol{
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -190,12 +192,12 @@ body {
     padding-top: .5rem;
   }
 
-  .section-content > p a{
+  .section-content p a{
     color: rgb(var(--icn-fill));
     transition: color .2s;
   }
   
-  .section-content > p a:hover{
+  .section-content p a:hover{
     color: rgb(var(--icn-fill-hover));
   }
 
@@ -214,8 +216,39 @@ body {
     margin-top: 0;
   }
 
-  /* TODO: Improve styling for sub-sections */
-  /* Contain them in a rounded container, a light background and inner padding */
+  .section-content img{
+    border-radius: .375rem;
+  }
+
+  .subsection {
+    row-gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .point{
+    background-color: rgba(var(--subsection-fill));
+    padding: 0.625rem .75rem .75rem;
+    border-radius: .375rem;
+  }
+  
+  .point:has(img){
+    /* background-color: rgba(255 255 255 / .03);
+    padding: 0.625rem .75rem .75rem; */
+    border-radius: .875rem;
+  }
+
+  .point h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .point ul:not(:first-child), .point ol:not(:first-child){
+    padding-top: 0.8rem;
+  }
+  
+  .point ul:last-child, .point ol:last-child{
+    padding-bottom: 0;
+  }
 
   .disable-scroll{
     overflow-y: hidden;

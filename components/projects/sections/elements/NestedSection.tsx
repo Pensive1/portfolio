@@ -28,22 +28,25 @@ export default function NestedSection({ iconType, title, subSectionData, summary
                 {title}
             </SectionHeading>
 
-            {subSectionData.length && subSectionData.map(
-                point => (
-                    <div
-                        key={point._key}
-                        className="section-content tech-approach__point"
-                    >
-                        <h4>{point.title}</h4>
-                        <PortableText value={point.desc} />
-                    </div>
-                ))
-            }
+            <div className="section-content subsection">
+                {subSectionData.length && subSectionData.map(
+                    point => (
+                        <div
+                            key={point._key}
+                            className="point"
+                        >
+                            <h4>{point.title}</h4>
+                            <PortableText value={point.desc} />
+                        </div>
 
-            {/* Render summary image OR text */}
+                        // TODO: RENDER POINT IMAGE IF IT EXISTS
+                    ))
+                }
+            </div>
+
             {summaryData && isSummaryAnImg(summaryData)
                 ? (
-                    <div className="tech-approach__summary">
+                    <div className="section-content tech-approach__summary">
                         <Image
                             src={sanityImg(summaryData.asset._ref).fit("max").url()}
                             alt={summaryData?.alt ?? `A image depicting the ${title}`}
@@ -53,7 +56,7 @@ export default function NestedSection({ iconType, title, subSectionData, summary
                     </div>
                 ) : (
                     // TODO: PROVIDE PADDING ABOVE
-                    <div className="tech-approach__summary">
+                    <div className="section-content tech-approach__summary">
                         <PortableText value={summaryData as PortableTextBlock[]} />
                     </div>
                 )}
