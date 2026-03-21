@@ -44,7 +44,7 @@ export default async function Project({
           demoUrl={project.demoUrl}
         />
 
-        <div className="xl:w-[83.33%] flex flex-col gap-12 md:gap-14 2xl:gap-16">
+        <div className="xl:w-[83.33%] flex flex-col gap-16 md:gap-[6.25rem]">
           {project.projOverview && (
             <StandardSection
               sectionIcon="info"
