@@ -10,8 +10,7 @@ export default function Screenshots({ mockups }: screenshotProps) {
                 Screenshots
             </SectionHeading>
 
-            {/* TODO: Space out screenshots via tailwind */}
-            <div className="section-content">
+            <div className="section-content screenshots">
                 {mockups.length && mockups.map(screen => (
                     <figure
                         className="flex flex-col gap-2"
@@ -26,7 +25,7 @@ export default function Screenshots({ mockups }: screenshotProps) {
                         />
 
                         {screen.caption && <figcaption
-                            className="text-sm text-center text-[rgb(var(--txt-body-title))]"
+                            className="text-xs italic text-center text-[rgb(var(--txt-body-title))] md:text-sm"
                         >
                             {screen.caption}
                         </figcaption>}
