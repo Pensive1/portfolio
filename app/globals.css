@@ -70,7 +70,7 @@
   --btn-burger-menu-fill: var(--color-indigo-dye);
   
   /* Fills */
-  --subsection-fill: var(--color-cocoa-brown-light), .03;
+  --subsection-fill: var(--color-cocoa-brown), .07;
   --icn-fill: var(--color-cocoa-brown);
   --icn-fill-hover: var(--color-cocoa-brown-light);
   --icn-footer: var(--color-indigo-dye);
@@ -123,7 +123,7 @@
   --btn-burger-menu-fill: var(--color-carrib-current);
 
   /* Fills */
-  --subsection-fill: var(--color-ash-grey), .03;
+  --subsection-fill: var(--color-ash-grey), .05;
   --icn-fill: var(--color-shamrock);
   --icn-fill-hover: var(--color-shamrock-light);
   --icn-footer: var(--color-battle-grey);
