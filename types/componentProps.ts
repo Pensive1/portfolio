@@ -161,6 +161,12 @@ export interface nestedSectionProps {
   summaryData?: PortableTextBlock[] | StandardImage;
 }
 
+export interface SummaryProps {
+  sectionTitle: string;
+  data: nestedSectionProps["summaryData"];
+  classTitle: string;
+}
+
 export interface considerations {
   overview: PortableTextBlock[];
   factors: factor[];
