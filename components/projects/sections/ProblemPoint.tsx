@@ -18,7 +18,7 @@ export default function ProblemPoint({
         className="bg-gray-500 rounded-md aspect-video w-full"
       />
       <section className="flex flex-col gap-2">
-        <h4 className="text-[rgb(var(--txt-body-title))]">{pointTitle}</h4>
+        <p className="text-[rgb(var(--txt-body-title))] font-semibold">{pointTitle}</p>
         <p className="prob-desc">{children}</p>
       </section>
     </article>
