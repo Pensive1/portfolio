@@ -20,7 +20,7 @@ export default function Summary({ sectionTitle, data, classTitle }: SummaryProps
         <div className={`section-content ${classTitle}__summary`}>
             <Image
                 src={sanityImg(data.asset._ref).fit("max").url()}
-                alt={data.alt ?? `A image summarizing the ${sectionTitle.toLowerCase()}`}
+                alt={data.alt ?? `A image summarizing ${"the" + sectionTitle?.toLowerCase() || "this section"}`}
                 width={1280}
                 height={720}
             />

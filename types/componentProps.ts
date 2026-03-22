@@ -162,7 +162,7 @@ export interface nestedSectionProps {
 }
 
 export interface SummaryProps {
-  sectionTitle: string;
+  sectionTitle?: string;
   data: nestedSectionProps["summaryData"];
   classTitle: string;
 }

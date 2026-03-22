@@ -5,7 +5,7 @@ import { PortableText } from "@portabletext/react";
 export default function Challenges({ challengeList }: challenges) {
   return (
     <section className="project__challenges">
-      <SectionHeading iconType="sword">Challenges</SectionHeading>
+      <SectionHeading iconType="sword">Project Challenges</SectionHeading>
 
       <div className="flex flex-col gap-4">
         {challengeList.map((challenge, index) => (

@@ -2,6 +2,7 @@ import SectionHeading from "@/components/SectionHeading";
 import ProblemPoint from "./ProblemPoint";
 import { PortableText } from "@portabletext/react";
 import { problems } from "@/types/componentProps";
+import Summary from "./elements/Summary";
 
 export default function Problems({ content, conclusion }: problems) {
   return (
@@ -21,11 +22,8 @@ export default function Problems({ content, conclusion }: problems) {
             </ProblemPoint>
           ))}
         </div>
-        {conclusion && (
-          <div className="section-content">
-            <PortableText value={conclusion} />
-          </div>
-        )}
+
+        {conclusion && <Summary classTitle="problems" data={conclusion} />}
       </div>
     </section>
   );
