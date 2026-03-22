@@ -67,6 +67,7 @@ export interface factor {
 }[];
 
 export interface challenge {
+  _key: string;
   index: number;
   challengeTitle: string;
   challengeDesc: PortableTextBlock[];
