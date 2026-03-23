@@ -5,7 +5,7 @@ export const HOMEPAGE_QUERY = groq`*[_type == "page" && title == "Home Page"]{
       "about": pageBuilder[1]
     }`;
 
-export const HOMEPAGE_PROJECT_QUERY = groq`*[_type == "project"]{
+export const HOMEPAGE_PROJECT_QUERY = groq`*[_type == "project" && projArchiveState == false]{
     _id,
     _createdAt,
     projectName,

@@ -170,7 +170,6 @@ body {
   /* PROJECT SECTION CONTENT */
   .section-content{
     @apply flex flex-col gap-2 pl-9 pr-4;
-
   }
 
   .section-content ul li, .section-content ol li {

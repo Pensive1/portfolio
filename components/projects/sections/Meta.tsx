@@ -21,6 +21,7 @@ export default function Meta({
       </div>
 
       <div className="flex flex-col gap-4 w-full xl:w-[83.33%]">
+        {/* TODO: ADD BORDER AROUND IMAGERY */}
         <Image
           alt={heroImage?.alt ? heroImage.alt : `${projectName} feature image`}
           src={
