@@ -11,7 +11,8 @@ export const projectList = defineType({
             name: "heading",
             type: "string",
             title: "Section Heading",
-            initialValue: "Projects"
+            initialValue: "Projects",
+            description: "Used for identifying this section outside this popup",
         }),
         defineField({
             name: "projects",
