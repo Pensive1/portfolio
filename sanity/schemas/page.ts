@@ -19,6 +19,10 @@ const pageType = defineType({
           name: "aboutSection",
           type: "aboutSection",
         }),
+        defineArrayMember({
+          name: "projectList",
+          type: "projectList",
+        }),
       ],
     }),
   ],
