@@ -42,7 +42,7 @@ export default function ProjectThumbnail({
       >
         <section className="flex flex-col gap-4 flex-grow">
           <div className="flex flex-col gap-2">
-            <h4 className="text-[rgb(var(--txt-section-title))]">{title}</h4>
+            <h4 className="text-base font-semibold text-[rgb(var(--txt-section-title))]">{title}</h4>
             <p className="text-[rgb(var(--txt-body))]">{desc}</p>
           </div>
 
