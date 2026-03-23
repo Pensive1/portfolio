@@ -2,30 +2,26 @@ import Image from "next/image";
 import ProjectThumbnail from "../../components/home/ProjectThumbnail";
 import { sanityImg, sanityFetch } from "@/sanity/sanity-utils";
 import SectionHeading from "@/components/SectionHeading";
-import { HOMEPAGE_PROJECT_QUERY, HOMEPAGE_QUERY } from "@/sanity/lib/queries";
+import { HOMEPAGE_QUERY } from "@/sanity/lib/queries";
 import { PortableText } from "@portabletext/react";
 
 import { homepageContent } from "@/types/api"
-import { Project } from "@/types/data";
 
 export default async function Home() {
-  const projects = await sanityFetch<Project[]>({
-    query: HOMEPAGE_PROJECT_QUERY,
-  });
-  const [{ hero, about }] = await sanityFetch<homepageContent>({
+  const { hero, about, projects: projectList } = await sanityFetch<homepageContent>({
     query: HOMEPAGE_QUERY
   });
 
   return (
     <>
-      {Object.keys(hero).length > 0 && (
+      {Object.keys(hero).length && (
         <section className="col-span-full flex flex-col gap-2 rounded-md p-4 text-center justify-center h-[40dvh]">
           <h1 className="text-[rgb(var(--txt-heading))]">{hero.heading}</h1>
           <h2 className="text-[rgb(var(--txt-headline))]">{hero.tagline}</h2>
         </section>
       )}
 
-      {Object.keys(about).length > 0 && (
+      {Object.keys(about).length && (
         <section className="col-span-full" id="about">
           <SectionHeading showIcon={false}>About</SectionHeading>
           <div className="rounded-2xl bg-[rgba(var(--txt-body),.06)] p-4 flex flex-col gap-8 items-center md:flex-row-reverse md:items-start">
@@ -67,12 +63,12 @@ export default async function Home() {
         </section>
       )}
 
-      {projects.length > 0 && (
+      {projectList?.length && (
         <section className="col-span-full flex flex-col gap-4" id="projects">
           <SectionHeading showIcon={false}>Projects</SectionHeading>
 
           <div className="grid grid-cols-4 gap-4 md:grid-cols-8 xl:grid-cols-12">
-            {projects.map((project) => (
+            {projectList.map((project) => (
               <ProjectThumbnail
                 key={project._id}
                 hero={project.projDisplay}
