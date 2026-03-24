@@ -21,7 +21,6 @@ export default function Meta({
       </div>
 
       <div className="flex flex-col gap-4 w-full xl:w-[83.33%]">
-        {/* TODO: ADD BORDER AROUND IMAGERY */}
         <Image
           alt={heroImage?.alt ? heroImage.alt : `${projectName} feature image`}
           src={
@@ -32,7 +31,7 @@ export default function Meta({
           height={720}
           sizes="100vw"
           priority={true}
-          className="aspect-video w-full bg-gray-400 rounded-lg md:rounded-xl xl:rounded-2xl 2xl:rounded-3xl"
+          className="aspect-video w-full bg-[rgba(var(--action-bg-fill))] rounded-lg border border-[rgb(var(--border-img))] md:rounded-xl xl:rounded-2xl 2xl:rounded-3xl"
         />
         <OverviewMeta
           techStack={techStack}

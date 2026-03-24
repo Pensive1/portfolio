@@ -16,13 +16,12 @@ export default function Screenshots({ mockups }: screenshotProps) {
                         className="flex flex-col gap-2"
                         key={screen._key}
                     >
-                        {/* TODO: ADD BORDER AROUND IMAGERY */}
                         <Image
                             src={sanityImg(screen.img.asset._ref).fit("max").url()}
                             alt={screen.img?.alt ?? `A preview of ${screen.caption}`}
                             width={1280}
                             height={720}
-                            className="w-full h-auto max-h-[600px] object-contain"
+                            className="w-full h-auto max-h-[600px] object-contain bg-[rgba(var(--action-bg-fill))]"
                         />
 
                         {screen.caption && <figcaption
