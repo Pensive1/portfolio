@@ -188,12 +188,12 @@ body {
     padding-top: .5rem;
   }
 
-  .section-content p a{
+  .section-content a{
     color: rgb(var(--icn-fill));
     transition: color .2s;
   }
   
-  .section-content p a:hover{
+  .section-content a:hover{
     color: rgb(var(--icn-fill-hover));
   }
 
