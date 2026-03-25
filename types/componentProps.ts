@@ -36,8 +36,22 @@ export type svgIconProps = {
   fillColor: string;
 };
 
+/**
+ * Defines the icon symbol, size and where its used.
+ */
 export interface iconProps extends iconList {
+  /** Controls the rendered size of the icon. 
+   * - 1 - 16px
+   * - 2 - 24px
+   * - 3 - 28px
+   * @default 2
+   */
   size?: 1 | 2 | 3;
+
+  /** 
+   * Defines the context in which the icon is used, affecting its styling.
+   * @default "default"
+  */
   use?: "default" | "button" | "sectionHeading" | "projectMeta" | "footer";
 }
 
