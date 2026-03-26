@@ -12,7 +12,6 @@ export default function Meta({
   liveUrl,
   demoUrl,
 }: projectOverview) {
-  // console.log(sanityImg(heroImage.asset._ref).url());
   return (
     <section className="flex flex-col w-full md:items-center gap-6 pb-4 md:gap-10 md:pb-5 xl:pb-14 xl:gap-14 2xl:pb-16">
       <div className="w-full flex flex-col gap-4 xl:gap-5">
