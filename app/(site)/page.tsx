@@ -41,7 +41,7 @@ export default async function Home() {
               className="bg-gray-400 rounded-full aspect-square w-48 md:w-[25%]"
             />
             <div className="flex flex-col items-center text-center gap-6 md:w-[75%] md:text-left justify-around">
-              <div className="section-content">
+              <div className="section-content pl-0">
                 <PortableText value={about.aboutContent} />
               </div>
               <div className="flex flex-col gap-4 w-[100%]">
