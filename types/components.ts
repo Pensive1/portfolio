@@ -1,4 +1,4 @@
 import { svgIconProps } from "./componentProps";
-export type iconCollection = {
+export type iconMap = {
   [key: string]: React.ComponentType<svgIconProps>;
 };

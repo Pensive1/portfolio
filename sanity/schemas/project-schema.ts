@@ -4,13 +4,25 @@ const project = {
   type: "document",
   groups: [
     {
+      name: "meta",
+      title: "Project Details",
+      default: true,
+    },
+    {
       name: "overview",
       title: "Overview",
-      default: true,
     },
     {
       name: "background",
       title: "Background",
+    },
+    {
+      name: "brief",
+      title: "Brief",
+    },
+    {
+      name: "role",
+      title: "Your Role",
     },
     {
       name: "problems",
@@ -21,31 +33,66 @@ const project = {
       title: "Solutions",
     },
     {
+      name: "techApproach",
+      title: "Technical Approach",
+    },
+    {
+      name: "techStack",
+      title: "Technical Rationale",
+    },
+    {
+      name: "techChallenges",
+      title: "Technical Challenges",
+    },
+    {
       name: "uiConsiderations",
       title: "Visual Considerations",
     },
     {
+      name: "screenshots",
+      title: "Screenshots",
+    },
+    {
       name: "challenges",
-      title: "Challenges",
+      title: "Project Challenges",
+    },
+    {
+      name: "performance",
+      title: "Performance and QA",
     },
     {
       name: "impact",
       title: "Impact/Reception",
     },
+    {
+      name: "learnings",
+      title: "Learnings",
+    },
   ],
+
   fields: [
+    // PROJECT META
+    {
+      name: "projArchiveState",
+      title: "Archived",
+      type: "boolean",
+      description:
+        "Archived projects will not show on the homepage",
+      group: "meta",
+      initialValue: false,
+    },
     {
       name: "projectName",
       title: "Project Name",
       type: "string",
-      group: "overview",
+      group: "meta",
     },
     {
       name: "slug",
       title: "Project URL",
       description: "Portfolio site's URL for this project",
       type: "slug",
-      group: "overview",
+      group: "meta",
       options: { source: "projectName" },
     },
     {
@@ -54,7 +101,7 @@ const project = {
       type: "text",
       description:
         "Short Descrtiption describing this project. Shown below the project title",
-      group: "overview",
+      group: "meta",
     },
     {
       name: "heroImage",
@@ -62,7 +109,7 @@ const project = {
       description: "This appears under the title and description.",
       type: "image",
       options: { hotspot: true },
-      group: "overview",
+      group: "meta",
       fields: [
         {
           name: "alt",
@@ -75,7 +122,7 @@ const project = {
       name: "technologies",
       title: "Tech Stack",
       description: "List all technologies and packages.)",
-      group: "overview",
+      group: "meta",
       type: "array",
       of: [{ type: "string" }],
       options: {
@@ -86,19 +133,19 @@ const project = {
       name: "gitHubUrl",
       title: "GitHub Link",
       type: "url",
-      group: "overview",
+      group: "meta",
     },
     {
       name: "liveUrl",
       title: "Live Link",
       type: "url",
-      group: "overview",
+      group: "meta",
     },
     {
       name: "demoUrl",
       title: "Demo Link",
       type: "url",
-      group: "overview",
+      group: "meta",
     },
     {
       name: "projDisplay",
@@ -106,18 +153,55 @@ const project = {
       type: "boolean",
       description:
         "Affects how the thumbnail is displayed. Hero is wide and detailed, regular is consice.",
-      group: "overview",
+      group: "meta",
       initialValue: false,
     },
+
+    // OVERVIEW
+    {
+      name: "projOverview",
+      title: "Summary",
+      group: "overview",
+      description:
+        "What is the basic description of this project?",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+
+    // BACKGROUND
     {
       name: "bgContent",
       title: "Context",
       group: "background",
       description:
-        "What is the story behind this project? 1. Who is the customer/client?, 2. What do they do? 3. How many customers do they serve? 4. What is their goal? 5. What role did you play?",
+        "What is the story behind this project? 1. Who is the customer/client?, 2. What do they do? 3. How many customers do they serve? 4. What is their goal?",
       type: "array",
       of: [{ type: "block" }],
     },
+
+    // BRIEF
+    {
+      name: "projBrief",
+      title: "The Brief",
+      group: "brief",
+      description:
+        "What are the objectives",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+
+    // ROLE
+    {
+      name: "projRole",
+      title: "Your Role",
+      group: "role",
+      description:
+        "What were you responsible for doing?",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+
+    // PROBLEMS
     {
       name: "problemContent",
       title: "Pain Points",
@@ -163,6 +247,8 @@ const project = {
       of: [{ type: "block" }],
       group: "problems",
     },
+
+    // SOLUTIONS
     {
       title: "Solution outline",
       name: "solutionOutline",
@@ -204,6 +290,206 @@ const project = {
         layout: "list",
       },
     },
+
+    // TECHNICAL APPROACH
+    {
+      name: "projTechApproach",
+      title: "Approaches",
+      group: "techApproach",
+      description:
+        "What did you consider as you built this? Eg: Architechture, API Integrations",
+      type: "array",
+      of: [
+        {
+          title: "Approach Details",
+          name: "approachDetail",
+          type: "object",
+          fields: [
+            {
+              title: "Title",
+              name: "title",
+              type: "string",
+            },
+            {
+              title: "Image",
+              name: "img",
+              type: "image",
+            },
+            {
+              title: "Description",
+              name: "desc",
+              type: 'array',
+              of: [{ type: 'block' }]
+            },
+          ],
+        },
+      ],
+      options: {
+        layout: "list",
+      },
+    },
+    {
+      name: "techApproachSummary",
+      title: "Summary",
+      description: "Any final notes",
+      type: "array",
+      of: [{ type: "block" }],
+      group: "techApproach",
+    },
+
+    // TECHNICAL RATIONALE
+    {
+      name: "projTechStack",
+      title: "Tech Stack",
+      group: "techStack",
+      description:
+        "Outline technologies and the reasons they were chosen",
+      type: "array",
+      of: [
+        {
+          title: "Chosen Technology",
+          name: "stackDetail",
+          type: "object",
+          fields: [
+            {
+              title: "Name",
+              name: "title",
+              type: "string",
+            },
+            {
+              title: "Short Description",
+              name: "desc",
+              type: "array",
+              of: [{ type: "block" }],
+              description: "Explain why this technology was chosen",
+            },
+            {
+              title: "Image (optional)",
+              name: "img",
+              type: "image",
+              options: { hotspot: true },
+              fields: [
+                {
+                  name: "alt",
+                  title: "Alt",
+                  type: "string",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      options: {
+        layout: "list",
+      },
+    },
+    {
+      name: "stackSummaryImage",
+      title: "Summary Image (optional)",
+      type: "image",
+      group: "techStack",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
+    },
+
+    // TECHNICAL CHALLENGE
+    {
+      name: "projTechChallenges",
+      title: "Technical Challenges",
+      group: "techChallenges",
+      description: "Outline the technical challenges",
+      type: "array",
+      of: [
+        {
+          title: "Technical Challenge",
+          name: "stackDetail",
+          type: "object",
+          fields: [
+            {
+              title: "Title",
+              name: "title",
+              type: "string",
+            },
+            {
+              title: "Description",
+              name: "desc",
+              type: "array",
+              of: [{ type: "block" }],
+              description: "Were there any edge cases, limitations or constraints (eg time or knowledge)?",
+            },
+            {
+              title: "Image (optional)",
+              name: "img",
+              type: "image",
+              options: { hotspot: true },
+              fields: [
+                {
+                  name: "alt",
+                  title: "Alt",
+                  type: "string",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      options: {
+        layout: "list",
+      },
+    },
+    {
+      name: "techChallengeSummaryImage",
+      title: "Summary Image (optional)",
+      type: "image",
+      group: "techChallenges",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
+    },
+
+    // PROJECT CHALLENGES
+    {
+      name: "challengeList",
+      title: "Challenges",
+      group: "challenges",
+      description: "List all challenges",
+      type: "array",
+      of: [
+        {
+          title: "challenge",
+          type: "object",
+          name: "challengeItem",
+          fields: [
+            {
+              title: "Title",
+              name: "challengeTitle",
+              type: "string",
+            },
+            {
+              title: "Description",
+              name: "challengeDesc",
+              description: "A short summary about this challenge",
+              type: "array",
+              of: [{ type: "block" }],
+            },
+          ],
+        },
+      ],
+      options: { layout: "list" },
+    },
+
+    // UI CONSIDERATIONS
     {
       name: "uiFactorDesc",
       title: "Description",
@@ -261,35 +547,58 @@ const project = {
       ],
       options: { layout: "list" },
     },
+
+    // ADDITIONAL SCREENSHOTS
     {
-      name: "challengeList",
-      title: "Challenges",
-      group: "challenges",
-      description: "List all challenges",
+      name: "projScreenshots",
+      title: "Screenshots (Optional)",
+      group: "screenshots",
+      description: "Provide additional screenshots",
       type: "array",
       of: [
         {
-          title: "challenge",
+          title: "Screenshot",
+          name: "projScreen",
           type: "object",
-          name: "challengeItem",
           fields: [
             {
-              title: "Title",
-              name: "challengeTitle",
-              type: "string",
+              title: "Image",
+              name: "img",
+              type: "image",
+              options: { hotspot: true },
+              fields: [
+                {
+                  name: "alt",
+                  title: "Alt",
+                  type: "string",
+                },
+              ],
             },
             {
-              title: "Description",
-              name: "challengeDesc",
-              description: "A short summary about this challenge",
-              type: "array",
-              of: [{ type: "block" }],
+              title: "Caption (Optional)",
+              name: "caption",
+              type: "string",
             },
           ],
         },
       ],
-      options: { layout: "list" },
+      options: {
+        layout: "list",
+      },
     },
+
+    // PERFORMANCE AND QA
+    {
+      name: "projPerformanceQA",
+      title: "Performance and Quality Assurance Details",
+      group: "performance",
+      description:
+        "What checks were carried out and how well did it perform",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+
+    // IMPACT
     {
       title: "Type",
       name: "impactType",
@@ -308,6 +617,17 @@ const project = {
       title: "Impact",
       group: "impact",
       description: "What are the outcomes from this project",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+
+    // LEARNINGS
+    {
+      name: "projLearnings",
+      title: "Lessons Learned",
+      group: "learnings",
+      description:
+        "What did you discover through this project that you didn't know before?",
       type: "array",
       of: [{ type: "block" }],
     },

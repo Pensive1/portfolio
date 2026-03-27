@@ -1,6 +1,6 @@
 import { svgIconProps } from "@/types/componentProps";
 
-export default function Sword({ size, fillColor }: svgIconProps) {
+export default function IcnBrain({ size, fillColor }: svgIconProps) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -8,8 +8,9 @@ export default function Sword({ size, fillColor }: svgIconProps) {
       height={size}
       viewBox='0 0 24 24'
     >
+      <title>brain_line</title>
       <g
-        id="sword_line"
+        id="brain_line"
         fill='none'
         fillRule='evenodd'
       >
@@ -19,7 +20,7 @@ export default function Sword({ size, fillColor }: svgIconProps) {
 
         <path
           fill={fillColor}
-          d='M19.071 3.93a1 1 0 0 1 .993.883l.007.116v5.657a1 1 0 0 1-.315.729l-.09.075-7.198 5.32.946.947a1 1 0 0 1 .084 1.32l-.084.094L12 20.485a1 1 0 0 1-1.036.238l-.118-.05-2.184-1.092-1.612 1.612a1 1 0 0 1-1.32.083l-.094-.083-2.828-2.829a1 1 0 0 1-.083-1.32l.083-.094 1.611-1.612-1.091-2.183a1 1 0 0 1 .102-1.059L3.515 12l1.414-1.414a1 1 0 0 1 1.32-.083l.094.083.947.947 5.32-7.198a1 1 0 0 1 .687-.399l.117-.007h5.657ZM5.636 12.706l-.197.198 1.092 2.184a1 1 0 0 1-.188 1.154L4.93 17.657l1.414 1.414 1.415-1.414a1 1 0 0 1 1.154-.187l2.184 1.092.197-.198-5.657-5.657ZM18.071 5.93H13.92l-5.2 7.033 2.318 2.317 7.033-5.198z'
+          d='M9 3a4 4 0 0 0-4 4v1.126a4.002 4.002 0 0 0 0 7.748V17a4 4 0 0 0 7 2.646A4 4 0 0 0 19 17v-1.126a4.002 4.002 0 0 0 0-7.748V7a4 4 0 0 0-7-2.646A3.99 3.99 0 0 0 9 3m8 6V7a2 2 0 1 0-4 0v4.535A3.982 3.982 0 0 1 15 11a1 1 0 1 1 0 2 2 2 0 0 0-2 2v2a2 2 0 1 0 4 0v-1.126a3.947 3.947 0 0 1-.333-.102 1 1 0 1 1 .666-1.886A2 2 0 1 0 18 10a1 1 0 0 1-1-1m-8 4a2 2 0 0 1 2 2v2a2 2 0 1 1-4 0v-1.126c.113-.03.224-.063.333-.102a1 1 0 1 0-.666-1.886A2 2 0 1 1 6 10a1 1 0 0 0 1-1V7a2 2 0 1 1 4 0v4.535A3.982 3.982 0 0 0 9 11a1 1 0 1 0 0 2'
         />
       </g>
     </svg>

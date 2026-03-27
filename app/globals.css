@@ -39,6 +39,7 @@
   --container-fill: 255, 255, 255;
   --action-bg-fill: 72, 134, 140, 0.03;
   --border-meta: 0, 0, 0, 0.15;
+  --border-img: 0 0 0 / 0.15;
   --gradient-border-start: 224,224,224, 1;
   --gradient-border-mid: 173,173,173, 1;
   --gradient-border-end: 224,224,224, 0;
@@ -50,6 +51,7 @@
   --txt-heading: var(--color-indigo-dye);
   --txt-headline: var(--color-slate-grey);
   --txt-section-title: var(--color-indigo-dye);
+  --txt-section-subheading: var(--color-carrib-current);
   --txt-body-title: var(--color-indigo-dye);
   --txt-body: var(--color-dim-grey);
   --txt-link: var(--color-carrib-current);
@@ -68,7 +70,8 @@
   --btn-tertiary-txt: var(--color-carrib-current);
   --btn-burger-menu-fill: var(--color-indigo-dye);
   
-  /* Icon Fills */
+  /* Fills */
+  --subsection-fill: var(--color-cocoa-brown), .07;
   --icn-fill: var(--color-cocoa-brown);
   --icn-fill-hover: var(--color-cocoa-brown-light);
   --icn-footer: var(--color-indigo-dye);
@@ -89,6 +92,7 @@
   --header-bg: var(--color-outer-space-dark);
   --container-fill: var(--color-eerie-black);
   --border-meta: 66, 82, 84, 1;
+  --border-img: 66 82 84 / 1;
   --action-bg-fill: 0, 0, 0, 0.03;
   --gradient-border-start: 66,82,84, 1;
   --gradient-border-mid: 56,70,71, 1;
@@ -100,7 +104,8 @@
   --txt-logo: var(--color-isabelline);
   --txt-heading: var(--color-ash-grey);
   --txt-headline: var(--color-cadet-grey);
-  --txt-section-title: var(--color-cadet-grey-light);
+  --txt-section-title: var(--color-ash-grey);
+  --txt-section-subheading: var(--color-cadet-grey-light);
   --txt-body-title: var(--color-cadet-grey-light);
   --txt-body: var(--color-battle-grey);
   --txt-link: var(--color-ash-grey);
@@ -119,7 +124,8 @@
   --btn-tertiary-txt: var(--color-ash-grey);
   --btn-burger-menu-fill: var(--color-carrib-current);
 
-  /* Icon Fills */
+  /* Fills */
+  --subsection-fill: var(--color-ash-grey), .05;
   --icn-fill: var(--color-shamrock);
   --icn-fill-hover: var(--color-shamrock-light);
   --icn-footer: var(--color-battle-grey);
@@ -156,27 +162,98 @@ body {
   }
   /*  Body */
   p, ul li, ol li {
-    @apply text-sm font-normal md:text-base 2xl:text-lg;
+    @apply text-sm font-normal md:text-base;
   }
-  /* Content lists */
-  .content > ul li, .content > ol li {
+  
+  p {
+    @apply leading-5 xl:leading-7;
+  }
+
+  /* PROJECT SECTION CONTENT */
+  .section-content{
+    @apply flex flex-col gap-2 pl-9 pr-4;
+  }
+
+  .section-content ul li, .section-content ol li {
     list-style: disc;
     margin-left: 1.5rem;
   }
 
-  .content > ul, .content > ol{
+  .section-content ul, .section-content ol{
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: .25rem;
+    padding-bottom: .8rem;
   }
   
-  .content > p a{
+  .section-content > p:nth-of-type(n+2){
+    padding-top: .5rem;
+  }
+
+  .section-content a{
     color: rgb(var(--icn-fill));
     transition: color .2s;
   }
   
-  .content > p a:hover{
+  .section-content a:hover{
     color: rgb(var(--icn-fill-hover));
+  }
+
+  .section-content strong{
+    color: rgb(var(--txt-section-subheading));
+    font-weight: 600;
+  }
+
+  .section-content h4 {
+    color: rgb(var(--txt-section-subheading));
+    font-size: 1rem;
+    margin-top: 1.125rem;
+
+    @media (min-width: 744) {
+      font-size: 1.125rem;
+    }
+  }
+  
+  .section-content > h4:first-child {
+    margin-top: 0;
+  }
+
+  .section-content img{
+    border-radius: .375rem;
+    border: 1px solid rgba(var(--border-meta));
+  }
+
+  .subsection {
+    row-gap: 1rem;
+  }
+
+  .point{
+    background-color: rgba(var(--subsection-fill));
+    padding: .75rem;
+    border-radius: .375rem;
+  }
+  
+  .point:has(img){
+    /* background-color: rgba(255 255 255 / .03);
+    padding: 0.625rem .75rem .75rem; */
+    border-radius: .375rem .375rem .875rem .875rem;
+  }
+
+  .point h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  .point ul:nth-child(n+3), .point ol:nth-child(n+3){
+    padding-top: 0.8rem;
+  }
+  
+  .point ul:last-child, .point ol:last-child{
+    padding-bottom: 0;
+  }
+
+  .screenshots {
+    row-gap: 4rem;
   }
 
   .disable-scroll{

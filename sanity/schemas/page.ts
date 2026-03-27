@@ -9,7 +9,7 @@ const pageType = defineType({
     defineField({
       name: "pageBuilder",
       type: "array",
-      title: "Page builder",
+      title: "Page Sections",
       of: [
         defineArrayMember({
           name: "hero",
@@ -18,6 +18,10 @@ const pageType = defineType({
         defineArrayMember({
           name: "aboutSection",
           type: "aboutSection",
+        }),
+        defineArrayMember({
+          name: "projectList",
+          type: "projectList",
         }),
       ],
     }),

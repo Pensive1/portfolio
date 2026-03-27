@@ -3,7 +3,7 @@ import { sanityImg } from "@/sanity/sanity-utils";
 import { projectOverview } from "@/types/componentProps";
 import OverviewMeta from "./OverviewMeta";
 
-export default function Overview({
+export default function Meta({
   projectName,
   synopsis,
   heroImage,
@@ -12,7 +12,6 @@ export default function Overview({
   liveUrl,
   demoUrl,
 }: projectOverview) {
-  // console.log(sanityImg(heroImage.asset._ref).url());
   return (
     <section className="flex flex-col w-full md:items-center gap-6 pb-4 md:gap-10 md:pb-5 xl:pb-14 xl:gap-14 2xl:pb-16">
       <div className="w-full flex flex-col gap-4 xl:gap-5">
@@ -31,7 +30,7 @@ export default function Overview({
           height={720}
           sizes="100vw"
           priority={true}
-          className="aspect-video w-full bg-gray-400 rounded-lg md:rounded-xl xl:rounded-2xl 2xl:rounded-3xl"
+          className="aspect-video w-full bg-[rgba(var(--action-bg-fill))] rounded-lg border border-[rgb(var(--border-img))] md:rounded-xl xl:rounded-2xl 2xl:rounded-3xl"
         />
         <OverviewMeta
           techStack={techStack}

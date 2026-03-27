@@ -1,24 +1,32 @@
 import { PortableTextBlock } from "sanity";
-import { challenge, factor, solution } from "./data";
+import { BlockSectionPoint, challenge, factor, screenshot, solution, StandardImage } from "./data";
 import type { Route } from "next";
 
 // ICON COMPONENTS
 interface iconList {
   iconType?:
+  | "brain"
   | "burgerMenu"
   | "close"
+  | "craft"
   | "code"
   | "externalLink"
+  | "education"
   | "email"
   | "github"
+  | "images"
   | "info"
   | "linkedin"
   | "list"
   | "medal"
   | "medium"
+  | "person"
   | "question"
   | "route"
+  | "speed"
+  | "strategy"
   | "sword"
+  | "target"
   | "video"
   | "wand";
 }
@@ -28,8 +36,22 @@ export type svgIconProps = {
   fillColor: string;
 };
 
+/**
+ * Defines the icon symbol, size and where its used.
+ */
 export interface iconProps extends iconList {
+  /** Controls the rendered size of the icon. 
+   * - 1 - 16px
+   * - 2 - 24px
+   * - 3 - 28px
+   * @default 2
+   */
   size?: 1 | 2 | 3;
+
+  /** 
+   * Defines the context in which the icon is used, affecting its styling.
+   * @default "default"
+  */
   use?: "default" | "button" | "sectionHeading" | "projectMeta" | "footer";
 }
 
@@ -120,6 +142,12 @@ export interface projectMeta {
   demoUrl?: string;
 }
 
+export interface standardSectionProps {
+  sectionTitle: string;
+  sectionIcon: SectionHeadingProps["iconType"];
+  textContent: PortableTextBlock[];
+}
+
 export interface problemContent {
   title: string;
   problemImg: {
@@ -140,6 +168,19 @@ export interface solutions {
   solutions: solution[];
 }
 
+export interface nestedSectionProps {
+  iconType?: SectionHeadingProps["iconType"];
+  title: string;
+  subSectionData: BlockSectionPoint[];
+  summaryData?: PortableTextBlock[] | StandardImage;
+}
+
+export interface SummaryProps {
+  sectionTitle?: string;
+  data: nestedSectionProps["summaryData"];
+  classTitle: string;
+}
+
 export interface considerations {
   overview: PortableTextBlock[];
   factors: factor[];
@@ -147,6 +188,10 @@ export interface considerations {
 
 export interface challenges {
   challengeList: challenge[];
+}
+
+export interface screenshotProps {
+  mockups: screenshot[];
 }
 
 export interface impact {

@@ -8,8 +8,8 @@ export default function Feature({
   children,
 }: featureProps) {
   return (
-    <article className="flex flex-col gap-3 md:flex-row-reverse">
-      {/* Embed gif here */}
+    <article className="point flex flex-col gap-3 md:flex-row-reverse">
+      {/* TODO: Embed gif here */}
       <div className="w-full flex justify-center md:w-fit">
         <Image
           src={featimg?.asset._ref && sanityImg(featimg.asset._ref).url()}
@@ -20,11 +20,11 @@ export default function Feature({
         />
       </div>
 
-      <section className="flex flex-col gap-2 md:gap-2 2xl:gap-3 md:w-[62.5%] md:flex-grow xl:w-[50%]">
-        <h4 className="feat-title text-[rgb(var(--txt-body-title))]">
+      <section className="flex flex-col md:gap-2 2xl:gap-3 md:w-[62.5%] md:flex-grow xl:w-[50%]">
+        <h4 className="feat-title text-[rgb(var(--txt-body-title))] !mt-3 md:!mt-0">
           {featTitle}
         </h4>
-        <div className="content feat-desc flex flex-col gap-2">{children}</div>
+        <div className="feat-desc">{children}</div>
       </section>
     </article>
   );

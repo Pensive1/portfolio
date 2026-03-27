@@ -1,6 +1,5 @@
 import { PortableTextBlock } from "sanity";
 import { problemContent } from "./componentProps";
-import { UrlObject } from "url";
 
 export interface Project {
   _id: string;
@@ -23,16 +22,28 @@ export interface Project {
 }
 
 export interface ProjectPage extends Project {
+  projOverview: PortableTextBlock[];
   bgContent: PortableTextBlock[];
+  projBrief: PortableTextBlock[];
+  projRole: PortableTextBlock[];
   problemContent: Array<problemContent>;
+  problemConclusion: PortableTextBlock[];
   challengeList: challenge[];
-  impactType: string;
   impactContent: PortableTextBlock[];
   solutionOutline: PortableTextBlock[];
   solutions: Array<solution>;
-  problemConclusion: PortableTextBlock[];
+  projTechApproach: BlockSectionPoint[];
+  projTechStack: BlockSectionPoint[];
+  stackSummaryImage: StandardImage;
+  techApproachSummary: PortableTextBlock[];
+  projTechChallenges: BlockSectionPoint[];
+  techChallengeSummaryImage: StandardImage;
   uiFactorDesc: PortableTextBlock[];
   uiFactors: factor[];
+  projScreenshots: screenshot[];
+  projPerformanceQA: PortableTextBlock[];
+  impactType: string;
+  projLearnings: PortableTextBlock[];
 }
 
 export interface solution {
@@ -47,17 +58,51 @@ export interface solution {
 [];
 
 export interface factor {
-  index: number;
+  _key: string;
   uiFactorPointTitle: string;
   uiFactorPoints: {
     description: PortableTextBlock[];
+    image: StandardImage;
   };
-}
-[];
+}[];
 
 export interface challenge {
+  _key: string;
   index: number;
   challengeTitle: string;
   challengeDesc: PortableTextBlock[];
+}[];
+
+export interface screenshot {
+  _key: string;
+  caption?: string;
+  img: StandardImage;
 }
-[];
+
+/**
+ * A block section point consists of a title, description and an optional image.
+ * 
+ * As the name suggests, these are only for block sections containing a section title and text block.
+ * These are usually contained in arrays
+ */
+export interface BlockSectionPoint {
+  _key: string;
+  title: string;
+  desc: PortableTextBlock[];
+  img: {
+    asset: {
+      _ref: string;
+    };
+  };
+}
+
+/**
+ * Standard images consist of an image URL and alt text (optional).
+ */
+export type StandardImage = {
+  alt?: string;
+  _type: string;
+  asset: {
+    _ref: string;
+  };
+}

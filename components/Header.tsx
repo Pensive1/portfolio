@@ -4,7 +4,7 @@ import Button from "./Button";
 import IcnBurgerMenu from "./icons/icn_burgerMenu";
 import IcnClose from "./icons/icn_close";
 import BurgerModal from "./BurgerModal";
-import { SyntheticEvent, useState, useEffect } from "react";
+import { SyntheticEvent, useState, useLayoutEffect } from "react";
 import type { Route } from "next";
 
 type HeaderLink = {
@@ -13,26 +13,27 @@ type HeaderLink = {
   isExternal: boolean,
 }
 
+const links: HeaderLink[] = [
+  { name: "Projects", url: "/#projects", isExternal: false },
+  { name: "About", url: "/#about", isExternal: false },
+  { name: "Blog", url: "https://medium.com/@racquaye89", isExternal: true },
+];
+
+const renderLinks = () => {
+  return links.map((link, i) => (
+    <Link
+      key={i}
+      href={link.url}
+      target={link.isExternal ? "_blank" : "_self"}
+    >
+      {link.name}
+    </Link>
+  ));
+};
+
 export default function Header() {
   const [isBurgerMenuOpen, setBurgerMenuOpen] = useState(false);
   const [isMobileBreakpoint, setIsMobileBreakpoint] = useState(false);
-  const links: HeaderLink[] = [
-    { name: "Projects", url: "/#projects", isExternal: false },
-    { name: "About", url: "/#about", isExternal: false },
-    { name: "Blog", url: "https://medium.com/@racquaye89", isExternal: true },
-  ];
-
-  const renderLinks = () => {
-    return links.map((link, i) => (
-      <Link
-        key={i}
-        href={link.url}
-        target={link.isExternal ? "_blank" : "_self"}
-      >
-        {link.name}
-      </Link>
-    ));
-  };
 
   const toggleBurgerModalIcn = (e: SyntheticEvent) => {
     e.preventDefault();
@@ -40,7 +41,7 @@ export default function Header() {
   };
 
   //Screen width check
-  useEffect(() => {
+  useLayoutEffect(() => {
     const mobScreenSize = window.matchMedia("(width < 933px)");
 
     const handleScreenWidthChange = (e: MediaQueryListEvent) => {

@@ -1,10 +1,19 @@
 import { defineField, defineType } from "sanity";
+import { UserIcon } from "@sanity/icons";
 
 const aboutSection = defineType({
   name: "aboutSection",
   title: "About Section",
   type: "object",
+  icon: UserIcon,
   fields: [
+    defineField({
+      name: "heading",
+      type: "string",
+      title: "Section Name",
+      description: "Used for identifying this section outside this popup",
+      initialValue: "About",
+    }),
     defineField({
       name: "aboutImage",
       type: "image",

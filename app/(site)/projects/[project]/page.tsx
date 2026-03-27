@@ -2,15 +2,16 @@ import { notFound } from "next/navigation";
 import { sanityFetch } from "@/sanity/sanity-utils";
 import { PROJECT_QUERY } from "@/sanity/lib/queries";
 import { ProjectPage } from "@/types/data";
-import { PortableText } from "@portabletext/react";
 
-import SectionHeading from "@/components/SectionHeading";
-import Overview from "@/components/projects/sections/Overview";
+import Meta from "@/components/projects/sections/Meta";
 import Problems from "@/components/projects/sections/Problems";
 import Solutions from "@/components/projects/sections/Solutions";
 import Considerations from "@/components/projects/sections/Considerations";
 import Challenges from "@/components/projects/sections/Challenges";
 import Impact from "@/components/projects/sections/Impact";
+import StandardSection from "@/components/projects/sections/StandardSection";
+import NestedSection from "@/components/projects/sections/elements/NestedSection";
+import Screenshots from "@/components/projects/sections/Screenshots";
 
 export default async function Project({
   params,
@@ -31,7 +32,7 @@ export default async function Project({
   return (
     <>
       <div className="text-[var(--body-colour)] col-span-full flex flex-col items-center gap-12 md:gap-14 2xl:gap-16">
-        <Overview
+        <Meta
           projectName={project.projectName}
           synopsis={project.synopsis}
           heroImage={project.heroImage}
@@ -41,27 +42,80 @@ export default async function Project({
           demoUrl={project.demoUrl}
         />
 
-        <div className="xl:w-[83.33%] flex flex-col gap-12 md:gap-14 2xl:gap-16">
-          {project.bgContent && (
-            <section>
-              <SectionHeading iconType="route">Background</SectionHeading>
-              <div className="content flex flex-col gap-1 md:gap-2 2xl:gap-3)]">
-                <PortableText value={project.bgContent} />
-              </div>
-            </section>
+        <div className="xl:w-[83.33%] flex flex-col gap-16 md:gap-[6.25rem]">
+          {project.projOverview && (
+            <StandardSection
+              sectionIcon="info"
+              sectionTitle="Overview"
+              textContent={project.projOverview}
+            />
           )}
+
+          {project.bgContent && (
+            <StandardSection
+              sectionIcon="route"
+              sectionTitle="Background"
+              textContent={project.bgContent}
+            />
+          )}
+
+          {project.projBrief && (
+            <StandardSection
+              sectionIcon="target"
+              sectionTitle="The Brief"
+              textContent={project.projBrief}
+            />
+          )}
+
+          {project.projRole && (
+            <StandardSection
+              sectionIcon="person"
+              sectionTitle="My Role"
+              textContent={project.projRole}
+            />
+          )}
+
           {project.problemContent && (
             <Problems
               content={project.problemContent}
               conclusion={project.problemConclusion}
             />
           )}
+
           {project.solutions && (
             <Solutions
               outline={project.solutionOutline}
               solutions={project.solutions}
             />
           )}
+
+          {project.projTechApproach && (
+            <NestedSection
+              title={"Technical Approach"}
+              iconType="strategy"
+              subSectionData={project.projTechApproach}
+              summaryData={project.techApproachSummary}
+            />
+          )}
+
+          {project.projTechStack && (
+            <NestedSection
+              title={"Technologies Used"}
+              iconType="code"
+              subSectionData={project.projTechStack}
+              summaryData={project.stackSummaryImage}
+            />
+          )}
+
+          {project.projTechChallenges && (
+            <NestedSection
+              title={"Technical Challenges"}
+              iconType="brain"
+              subSectionData={project.projTechChallenges}
+              summaryData={project.techChallengeSummaryImage}
+            />
+          )}
+
           {(project.uiFactorDesc ||
             (project.uiFactors &&
               Object.keys(project.uiFactors).length > 0)) && (
@@ -70,12 +124,35 @@ export default async function Project({
                 factors={project.uiFactors}
               />
             )}
+
           {project.challengeList &&
             Object.keys(project.challengeList).length > 0 && (
               <Challenges challengeList={project.challengeList} />
-            )}
+            )
+          }
+
+          {project.projScreenshots &&
+            <Screenshots mockups={project.projScreenshots} />
+          }
+
+          {project.projPerformanceQA && (
+            <StandardSection
+              sectionIcon="speed"
+              sectionTitle="Performance and Quality Assurance"
+              textContent={project.projPerformanceQA}
+            />
+          )}
+
           {project.impactType && project.impactContent && (
             <Impact type={project.impactType} content={project.impactContent} />
+          )}
+
+          {project.projLearnings && (
+            <StandardSection
+              sectionIcon="education"
+              sectionTitle="Learnings"
+              textContent={project.projLearnings}
+            />
           )}
         </div>
       </div>
