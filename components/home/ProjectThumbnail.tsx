@@ -28,7 +28,11 @@ export default function ProjectThumbnail({
           }`}
       >
         <Image
-          src={imgSrc.asset._ref && sanityImg(imgSrc.asset._ref).url()}
+          // TODO: CREATE PLACEHOLDER IMAGE IF SRC ISN'T AVAILABLE
+          src={imgSrc.asset._ref
+            ? sanityImg(imgSrc.asset._ref).url()
+            : "/assets/placeholders/hero.svg"
+          }
           alt={imgSrc?.alt ? imgSrc.alt : `${title} project`}
           width={1280}
           height={720}

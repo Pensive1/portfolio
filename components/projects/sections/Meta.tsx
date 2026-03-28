@@ -23,8 +23,9 @@ export default function Meta({
         <Image
           alt={heroImage?.alt ? heroImage.alt : `${projectName} feature image`}
           src={
-            heroImage?.asset._ref &&
-            sanityImg(heroImage.asset._ref).fit("max").url()
+            heroImage?.asset._ref
+              ? sanityImg(heroImage.asset._ref).fit("max").url()
+              : "/assets/placeholders/hero.svg"
           }
           width={1280}
           height={720}

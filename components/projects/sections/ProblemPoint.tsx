@@ -10,13 +10,13 @@ export default function ProblemPoint({
 }: problemPointProps) {
   return (
     <article className="col-span-full md:col-span-4 xl:col-span-5 flex flex-col gap-2">
-      <Image
-        src={probImg && sanityImg(probImg).url()}
-        alt={probAlt}
+      {probImg && <Image
+        src={sanityImg(probImg).url()}
+        alt={probAlt ?? ''}
         width={160}
         height={90}
         className="bg-gray-500 rounded-md aspect-video w-full"
-      />
+      />}
       <section className="flex flex-col gap-2">
         <p className="text-[rgb(var(--txt-body-title))] font-semibold">{pointTitle}</p>
         <p className="prob-desc">{children}</p>

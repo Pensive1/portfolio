@@ -27,8 +27,9 @@ export default async function Home() {
           <div className="rounded-2xl bg-[rgba(var(--txt-body),.06)] p-4 flex flex-col gap-8 items-center md:flex-row-reverse md:items-start">
             <Image
               src={
-                about.aboutImage.asset._ref &&
-                sanityImg(about.aboutImage.asset._ref).url()
+                about.aboutImage.asset._ref
+                  ? sanityImg(about.aboutImage.asset._ref).url()
+                  : "/assets/placeholders/square-img.svg"
               }
               alt={
                 about.aboutImage.aboutImageAlt

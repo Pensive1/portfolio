@@ -29,6 +29,8 @@ export default async function Project({
     notFound();
   }
 
+  console.log(project);
+
   return (
     <>
       <div className="text-[var(--body-colour)] col-span-full flex flex-col items-center gap-12 md:gap-14 2xl:gap-16">
