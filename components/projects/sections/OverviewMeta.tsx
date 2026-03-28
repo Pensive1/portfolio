@@ -8,29 +8,33 @@ export default function OverviewMeta({
   liveUrl,
   demoUrl,
 }: projectMeta) {
+  const links = [gitHubUrl, liveUrl, demoUrl];
+
   return (
     <section className="border border-solid border-[rgba(var(--border-meta))] rounded-lg flex flex-col gap-4 overflow-hidden md:rounded-xl md:flex-row">
       <TechList techStack={techStack} />
 
-      <div className="bg-[rgba(var(--action-bg-fill))] flex justify-center py-5 border-t border-solid border-[rgba(var(--border-meta))] md:py-6 md:w-[25%] md:items-center md:border-t-0 md:border-l xl:w-[16.6%]">
-        <div className="flex justify-around w-full md:flex-col md:justify-center md:gap-8 md:w-fit">
-          {gitHubUrl && (
-            <IconLink iconType="github" href={gitHubUrl} isExternal={true}>
-              GitHub
-            </IconLink>
-          )}
-          {demoUrl && (
-            <IconLink iconType="video" href={demoUrl} isExternal={true}>
-              Demo
-            </IconLink>
-          )}
-          {liveUrl && (
-            <IconLink iconType="externalLink" href={liveUrl} isExternal={true}>
-              Live
-            </IconLink>
-          )}
+      {links.some(link => link) && (
+        <div className="bg-[rgba(var(--action-bg-fill))] flex justify-center py-5 border-t border-solid border-[rgba(var(--border-meta))] md:py-6 md:w-[25%] md:items-center md:border-t-0 md:border-l xl:w-[16.6%]">
+          <div className="flex justify-around w-full md:flex-col md:justify-center md:gap-8 md:w-fit">
+            {gitHubUrl && (
+              <IconLink iconType="github" href={gitHubUrl} isExternal={true}>
+                GitHub
+              </IconLink>
+            )}
+            {demoUrl && (
+              <IconLink iconType="video" href={demoUrl} isExternal={true}>
+                Demo
+              </IconLink>
+            )}
+            {liveUrl && (
+              <IconLink iconType="externalLink" href={liveUrl} isExternal={true}>
+                Live
+              </IconLink>
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }
