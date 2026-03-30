@@ -28,7 +28,6 @@ export default function ProjectThumbnail({
           }`}
       >
         <Image
-          // TODO: CREATE PLACEHOLDER IMAGE IF SRC ISN'T AVAILABLE
           src={imgSrc.asset._ref
             ? sanityImg(imgSrc.asset._ref).url()
             : "/assets/placeholders/hero.svg"
