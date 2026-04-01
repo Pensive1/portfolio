@@ -16,7 +16,7 @@ export default function Feature({
           alt={`${featTitle} in action`}
           width={268}
           height={268}
-          className="bg-gray-400 aspect-square w-auto rounded-xl md:h-64 md:sticky md:top-3 xl:top-6"
+          className="aspect-square w-auto rounded-xl md:h-64 md:sticky md:top-3 xl:top-6"
         />
       </div>}
 
@@ -24,7 +24,7 @@ export default function Feature({
         <h4 className="feat-title text-[rgb(var(--txt-body-title))] !mt-3 md:!mt-0">
           {featTitle}
         </h4>
-        <div className="feat-desc">{children}</div>
+        <div className="feat-desc flex flex-col gap-1">{children}</div>
       </section>
     </article>
   );

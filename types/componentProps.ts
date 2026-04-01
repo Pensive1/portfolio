@@ -164,8 +164,9 @@ export interface problems {
 }
 
 export interface solutions {
-  outline: PortableTextBlock[];
+  intro: PortableTextBlock[];
   solutions: solution[];
+  summary: PortableTextBlock[];
 }
 
 export interface nestedSectionProps {

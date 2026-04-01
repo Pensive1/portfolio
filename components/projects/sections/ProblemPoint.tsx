@@ -15,7 +15,7 @@ export default function ProblemPoint({
         alt={probAlt ?? ''}
         width={160}
         height={90}
-        className="bg-gray-500 rounded-md aspect-video w-full"
+        className="rounded-md aspect-video w-full"
       />}
       <section className="flex flex-col gap-2">
         <p className="text-[rgb(var(--txt-body-title))] font-semibold text-base">{pointTitle}</p>

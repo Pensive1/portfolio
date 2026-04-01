@@ -250,8 +250,8 @@ const project = {
 
     // SOLUTIONS
     {
-      title: "Solution outline",
-      name: "solutionOutline",
+      title: "Solution Intro (optional)",
+      name: "solutionIntro",
       group: "solutions",
       type: "array",
       of: [{ type: "block" }],
@@ -289,6 +289,13 @@ const project = {
       options: {
         layout: "list",
       },
+    },
+    {
+      title: "Summary",
+      name: "solutionOutline",
+      group: "solutions",
+      type: "array",
+      of: [{ type: "block" }],
     },
 
     // TECHNICAL APPROACH

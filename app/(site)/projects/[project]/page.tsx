@@ -86,8 +86,9 @@ export default async function Project({
 
           {project.solutions && (
             <Solutions
-              outline={project.solutionOutline}
+              intro={project.solutionIntro}
               solutions={project.solutions}
+              summary={project.solutionOutline}
             />
           )}
 

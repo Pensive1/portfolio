@@ -30,8 +30,9 @@ export interface ProjectPage extends Project {
   problemConclusion: PortableTextBlock[];
   challengeList: challenge[];
   impactContent: PortableTextBlock[];
-  solutionOutline: PortableTextBlock[];
+  solutionIntro: PortableTextBlock[];
   solutions: Array<solution>;
+  solutionOutline: PortableTextBlock[];
   projTechApproach: BlockSectionPoint[];
   projTechStack: BlockSectionPoint[];
   stackSummaryImage: StandardImage;
