@@ -223,6 +223,22 @@ body {
     border: 1px solid rgba(var(--border-meta));
   }
 
+  .section-content.problems__summary {
+    position:relative;
+    padding-top: 2.5rem;
+  }
+
+  /* Adds a divider line between the problems and the summary */
+  .section-content.problems__summary::before {
+    content:"";
+    width: 40%;
+    position: absolute;
+    top:0;
+    left: 50%;
+    border-top: 1px solid rgb(var(--border-img));
+    translate: -50% 0;
+  }
+
   .subsection {
     row-gap: 1rem;
   }
