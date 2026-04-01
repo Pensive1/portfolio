@@ -385,12 +385,21 @@ const project = {
               title: "Image (optional)",
               name: "img",
               type: "image",
-              options: { hotspot: true },
+              options: {
+                collapsible: true,
+                collapsed: true
+              },
               fields: [
                 {
                   name: "alt",
-                  title: "Alt",
+                  title: "Alt Text",
                   type: "string",
+                },
+                {
+                  title: "Caption",
+                  name: "caption",
+                  type: "array",
+                  of: [{ type: "block" }],
                 },
               ],
             },
@@ -500,6 +509,28 @@ const project = {
               description: "A short summary about this challenge",
               type: "array",
               of: [{ type: "block" }],
+            },
+            {
+              title: "Image (optional)",
+              name: "img",
+              type: "image",
+              options: {
+                collapsible: true,
+                collapsed: true
+              },
+              fields: [
+                {
+                  name: "alt",
+                  title: "Alt Text",
+                  type: "string",
+                },
+                {
+                  title: "Caption",
+                  name: "caption",
+                  type: "array",
+                  of: [{ type: "block" }],
+                },
+              ],
             },
           ],
         },

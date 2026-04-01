@@ -40,7 +40,6 @@ export default function NestedSection({ iconType, title, subSectionData, summary
                                     <figure
                                         className="flex flex-col gap-2"
                                     >
-                                        {/* TODO: UPDATE SCHEMA TO INCLUDE ALT TEXT AND CAPTION WITH RICH TEXT (LINKS) */}
                                         <Image
                                             src={sanityImg(point.img?.asset._ref).fit("max").url()}
                                             alt={point.img?.alt ?? `Am image summarising ${point.title}`}
@@ -52,7 +51,6 @@ export default function NestedSection({ iconType, title, subSectionData, summary
                                         {point.img.caption && (<figcaption
                                             className="text-xs italic text-center text-[rgb(var(--txt-body-title))] md:text-sm"
                                         >
-                                            {/* A high level flowchart illustrating the upload process. (See full image) */}
                                             <PortableText value={point.img.caption} />
                                         </figcaption>)}
                                     </figure>
