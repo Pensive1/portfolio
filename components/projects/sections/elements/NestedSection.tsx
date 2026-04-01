@@ -1,6 +1,8 @@
 import SectionHeading from "@/components/SectionHeading";
 import { nestedSectionProps } from "@/types/componentProps";
 import { PortableText } from "@portabletext/react";
+import { sanityImg } from "@/sanity/sanity-utils";
+import Image from "next/image";
 import Summary from "./Summary";
 
 /**
@@ -33,8 +35,28 @@ export default function NestedSection({ iconType, title, subSectionData, summary
                             >
                                 <h4>{point.title}</h4>
                                 <PortableText value={point.desc} />
+
+                                {point.img?.asset._ref && (
+                                    <figure
+                                        className="flex flex-col gap-2"
+                                    >
+                                        {/* TODO: UPDATE SCHEMA TO INCLUDE ALT TEXT AND CAPTION WITH RICH TEXT (LINKS) */}
+                                        <Image
+                                            src={sanityImg(point.img?.asset._ref).fit("max").url()}
+                                            alt={point.img?.alt ?? `Am image summarising ${point.title}`}
+                                            width={1280}
+                                            height={720}
+                                            className="w-full h-auto max-h-[600px] object-contain"
+                                        />
+
+                                        <figcaption
+                                            className="text-xs italic text-center text-[rgb(var(--txt-body-title))] md:text-sm"
+                                        >
+                                            A high level flowchart illustrating the upload process. (See full image)
+                                        </figcaption>
+                                    </figure>
+                                )}
                             </div>
-                            // TODO: RENDER POINT IMAGE IF IT EXISTS
                         ))
                     }
                 </div>

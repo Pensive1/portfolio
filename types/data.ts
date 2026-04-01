@@ -89,11 +89,7 @@ export interface BlockSectionPoint {
   _key: string;
   title: string;
   desc: PortableTextBlock[];
-  img: {
-    asset: {
-      _ref: string;
-    };
-  };
+  img: StandardImage;
 }
 
 /**
