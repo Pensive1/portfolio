@@ -38,7 +38,7 @@ const project = {
     },
     {
       name: "techStack",
-      title: "Technical Rationale",
+      title: "Technical Stack",
     },
     {
       name: "techChallenges",
@@ -311,16 +311,34 @@ const project = {
               type: "string",
             },
             {
-              title: "Image",
-              name: "img",
-              type: "image",
-            },
-            {
               title: "Description",
               name: "desc",
               type: 'array',
               of: [{ type: 'block' }]
             },
+            {
+              title: "Image (optional)",
+              name: "img",
+              type: "image",
+              options: {
+                collapsible: true,
+                collapsed: true
+              },
+              fields: [
+                {
+                  name: "alt",
+                  title: "Alt Text",
+                  type: "string",
+                },
+                {
+                  title: "Caption",
+                  name: "caption",
+                  type: "array",
+                  of: [{ type: "block" }],
+                },
+              ],
+            },
+
           ],
         },
       ],
