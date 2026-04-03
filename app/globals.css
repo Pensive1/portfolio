@@ -186,7 +186,7 @@ body {
     padding-bottom: .8rem;
   }
   
-  .section-content > p:nth-of-type(n+2){
+  .section-content > p:not(:first-of-type):not(h4 + p){
     padding-top: .5rem;
   }
 
@@ -247,11 +247,12 @@ body {
     background-color: rgba(var(--subsection-fill));
     padding: .75rem;
     border-radius: .375rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: .25rem;
   }
   
   .point:has(img){
-    /* background-color: rgba(255 255 255 / .03);
-    padding: 0.625rem .75rem .75rem; */
     border-radius: .375rem .375rem .875rem .875rem;
   }
 
