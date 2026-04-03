@@ -273,6 +273,10 @@ body {
     row-gap: 4rem;
   }
 
+  .feat-desc p {
+    text-wrap: pretty;
+  }
+
   .disable-scroll{
     overflow-y: hidden;
   }
