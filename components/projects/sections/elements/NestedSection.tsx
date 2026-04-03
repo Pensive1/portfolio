@@ -2,16 +2,9 @@ import SectionHeading from "@/components/SectionHeading";
 import { nestedSectionProps } from "@/types/componentProps";
 import { PortableText } from "@portabletext/react";
 import { sanityImg } from "@/sanity/sanity-utils";
+import { lowerHyphenClass } from "@/utils/textFuncs";
 import Image from "next/image";
 import Summary from "./Summary";
-
-/**
- * Transforms text to a lowercase hyphenated word
- * @param txt - Incoming text
- */
-const lowerHyphenClass = (txt: string) => txt
-    .toLowerCase()
-    .replaceAll(" ", "-");
 
 /**
  *  Creates a section with sub-sections.

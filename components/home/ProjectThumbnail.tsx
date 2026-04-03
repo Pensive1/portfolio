@@ -50,7 +50,7 @@ export default function ProjectThumbnail({
           </div>
 
           {techList && (
-            <div className={`${!hero && "hidden"} flex flex-col gap-y-1`}>
+            <div className={`${!hero && "hidden"} flex flex-col gap-y-3`}>
               <h5 className="text-sm font-medium text-[rgb(var(--txt-section-title))]">
                 Tech
               </h5>
@@ -58,7 +58,7 @@ export default function ProjectThumbnail({
                 {techList.length > 0 &&
                   techList.map((tech, index) => (
                     <li
-                      className="label tech-name bg-[rgba(var(--txt-body))]/[.15] px-2 rounded-xl"
+                      className="label tech-name bg-[rgb(var(--subsection-fill))] px-2 rounded-xl"
                       key={index}
                     >
                       {tech}
