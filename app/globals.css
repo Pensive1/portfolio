@@ -166,12 +166,12 @@ body {
   }
   
   p {
-    @apply leading-5 xl:leading-7;
+    @apply leading-5 md:leading-6 xl:leading-6;
   }
 
   /* PROJECT SECTION CONTENT */
   .section-content{
-    @apply flex flex-col gap-2 pl-9 pr-4;
+    @apply flex flex-col gap-2 pl-11 pr-4;
   }
 
   .section-content ul li, .section-content ol li {
@@ -186,7 +186,7 @@ body {
     padding-bottom: .8rem;
   }
   
-  .section-content > p:nth-of-type(n+2){
+  .section-content > p:not(:first-of-type):not(h4 + p){
     padding-top: .5rem;
   }
 
@@ -223,6 +223,22 @@ body {
     border: 1px solid rgba(var(--border-meta));
   }
 
+  .section-content.problems__summary {
+    position:relative;
+    padding-top: 2.5rem;
+  }
+
+  /* Adds a divider line between the problems and the summary */
+  .section-content.problems__summary::before {
+    content:"";
+    width: 40%;
+    position: absolute;
+    top:0;
+    left: 50%;
+    border-top: 1px solid rgb(var(--border-img));
+    translate: -50% 0;
+  }
+
   .subsection {
     row-gap: 1rem;
   }
@@ -231,11 +247,12 @@ body {
     background-color: rgba(var(--subsection-fill));
     padding: .75rem;
     border-radius: .375rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: .25rem;
   }
   
   .point:has(img){
-    /* background-color: rgba(255 255 255 / .03);
-    padding: 0.625rem .75rem .75rem; */
     border-radius: .375rem .375rem .875rem .875rem;
   }
 
@@ -254,6 +271,10 @@ body {
 
   .screenshots {
     row-gap: 4rem;
+  }
+
+  .feat-desc p {
+    text-wrap: pretty;
   }
 
   .disable-scroll{

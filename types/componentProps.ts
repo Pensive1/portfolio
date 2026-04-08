@@ -107,8 +107,8 @@ export type ProjectThumbnailProps = {
 /* --- Problem Points --- */
 export type problemPointProps = {
   pointTitle: string;
-  probImg: string;
-  probAlt: string;
+  probImg?: string;
+  probAlt?: string;
   children: React.ReactNode;
 };
 
@@ -164,8 +164,9 @@ export interface problems {
 }
 
 export interface solutions {
-  outline: PortableTextBlock[];
+  intro: PortableTextBlock[];
   solutions: solution[];
+  summary: PortableTextBlock[];
 }
 
 export interface nestedSectionProps {

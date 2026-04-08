@@ -8,23 +8,23 @@ export default function Feature({
   children,
 }: featureProps) {
   return (
-    <article className="point flex flex-col gap-3 md:flex-row-reverse">
+    <article className="point flex flex-col gap-3 items-center md:flex-row-reverse md:gap-6 md:items-start">
       {/* TODO: Embed gif here */}
-      <div className="w-full flex justify-center md:w-fit">
+      {featimg && <div className="w-full flex justify-center max-w-[600px] md:w-[60%] md:sticky md:top-3 xl:top-6">
         <Image
           src={featimg?.asset._ref && sanityImg(featimg.asset._ref).url()}
           alt={`${featTitle} in action`}
           width={268}
           height={268}
-          className="bg-gray-400 aspect-square w-auto rounded-xl md:h-64 md:sticky md:top-3 xl:top-6"
+          className="aspect-square w-auto rounded-xl md:h-auto"
         />
-      </div>
+      </div>}
 
-      <section className="flex flex-col md:gap-2 2xl:gap-3 md:w-[62.5%] md:flex-grow xl:w-[50%]">
+      <section className="w-full flex flex-col md:gap-2 2xl:gap-3 md:w-[62.5%] md:flex-grow xl:w-[50%]">
         <h4 className="feat-title text-[rgb(var(--txt-body-title))] !mt-3 md:!mt-0">
           {featTitle}
         </h4>
-        <div className="feat-desc">{children}</div>
+        <div className="feat-desc flex flex-col gap-1">{children}</div>
       </section>
     </article>
   );

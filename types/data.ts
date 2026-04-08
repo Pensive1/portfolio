@@ -30,8 +30,9 @@ export interface ProjectPage extends Project {
   problemConclusion: PortableTextBlock[];
   challengeList: challenge[];
   impactContent: PortableTextBlock[];
-  solutionOutline: PortableTextBlock[];
+  solutionIntro: PortableTextBlock[];
   solutions: Array<solution>;
+  solutionOutline: PortableTextBlock[];
   projTechApproach: BlockSectionPoint[];
   projTechStack: BlockSectionPoint[];
   stackSummaryImage: StandardImage;
@@ -89,11 +90,7 @@ export interface BlockSectionPoint {
   _key: string;
   title: string;
   desc: PortableTextBlock[];
-  img: {
-    asset: {
-      _ref: string;
-    };
-  };
+  img?: StandardImage;
 }
 
 /**
@@ -101,6 +98,7 @@ export interface BlockSectionPoint {
  */
 export type StandardImage = {
   alt?: string;
+  caption?: PortableTextBlock[];
   _type: string;
   asset: {
     _ref: string;
