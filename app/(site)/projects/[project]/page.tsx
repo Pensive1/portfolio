@@ -29,7 +29,7 @@ export default async function Project({
     notFound();
   }
 
-  console.log(project);
+  // console.log(project);
 
   return (
     <>
