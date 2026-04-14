@@ -16,8 +16,8 @@ export default async function Home() {
     <>
       {Object.keys(hero).length && (
         <section className="col-span-full flex flex-col gap-2 rounded-md p-4 text-center justify-center h-[40dvh]">
-          <h1 className="text-[rgb(var(--txt-heading))]">{hero.heading}</h1>
-          <h2 className="text-[rgb(var(--txt-headline))]">{hero.tagline}</h2>
+          <h1 className="text-[rgb(var(--txt-heading))] text-balance">{hero.heading}</h1>
+          <h2 className="text-[rgb(var(--txt-headline))] text-balance">{hero.tagline}</h2>
         </section>
       )}
 
