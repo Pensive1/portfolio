@@ -28,6 +28,7 @@ export default function Button({
       target={isExternal ? "_blank" : "_self"}
       download={isFile}
       prefetch={false}
+      rel="noopener noreferrer"
     >
       {showIcon && <Icon iconType={iconType} size={size} use="button" />}
       {children}

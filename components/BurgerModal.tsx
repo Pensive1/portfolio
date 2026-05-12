@@ -73,7 +73,7 @@ export default function BurgerModal({
           </nav>
           <Button
             href={"/Richard-Acquaye_CV.pdf"}
-            isFile={true}
+            // isFile={true}
             btnType="header"
           >
             <IcnList size={24} fillColor="white" />
