@@ -3,17 +3,17 @@
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { disableDraftMode } from "@/app/actions";
-import { useDraftModeEnvironment } from "next-sanity/hooks";
+import { useVisualEditingEnvironment } from "next-sanity/hooks";
 
 export function DisableDraftMode() {
   const router = useRouter();
   const [pending, startTransition] = useTransition();
-  const environment = useDraftModeEnvironment();
+  const environment = useVisualEditingEnvironment();
 
   // Only show the disable draft mode button when outside of Presentation Tool
-  if (environment !== "live" && environment !== "unknown") {
-    return null;
-  }
+  // if (environment !== "live" && environment !== "unknown") {
+  //   return null;
+  // }
 
   const disable = () =>
     startTransition(async () => {
